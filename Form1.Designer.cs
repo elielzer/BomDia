@@ -30,9 +30,9 @@ namespace BomDia
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BomDia));
             this.TarefasDataSet = new System.Data.DataSet();
             this.BomDiaTarefas = new System.Data.DataTable();
@@ -205,19 +205,19 @@ namespace BomDia
             // 
             // DataGridView1
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.DataGridView1.AutoGenerateColumns = false;
             this.DataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iNDDataGridViewTextBoxColumn,
@@ -228,14 +228,14 @@ namespace BomDia
             this.pESODataGridViewTextBoxColumn,
             this.cRITÉRIODataGridViewTextBoxColumn});
             this.DataGridView1.DataSource = this.TarefasBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView1.DefaultCellStyle = dataGridViewCellStyle27;
             this.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridView1.Location = new System.Drawing.Point(0, 13);
             this.DataGridView1.Name = "DataGridView1";
@@ -455,7 +455,7 @@ namespace BomDia
             this.BindingNavigatorMigrar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MigrarToolStripButton});
             this.BindingNavigatorMigrar.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.BindingNavigatorMigrar.Location = new System.Drawing.Point(115, 397);
+            this.BindingNavigatorMigrar.Location = new System.Drawing.Point(132, 397);
             this.BindingNavigatorMigrar.MoveFirstItem = null;
             this.BindingNavigatorMigrar.MoveLastItem = null;
             this.BindingNavigatorMigrar.MoveNextItem = null;
@@ -464,7 +464,7 @@ namespace BomDia
             this.BindingNavigatorMigrar.PositionItem = null;
             this.BindingNavigatorMigrar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.BindingNavigatorMigrar.ShowItemToolTips = false;
-            this.BindingNavigatorMigrar.Size = new System.Drawing.Size(115, 32);
+            this.BindingNavigatorMigrar.Size = new System.Drawing.Size(101, 32);
             this.BindingNavigatorMigrar.TabIndex = 9;
             this.BindingNavigatorMigrar.Text = "bindingNavigatorMigrar";
             // 
@@ -475,8 +475,10 @@ namespace BomDia
             this.MigrarToolStripButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MigrarToolStripButton.ForeColor = System.Drawing.Color.Red;
             this.MigrarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("MigrarToolStripButton.Image")));
+            this.MigrarToolStripButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.MigrarToolStripButton.Name = "MigrarToolStripButton";
-            this.MigrarToolStripButton.Size = new System.Drawing.Size(115, 30);
+            this.MigrarToolStripButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.MigrarToolStripButton.Size = new System.Drawing.Size(100, 30);
             this.MigrarToolStripButton.Text = "&Migrar tarefa";
             this.MigrarToolStripButton.Click += new System.EventHandler(this.MigrarToolStripButton_Click);
             // 
@@ -495,7 +497,7 @@ namespace BomDia
             // DetalhePorQue
             // 
             this.DetalhePorQue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.TarefasBindingSource, "PORQUE", true));
-            this.DetalhePorQue.Location = new System.Drawing.Point(12, 341);
+            this.DetalhePorQue.Location = new System.Drawing.Point(6, 429);
             this.DetalhePorQue.Name = "DetalhePorQue";
             this.DetalhePorQue.Size = new System.Drawing.Size(100, 20);
             this.DetalhePorQue.TabIndex = 7;
@@ -504,7 +506,7 @@ namespace BomDia
             // DetalheQuando
             // 
             this.DetalheQuando.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.TarefasBindingSource, "QUANDO", true));
-            this.DetalheQuando.Location = new System.Drawing.Point(12, 315);
+            this.DetalheQuando.Location = new System.Drawing.Point(118, 429);
             this.DetalheQuando.Name = "DetalheQuando";
             this.DetalheQuando.Size = new System.Drawing.Size(100, 20);
             this.DetalheQuando.TabIndex = 6;
@@ -513,7 +515,7 @@ namespace BomDia
             // INDPretendido
             // 
             this.INDPretendido.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.TarefasBindingSource, "IND", true));
-            this.INDPretendido.Location = new System.Drawing.Point(12, 289);
+            this.INDPretendido.Location = new System.Drawing.Point(137, 94);
             this.INDPretendido.Name = "INDPretendido";
             this.INDPretendido.Size = new System.Drawing.Size(100, 20);
             this.INDPretendido.TabIndex = 4;
@@ -1713,10 +1715,10 @@ namespace BomDia
             "09/10/2024",
             "10/10/2024",
             "11/10/2024"});
-            this.ListaDeDatas.Location = new System.Drawing.Point(118, 280);
+            this.ListaDeDatas.Location = new System.Drawing.Point(6, 280);
             this.ListaDeDatas.Name = "ListaDeDatas";
             this.ListaDeDatas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ListaDeDatas.Size = new System.Drawing.Size(115, 114);
+            this.ListaDeDatas.Size = new System.Drawing.Size(227, 114);
             this.ListaDeDatas.TabIndex = 9;
             this.ListaDeDatas.SelectedValueChanged += new System.EventHandler(this.ListaDeDatas_SelectedValueChanged);
             // 
@@ -1837,7 +1839,7 @@ namespace BomDia
             this.PictureBox1.ContextMenuStrip = this.ContextMenuStripVoltar;
             this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTOFF;
             this.PictureBox1.InitialImage = null;
-            this.PictureBox1.Location = new System.Drawing.Point(12, 0);
+            this.PictureBox1.Location = new System.Drawing.Point(2, 1);
             this.PictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.PictureBox1.Name = "PictureBox1";
             this.PictureBox1.Size = new System.Drawing.Size(23, 29);
@@ -1893,7 +1895,7 @@ namespace BomDia
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AbrirToolStripButtonGerenciar,
             this.toolStripSeparator});
-            this.bindingNavigator1.Location = new System.Drawing.Point(70, 3);
+            this.bindingNavigator1.Location = new System.Drawing.Point(9, 397);
             this.bindingNavigator1.MoveFirstItem = null;
             this.bindingNavigator1.MoveLastItem = null;
             this.bindingNavigator1.MoveNextItem = null;
@@ -1987,11 +1989,12 @@ namespace BomDia
             // StatusStripBomDia
             // 
             this.StatusStripBomDia.AutoSize = false;
+            this.StatusStripBomDia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StatusStripBomDia.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MSGtoolStripStatusLabel});
-            this.StatusStripBomDia.Location = new System.Drawing.Point(0, 6);
+            this.StatusStripBomDia.Location = new System.Drawing.Point(0, 0);
             this.StatusStripBomDia.Name = "StatusStripBomDia";
-            this.StatusStripBomDia.Size = new System.Drawing.Size(752, 25);
+            this.StatusStripBomDia.Size = new System.Drawing.Size(752, 31);
             this.StatusStripBomDia.TabIndex = 15;
             this.StatusStripBomDia.Text = "Bom dia.";
             // 
@@ -2050,8 +2053,8 @@ namespace BomDia
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.BackColor = System.Drawing.Color.White;
             this.splitContainer2.Panel1.Controls.Add(this.PictureBox1);
-            this.splitContainer2.Panel1.Controls.Add(this.bindingNavigator1);
             // 
             // splitContainer2.Panel2
             // 
@@ -2074,6 +2077,7 @@ namespace BomDia
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(991, 481);
             this.ControlBox = false;
+            this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.BindingNavigatorMigrar);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.MonthCalendarDiamarcado);
@@ -2138,7 +2142,6 @@ namespace BomDia
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
