@@ -94,7 +94,6 @@ namespace BomDia
             this.CheckBoxIntegrador = new System.Windows.Forms.CheckBox();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.AbrirToolStripButtonGerenciar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.Timer1 = new System.Windows.Forms.Timer(this.components);
             this.BindingNavigatorSemana = new System.Windows.Forms.BindingNavigator(this.components);
             this.SemanaToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -1889,37 +1888,36 @@ namespace BomDia
             // 
             this.bindingNavigator1.AddNewItem = null;
             this.bindingNavigator1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bindingNavigator1.AutoSize = false;
             this.bindingNavigator1.CountItem = null;
             this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
+            this.bindingNavigator1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AbrirToolStripButtonGerenciar,
-            this.toolStripSeparator});
+            this.AbrirToolStripButtonGerenciar});
             this.bindingNavigator1.Location = new System.Drawing.Point(9, 397);
             this.bindingNavigator1.MoveFirstItem = null;
             this.bindingNavigator1.MoveLastItem = null;
             this.bindingNavigator1.MoveNextItem = null;
             this.bindingNavigator1.MovePreviousItem = null;
             this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.Padding = new System.Windows.Forms.Padding(0);
             this.bindingNavigator1.PositionItem = null;
-            this.bindingNavigator1.Size = new System.Drawing.Size(95, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(87, 40);
             this.bindingNavigator1.TabIndex = 2;
             this.bindingNavigator1.TabStop = true;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
             // AbrirToolStripButtonGerenciar
             // 
+            this.AbrirToolStripButtonGerenciar.AutoSize = false;
             this.AbrirToolStripButtonGerenciar.Image = ((System.Drawing.Image)(resources.GetObject("AbrirToolStripButtonGerenciar.Image")));
+            this.AbrirToolStripButtonGerenciar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AbrirToolStripButtonGerenciar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AbrirToolStripButtonGerenciar.Name = "AbrirToolStripButtonGerenciar";
-            this.AbrirToolStripButtonGerenciar.Size = new System.Drawing.Size(77, 22);
-            this.AbrirToolStripButtonGerenciar.Text = "&Gerenciar";
+            this.AbrirToolStripButtonGerenciar.Size = new System.Drawing.Size(74, 40);
+            this.AbrirToolStripButtonGerenciar.Text = "A&tivar";
             this.AbrirToolStripButtonGerenciar.Click += new System.EventHandler(this.AbrirToolStripButtonGerenciar_Click);
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
             // 
             // Timer1
             // 
@@ -2004,7 +2002,7 @@ namespace BomDia
             this.MSGtoolStripStatusLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MSGtoolStripStatusLabel.ForeColor = System.Drawing.Color.Blue;
             this.MSGtoolStripStatusLabel.Name = "MSGtoolStripStatusLabel";
-            this.MSGtoolStripStatusLabel.Size = new System.Drawing.Size(59, 20);
+            this.MSGtoolStripStatusLabel.Size = new System.Drawing.Size(59, 26);
             this.MSGtoolStripStatusLabel.Text = "Bom dia.";
             // 
             // DataHoje
@@ -2183,7 +2181,6 @@ namespace BomDia
         private System.Windows.Forms.Panel PainelPrincipal;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripButton AbrirToolStripButtonGerenciar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Windows.Forms.CheckBox CheckBoxIntegrador;
         private System.Windows.Forms.Timer Timer1;
         private System.Windows.Forms.BindingNavigator BindingNavigatorMigrar;
