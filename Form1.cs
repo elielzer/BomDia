@@ -456,6 +456,11 @@ namespace BomDia
             // definir a propriedade de menucontextstrip
             dateTimePicker1.ContextMenuStrip = ChaveadorContextMenuStrip;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
