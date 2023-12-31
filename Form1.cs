@@ -237,8 +237,8 @@ namespace BomDia
         private void Timer1_Tick(object sender, EventArgs e)
         {
             //MessageBox.Show("Alô mundo");
-             dateTimePicker1.ResetText();
-            //dateTimePicker2.ResetText();
+            dateTimePicker1.ResetText();
+            SemanaToolStripButton.Text = DateTime.Today.ToString("ddd");
         }
 
         private void MigrarToolStripButton_Click(object sender, EventArgs e)
