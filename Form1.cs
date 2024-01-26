@@ -13,18 +13,13 @@ namespace BomDia
         int Xloc = 0;
         int Yloc = 0;
         int LarguraReduzida = 0;
-        int LarguraDateTimeePiker1 = 0;
+        //int LarguraDateTimeePiker1 = 0;
         int AlturaReduzida = 0;
         DateTime DataSemana ;
         string BancoDados = "C:/Users/elielzer/Documents/Bom-Dia/XmlDoc.xml";
         public BomDia()
         {
             InitializeComponent();
-        }
-
-        private void dateTimePicker1_MouseLeave(object sender, EventArgs e)
-        {
-
         }
 
         public void BomDia_Load(object sender, EventArgs e)
@@ -34,21 +29,28 @@ namespace BomDia
             //
 
             // Estilo de Layout janela expandida armazenado 
-
+            DataHoje.Visible = true;
+            DataHoje.Text = DateTime.Today.ToShortDateString();
+            FormBorderStyle = FormBorderStyle.None;
             Xloc = Location.X;
             Yloc = Location.Y;
             LarguraForm = Width;
             AlturaForm = Height;
-            LarguraDateTimeePiker1 = dateTimePicker1.Width;
 
             // Layout mini janela inicializado
-            splitContainer2.Visible = false;
+            
             StatusStripBomDia.Visible = false;
             LarguraReduzida = (int)(((ushort)dateTimePicker1.Width) * 1.73);
             AlturaReduzida = (int)(((ushort)dateTimePicker1.Height) * 1.1);
             Width = LarguraReduzida;
+            this.BackColor = Color.Black;
+            // Transição altura da mini janela
 
-            // Trasição altura da mini janela
+
+            //Height = AlturaReduzida + DataHoje.Height;
+            //splitContainer2.Visible = false;
+            splitContainer1.Panel2Collapsed = true;
+            Height = AlturaReduzida;
 
             Height = AlturaReduzida + DataHoje.Height;
             timer2.Enabled = true;
@@ -56,10 +58,9 @@ namespace BomDia
             timer2.Start();
 
             // Mostra a data do dia
-            DataHoje.Visible = true;
-            DataHoje.Text = DateTime.Today.ToShortDateString();
 
-            FormBorderStyle = FormBorderStyle.None;
+
+
             Location = new Point(1050, 0);
 
             ListaDeDatas.Text = DateTime.Today.ToShortDateString();
@@ -75,14 +76,18 @@ namespace BomDia
 
         private void CortinaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            splitContainer2.Visible = true;
+            splitContainer1.Panel2Collapsed = false;
+            //splitContainer2.Visible = true;
+
             StatusStripBomDia.Visible = true;
             ActiveForm.Location = new Point(Xloc, Yloc);
             Width = LarguraForm;
             Height= AlturaForm;
             this.BackColor = Color.Gray;
+
+            FormBorderStyle = FormBorderStyle.Sizable;
             ControlBox = true;
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.Update();
             Refresh();
             cortinaToolStripMenuItem.Enabled = false;
             //atualiza data hoje
@@ -96,7 +101,7 @@ namespace BomDia
         }
         public enum ValorTag
         {
-            Min 
+            Min
         }
         public void BomDia_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -111,8 +116,9 @@ namespace BomDia
                 }
 
                 // Menu suspenso para o comando Voltar.
-                splitContainer2.Visible = false;
+                //splitContainer2.Visible = false;
                 StatusStripBomDia.Visible = false;
+                this.WindowState = FormWindowState.Normal;
                 FormBorderStyle = FormBorderStyle.None;
                 Xloc = Location.X;
                 Yloc = Location.Y;
@@ -179,15 +185,14 @@ namespace BomDia
 
         private void abrirToolStripButton_Click(object sender, EventArgs e)
         {
-            //GroupBox1.Enabled = true;
-            PainelPrincipal.Enabled = true;
+            tableLayoutPanel6.Enabled = true;
         }
 
 
         private void AbrirToolStripButtonGerenciar_Click(object sender, EventArgs e)
         {
             //GroupBox1.Enabled = true;
-            PainelPrincipal.Enabled = true;
+            tableLayoutPanel6.Enabled = true;
             BindingNavigatorNovo.Enabled = true;
             BindingExclui.Enabled = true;
             BindingNavigatorSalva.Enabled = true;
@@ -236,7 +241,7 @@ namespace BomDia
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            //MessageBox.Show("Alô mundo");
+
             dateTimePicker1.ResetText();
             SemanaToolStripButton.Text = DateTime.Today.ToString("ddd");
         }
@@ -262,9 +267,11 @@ namespace BomDia
 
         public void VoltarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Menu suspenso para o comando Voltar.
-            splitContainer2.Visible = false;
+            // Menu suspenso para o comando Voltar para formato reduzido.
+            //splitContainer2.Visible = false;
+            //tableLayoutPanel6.Visible = false;
             StatusStripBomDia.Visible = false;
+            this.WindowState = FormWindowState.Normal;
             FormBorderStyle = FormBorderStyle.None;
             Xloc = Location.X;
             Yloc = Location.Y;
@@ -275,15 +282,6 @@ namespace BomDia
             this.BackColor = Color.Black;
             Location = new Point(1100, 0);
             cortinaToolStripMenuItem.Enabled = true;
-        }
-
-        private void dateTimePicker1_MouseHover(object sender, EventArgs e)
-        {
-            //dateTimePicker1.Width = (int)(LarguraDateTimeePiker1 * 1.35);
-            //dateTimePicker1.Height = Height;
-            //dateTimePicker1.Font = new Font((string)dateTimePicker1.Font.Name,
-            //    13, dateTimePicker1.Font.Style, (GraphicsUnit)dateTimePicker1.Font.Unit);
-            //dateTimePicker1.Format = DateTimePickerFormat.Short;
         }
 
 
@@ -413,7 +411,7 @@ namespace BomDia
                             }
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                     }
                 }
@@ -424,9 +422,7 @@ namespace BomDia
             dateTimePicker1.Format = DateTimePickerFormat.Short;
             
             dateTimePicker1.Font = new Font("Agency FB", 10F, FontStyle.Regular);
-            //DataHoje.Location = new Point(0, 0);
-            //DataHoje.Visible = true;
-            //DataHoje.Text = dateTimePicker1.Text;
+
         }
 
         private void SemanaToolStripButton_MouseLeave(object sender, EventArgs e)
@@ -434,21 +430,12 @@ namespace BomDia
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "HH:mm";
             dateTimePicker1.Font = new Font("Agency FB", 21.75F, FontStyle.Bold);
-            //DataHoje.Visible = false;
-        }
-
-        private void BindingNavigatorSalva_RefreshItems(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BindingNavigatorSemana_RefreshItems(object sender, EventArgs e)
-        {
 
         }
 
         private void Timer2_Tick(object sender, EventArgs e)
         {
+            //splitContainer1.Panel2Collapsed = true;
             Height = AlturaReduzida;
             DataHoje.Visible = false;
             timer2.Stop();
@@ -458,6 +445,11 @@ namespace BomDia
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer6_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
