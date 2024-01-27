@@ -28,17 +28,17 @@ namespace BomDia
             TarefasDataSet.ReadXml(BancoDados, XmlReadMode.ReadSchema);
             //
 
-            // Estilo de Layout janela expandida armazenado 
+            // Como está a janela do aplicativo 
             DataHoje.Visible = true;
             DataHoje.Text = DateTime.Today.ToShortDateString();
-            FormBorderStyle = FormBorderStyle.None;
+
             Xloc = Location.X;
             Yloc = Location.Y;
             LarguraForm = Width;
             AlturaForm = Height;
 
-            // Layout mini janela inicializado
-            
+            // Layout mini janela
+            FormBorderStyle = FormBorderStyle.None;
             StatusStripBomDia.Visible = false;
             LarguraReduzida = (int)(((ushort)dateTimePicker1.Width) * 1.73);
             AlturaReduzida = (int)(((ushort)dateTimePicker1.Height) * 1.1);
@@ -77,18 +77,16 @@ namespace BomDia
         private void CortinaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             splitContainer1.Panel2Collapsed = false;
-            //splitContainer2.Visible = true;
 
             StatusStripBomDia.Visible = true;
             ActiveForm.Location = new Point(Xloc, Yloc);
             Width = LarguraForm;
             Height= AlturaForm;
             this.BackColor = Color.Gray;
-
+            this.WindowState = FormWindowState.Normal;
             FormBorderStyle = FormBorderStyle.Sizable;
             ControlBox = true;
-            this.Update();
-            Refresh();
+            //Refresh();
             cortinaToolStripMenuItem.Enabled = false;
             //atualiza data hoje
             if (ListaDeDatas.Text == DateTime.Today.ToShortDateString())
@@ -170,16 +168,17 @@ namespace BomDia
         // Entrada de novo registro, manualmente, ao arquivo XML ----------------
         private void BindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            DetalhePorQue.Visible = true;
-            DetalheQuando.Visible = true;
-            DetalhePorQue.Text = "A";
+            
+            DetalhePorQue.Visible = true ;
+            DetalheQuando.Visible = true ;
+            DetalhePorQue.Text = "A" ;
             DetalheQuando.Text = DateTime.Today.ToShortDateString();
             DetalhePorQue.Visible = false;
             DetalheQuando.Visible = false;
             ActiveControl = OQuePretendido;
             MSGtoolStripStatusLabel.Text = "Esboço...";
             this.label1.Image = global::BomDia.Properties.Resources.NEW;
-            
+            label1.Text = "Escrever";
             label5.Text = "";
         }
 
@@ -268,8 +267,7 @@ namespace BomDia
         public void VoltarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Menu suspenso para o comando Voltar para formato reduzido.
-            //splitContainer2.Visible = false;
-            //tableLayoutPanel6.Visible = false;
+
             StatusStripBomDia.Visible = false;
             this.WindowState = FormWindowState.Normal;
             FormBorderStyle = FormBorderStyle.None;
@@ -300,10 +298,8 @@ namespace BomDia
         //-----------------------------------------------------------------------------
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            //PictureBox1.Visible = false;
-
-            this.label1.Image = null; // anula a imagem indicadora de inclusão
-
+            this.label1.Image = null; // imagem ao registro atual não mais existe
+            this.label1.Text = "Editar";
             if (DataGridView1.CurrentRow == null) //quando a posição está em linha nova
             {
                 try
@@ -451,6 +447,14 @@ namespace BomDia
 
         private void splitContainer6_Panel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void TarefasBindingSource_AddingNew(object sender, System.ComponentModel.AddingNewEventArgs e)
+        {
+            label1.Text = "Escrever";
+            this.label1.Image = global::BomDia.Properties.Resources.NEW;
+
 
         }
     }
