@@ -462,6 +462,11 @@ namespace BomDia
         {
 
         }
+
+        private void splitContainer9_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
     }
 
 }
