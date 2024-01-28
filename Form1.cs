@@ -299,7 +299,7 @@ namespace BomDia
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             this.label1.Image = null; // imagem ao registro atual não mais existe
-            this.label1.Text = "Editar";
+            this.label1.Text = "Editar Item";
             if (DataGridView1.CurrentRow == null) //quando a posição está em linha nova
             {
                 try
@@ -455,6 +455,11 @@ namespace BomDia
             label1.Text = "Escrever";
             this.label1.Image = global::BomDia.Properties.Resources.NEW;
 
+
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
