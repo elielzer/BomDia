@@ -226,15 +226,19 @@ namespace BomDia
             //
             if (DataPara > DataHoje)
             {
-                MSGtoolStripStatusLabel.Text = "Data futura";
+                //MSGtoolStripStatusLabel.Text = "Data futura";
+                DiaBomDiaLabel.Text = "Data é futura";
             }
             if (DataPara < DataHoje)
             {
-                MSGtoolStripStatusLabel.Text = "Data passada";
+                //MSGtoolStripStatusLabel.Text = "Data passada";
+                DiaBomDiaLabel.Text = "Data é passada";
             }
             if (DataPara == DataHoje)
             {
-                MSGtoolStripStatusLabel.Text = "Hoje. || Arquivo de dados: " + BancoDados;
+                MSGtoolStripStatusLabel.Text =
+                    "Arquivo de dados: " + BancoDados;
+                DiaBomDiaLabel.Text = "Data é hoje";
             }
         }
 
@@ -455,16 +459,6 @@ namespace BomDia
             label1.Text = "Escrever";
             this.label1.Image = global::BomDia.Properties.Resources.NEW;
 
-
-        }
-
-        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer9_SplitterMoved(object sender, SplitterEventArgs e)
-        {
 
         }
     }
