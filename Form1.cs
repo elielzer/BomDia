@@ -254,13 +254,13 @@ namespace BomDia
             DataRow Row;
             Row = BomDiaTarefas.NewRow();
             Row["QUANDO"] = DateTime.Today.ToShortDateString();
-            Row["OQUE"] = DataGridView1.CurrentRow.Cells[3].Value; //4ª col
+            Row["OQUE"] = DataGridView1.CurrentRow.Cells[1].Value; //4ª col
             Row["PORQUE"] = DataGridView1.CurrentRow.Cells[4].Value; //5ª col
 
 
             Row["PESO"] = DataGridView1.CurrentRow.Cells[5].Value; //6ª col
             Row["CRITÉRIO"] = DataGridView1.CurrentRow.Cells[6].Value; //7ª col
-            Row["DIAMARCADO"] = DataGridView1.CurrentRow.Cells[2].Value; //3ª col
+            Row["DIAMARCADO"] = DataGridView1.CurrentRow.Cells[3].Value; //3ª col
 
             // Índice
             BomDiaTarefas.Rows.Add(Row);
