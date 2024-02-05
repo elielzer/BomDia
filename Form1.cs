@@ -313,9 +313,6 @@ namespace BomDia
                       upper: DateTime.Today); //marcação padrão na data de hoje
                     
                     label5.Text =  "(em branco)".ToUpper(); //texto fantasia
-                    // new SelectionRange(
-                    //lower: (DateTime)DataGridView1.CurrentRow.Cells[6].Value,
-                    //upper: (DateTime)DataGridView1.CurrentRow.Cells[6].Value);
                     return;
                 }
                 catch (Exception ex)
@@ -361,16 +358,15 @@ namespace BomDia
                     }
                     return; // finaliza se erro
                 }
-                else  // O registro é existente
+                else  // Quando o registro já existe fazer isso.
                 {
                     //
                     try
                     {
                         MonthCalendarDiamarcado.SelectionRange = new SelectionRange(
-                          lower: (DateTime)DataGridView1.CurrentRow.Cells[2].Value,
-                          upper: (DateTime)DataGridView1.CurrentRow.Cells[2].Value);
-                        DataSemana = (DateTime)DataGridView1.CurrentRow.Cells[2].Value;
-                        //label5.Text =  DataSemana.DayOfWeek.ToString();
+                          lower: (DateTime)DataGridView1.CurrentRow.Cells[3].Value,
+                          upper: (DateTime)DataGridView1.CurrentRow.Cells[3].Value);
+                        DataSemana = (DateTime)DataGridView1.CurrentRow.Cells[3].Value;
                         //
                         if (DataSemana == DateTime.Today)
                         {
