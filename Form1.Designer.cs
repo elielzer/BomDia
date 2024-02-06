@@ -33,11 +33,10 @@ namespace BomDia
             System.Windows.Forms.ListBox PrioridadesListBox;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BomDia));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TarefasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TarefasDataSet = new System.Data.DataSet();
             this.BomDiaTarefas = new System.Data.DataTable();
@@ -53,13 +52,6 @@ namespace BomDia
             this.DenominationDataColumn = new System.Data.DataColumn();
             this.PrioridadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iNDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oQUEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qUANDODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pORQUEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.pESODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cRITÉRIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.ChaveadorContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cortinaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -129,6 +121,13 @@ namespace BomDia
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.iNDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oQUEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qUANDODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pORQUEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.pESODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cRITÉRIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             PrioridadesListBox = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.TarefasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TarefasDataSet)).BeginInit();
@@ -329,14 +328,14 @@ namespace BomDia
             this.pESODataGridViewTextBoxColumn,
             this.cRITÉRIODataGridViewTextBoxColumn});
             this.DataGridView1.DataSource = this.TarefasBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridView1.Location = new System.Drawing.Point(3, 16);
             this.DataGridView1.Name = "DataGridView1";
@@ -346,68 +345,6 @@ namespace BomDia
             this.DataGridView1.TabIndex = 8;
             this.DataGridView1.SelectionChanged += new System.EventHandler(this.DataGridView1_SelectionChanged);
             this.DataGridView1.Enter += new System.EventHandler(this.DataGridView1_Enter);
-            // 
-            // iNDDataGridViewTextBoxColumn
-            // 
-            this.iNDDataGridViewTextBoxColumn.DataPropertyName = "IND";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkGray;
-            this.iNDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.iNDDataGridViewTextBoxColumn.HeaderText = "IND";
-            this.iNDDataGridViewTextBoxColumn.Name = "iNDDataGridViewTextBoxColumn";
-            this.iNDDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // oQUEDataGridViewTextBoxColumn
-            // 
-            this.oQUEDataGridViewTextBoxColumn.DataPropertyName = "OQUE";
-            this.oQUEDataGridViewTextBoxColumn.HeaderText = "O QUÊ";
-            this.oQUEDataGridViewTextBoxColumn.Name = "oQUEDataGridViewTextBoxColumn";
-            this.oQUEDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // qUANDODataGridViewTextBoxColumn
-            // 
-            this.qUANDODataGridViewTextBoxColumn.DataPropertyName = "QUANDO";
-            this.qUANDODataGridViewTextBoxColumn.HeaderText = "QUANDO";
-            this.qUANDODataGridViewTextBoxColumn.Name = "qUANDODataGridViewTextBoxColumn";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "DIAMARCADO";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn1.HeaderText = "DATA LIMITE";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 120;
-            // 
-            // pORQUEDataGridViewTextBoxColumn
-            // 
-            this.pORQUEDataGridViewTextBoxColumn.DataPropertyName = "PORQUE";
-            this.pORQUEDataGridViewTextBoxColumn.DataSource = this.PrioridadesBindingSource;
-            this.pORQUEDataGridViewTextBoxColumn.DisplayMember = "Denomination";
-            this.pORQUEDataGridViewTextBoxColumn.HeaderText = "POR QUÊ";
-            this.pORQUEDataGridViewTextBoxColumn.Name = "pORQUEDataGridViewTextBoxColumn";
-            this.pORQUEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.pORQUEDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.pORQUEDataGridViewTextBoxColumn.ValueMember = "ItemPrioridade";
-            this.pORQUEDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // pESODataGridViewTextBoxColumn
-            // 
-            this.pESODataGridViewTextBoxColumn.DataPropertyName = "PESO";
-            this.pESODataGridViewTextBoxColumn.HeaderText = "PESO";
-            this.pESODataGridViewTextBoxColumn.Name = "pESODataGridViewTextBoxColumn";
-            this.pESODataGridViewTextBoxColumn.Width = 40;
-            // 
-            // cRITÉRIODataGridViewTextBoxColumn
-            // 
-            this.cRITÉRIODataGridViewTextBoxColumn.DataPropertyName = "CRITÉRIO";
-            this.cRITÉRIODataGridViewTextBoxColumn.HeaderText = "QUAL CRITÉRIO";
-            this.cRITÉRIODataGridViewTextBoxColumn.Items.AddRange(new object[] {
-            "Maior melhor",
-            "Menor melhor"});
-            this.cRITÉRIODataGridViewTextBoxColumn.Name = "cRITÉRIODataGridViewTextBoxColumn";
-            this.cRITÉRIODataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cRITÉRIODataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.cRITÉRIODataGridViewTextBoxColumn.Width = 150;
             // 
             // dateTimePicker1
             // 
@@ -1819,7 +1756,12 @@ namespace BomDia
             "08/10/2024",
             "09/10/2024",
             "10/10/2024",
-            "11/10/2024"});
+            "11/10/2024",
+            "12/10/2024",
+            "13/10/2024",
+            "14/10/2024",
+            "15/10/2024",
+            "16/10/2024"});
             this.ListaDeDatas.Location = new System.Drawing.Point(0, 0);
             this.ListaDeDatas.Name = "ListaDeDatas";
             this.ListaDeDatas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -2392,14 +2334,14 @@ namespace BomDia
             this.itemPrioridadeDataGridViewTextBoxColumn,
             this.denominationDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.PrioridadesBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
@@ -2465,6 +2407,66 @@ namespace BomDia
             // 
             this.timer2.Interval = 5000;
             this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
+            // 
+            // iNDDataGridViewTextBoxColumn
+            // 
+            this.iNDDataGridViewTextBoxColumn.DataPropertyName = "IND";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkGray;
+            this.iNDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.iNDDataGridViewTextBoxColumn.HeaderText = "IND";
+            this.iNDDataGridViewTextBoxColumn.Name = "iNDDataGridViewTextBoxColumn";
+            this.iNDDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // oQUEDataGridViewTextBoxColumn
+            // 
+            this.oQUEDataGridViewTextBoxColumn.DataPropertyName = "OQUE";
+            this.oQUEDataGridViewTextBoxColumn.HeaderText = "O QUÊ";
+            this.oQUEDataGridViewTextBoxColumn.Name = "oQUEDataGridViewTextBoxColumn";
+            this.oQUEDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // qUANDODataGridViewTextBoxColumn
+            // 
+            this.qUANDODataGridViewTextBoxColumn.DataPropertyName = "QUANDO";
+            this.qUANDODataGridViewTextBoxColumn.HeaderText = "QUANDO";
+            this.qUANDODataGridViewTextBoxColumn.Name = "qUANDODataGridViewTextBoxColumn";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "DIAMARCADO";
+            this.dataGridViewTextBoxColumn1.HeaderText = "DATA LIMITE";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 120;
+            // 
+            // pORQUEDataGridViewTextBoxColumn
+            // 
+            this.pORQUEDataGridViewTextBoxColumn.DataPropertyName = "PORQUE";
+            this.pORQUEDataGridViewTextBoxColumn.DataSource = this.PrioridadesBindingSource;
+            this.pORQUEDataGridViewTextBoxColumn.DisplayMember = "Denomination";
+            this.pORQUEDataGridViewTextBoxColumn.HeaderText = "POR QUÊ";
+            this.pORQUEDataGridViewTextBoxColumn.Name = "pORQUEDataGridViewTextBoxColumn";
+            this.pORQUEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.pORQUEDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.pORQUEDataGridViewTextBoxColumn.ValueMember = "ItemPrioridade";
+            this.pORQUEDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // pESODataGridViewTextBoxColumn
+            // 
+            this.pESODataGridViewTextBoxColumn.DataPropertyName = "PESO";
+            this.pESODataGridViewTextBoxColumn.HeaderText = "PESO";
+            this.pESODataGridViewTextBoxColumn.Name = "pESODataGridViewTextBoxColumn";
+            this.pESODataGridViewTextBoxColumn.Width = 40;
+            // 
+            // cRITÉRIODataGridViewTextBoxColumn
+            // 
+            this.cRITÉRIODataGridViewTextBoxColumn.DataPropertyName = "CRITÉRIO";
+            this.cRITÉRIODataGridViewTextBoxColumn.HeaderText = "QUAL CRITÉRIO";
+            this.cRITÉRIODataGridViewTextBoxColumn.Items.AddRange(new object[] {
+            "Maior melhor",
+            "Menor melhor"});
+            this.cRITÉRIODataGridViewTextBoxColumn.Name = "cRITÉRIODataGridViewTextBoxColumn";
+            this.cRITÉRIODataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cRITÉRIODataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.cRITÉRIODataGridViewTextBoxColumn.Width = 150;
             // 
             // BomDia
             // 
