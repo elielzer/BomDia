@@ -325,21 +325,21 @@ namespace BomDia
             // Redefine o texto atual da barra de status
             MSGtoolStripStatusLabel.Text = "Indexador: " + DataGridView1.CurrentRow.Cells[0].Value;
 
-                if (DataGridView1.CurrentRow.Cells[2].Value.ToString() == "")
+                if (DataGridView1.CurrentRow.Cells[3].Value.ToString() == "")
                 {
                     try
                     {
                         MonthCalendarDiamarcado.SelectionRange = new SelectionRange(
                           lower: DateTime.Today,
                           upper: DateTime.Today);
-                        if (DataGridView1.CurrentRow.Cells[2].Value.ToString() == "")
+                        if (DataGridView1.CurrentRow.Cells[3].Value.ToString() == "")
                         {
                             label5.Text = "agenda do dia";
                             return;
                         }
                         else
                         {
-                            DataSemana = (DateTime)DataGridView1.CurrentRow.Cells[2].Value;
+                            DataSemana = (DateTime)DataGridView1.CurrentRow.Cells[3].Value;
                             if (DataSemana == DateTime.Today)
                             {
                                 label5.Text = "Hoje";
