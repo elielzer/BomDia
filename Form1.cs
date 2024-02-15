@@ -241,7 +241,7 @@ namespace BomDia
                 DiaBomDiaLabel.Text = "Data é hoje";
             }
         }
-
+        //listbox
         private void Timer1_Tick(object sender, EventArgs e)
         {
 
