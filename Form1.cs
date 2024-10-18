@@ -178,7 +178,7 @@ namespace BomDia
             ActiveControl = OQuePretendido;
             MSGtoolStripStatusLabel.Text = "Esboço...";
             this.label1.Image = global::BomDia.Properties.Resources.NEW;
-            label1.Text = "Escrever";
+            label1.Text = "Escrever item";
             label5.Text = "";
         }
 
@@ -302,8 +302,9 @@ namespace BomDia
         //-----------------------------------------------------------------------------
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            this.label1.Image = null; // imagem ao registro atual não mais existe
-            this.label1.Text = "Editar Item";
+            //this.label1.Image = null; // imagem ao registro atual não mais existe
+            this.label1.Image = global::BomDia.Properties.Resources.NOTE14;
+            this.label1.Text = "Editar";
             if (DataGridView1.CurrentRow == null) //quando a posição está em linha nova
             {
                 try
@@ -452,9 +453,14 @@ namespace BomDia
 
         private void TarefasBindingSource_AddingNew(object sender, System.ComponentModel.AddingNewEventArgs e)
         {
-            label1.Text = "Escrever";
+            label1.Text = "Escrever item";
             this.label1.Image = global::BomDia.Properties.Resources.NEW;
 
+
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
 
         }
     }
