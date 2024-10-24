@@ -298,12 +298,12 @@ namespace BomDia
         }
 
         //-----------------------------------------------------------------------------
-        // Escreve as mudanças dinâmicas de data de execução de tarefas para a iterface
+        // Escreve as mudanças dinâmicas de data de execução de tarefas para a interface
         //-----------------------------------------------------------------------------
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             //this.label1.Image = null; // imagem ao registro atual não mais existe
-            this.label1.Image = global::BomDia.Properties.Resources.NOTE14;
+            this.label1.Image = global::BomDia.Properties.Resources.Edit1;
             this.label1.Text = "Editar";
             if (DataGridView1.CurrentRow == null) //quando a posição está em linha nova
             {
