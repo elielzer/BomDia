@@ -70,8 +70,13 @@ namespace BomDia
             //Str = @"QUANDO = " + DateObject.Day + "/" + DateObject.Month + "/" + DateObject.Year;
             TarefasBindingSource.Filter = String.Format("QUANDO = '{0:dd/MM/yyyy}'",ListaDeDatas.Text);
             //
-            SemanaToolStripButton.Text = DateTime.Today.ToString("ddd");
+            string SemanaComMaiuscula;
+            SemanaComMaiuscula = DateTime.Today.ToString("ddd");
+            SemanaToolStripButton.Text =  SemanaComMaiuscula[0].ToString().ToUpper() +
+                SemanaComMaiuscula[1].ToString() + SemanaComMaiuscula[2].ToString();
+
             this.BackColor = Color.Black;
+            
         }
 
         private void CortinaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -247,7 +252,11 @@ namespace BomDia
         {
 
             dateTimePicker1.ResetText();
-            SemanaToolStripButton.Text = DateTime.Today.ToString("ddd");
+            //SemanaToolStripButton.Text = DateTime.Today.ToString("ddd");
+            string SemanaComMaiuscula;
+            SemanaComMaiuscula = DateTime.Today.ToString("ddd");
+            SemanaToolStripButton.Text = SemanaComMaiuscula[0].ToString().ToUpper() +
+                SemanaComMaiuscula[1].ToString() + SemanaComMaiuscula[2].ToString();
         }
 
         private void MigrarToolStripButton_Click(object sender, EventArgs e)
@@ -440,11 +449,6 @@ namespace BomDia
 
             // definir a propriedade de menucontextstrip
             dateTimePicker1.ContextMenuStrip = ChaveadorContextMenuStrip;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void splitContainer6_Panel1_Paint(object sender, PaintEventArgs e)
