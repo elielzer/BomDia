@@ -157,9 +157,10 @@ namespace BomDia
                 // Write to the file with the WriteXml method.
                 TarefasDataSet.WriteXml(xmlWriter);
                 xmlWriter.Close();
-                MSGtoolStripStatusLabel.Text = "Anexada a tarefa no arquivo XML " + DateTime.Now.ToString();
+                MSGtoolStripStatusLabel.Text = "Anexada a tarefa no arquivo XML " + 
+                    DateTime.Now.ToString();
                 
-                this.label1.Image = null;
+                this.label1.Image = global::BomDia.Properties.Resources.CLIP07;
             }
             catch
             {
@@ -426,7 +427,7 @@ namespace BomDia
         {
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "HH:mm";
-            dateTimePicker1.Font = new Font("Agency FB", 21.75F, FontStyle.Bold);
+            dateTimePicker1.Font = new Font("Calibri", 22F, FontStyle.Bold);
 
         }
 
