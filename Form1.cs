@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Globalization;
+using System.Linq;
 
 namespace BomDia
 {
@@ -72,8 +73,9 @@ namespace BomDia
             //
             string SemanaComMaiuscula;
             SemanaComMaiuscula = DateTime.Today.ToString("ddd");
-            SemanaToolStripButton.Text =  SemanaComMaiuscula[0].ToString().ToUpper() +
+            SemanaComMaiuscula = SemanaComMaiuscula[0].ToString().ToUpper() +
                 SemanaComMaiuscula[1].ToString() + SemanaComMaiuscula[2].ToString();
+            SemanaToolStripButton.Text = string.Concat(".", SemanaComMaiuscula);
 
             this.BackColor = Color.Black;
             
@@ -255,8 +257,9 @@ namespace BomDia
             //SemanaToolStripButton.Text = DateTime.Today.ToString("ddd");
             string SemanaComMaiuscula;
             SemanaComMaiuscula = DateTime.Today.ToString("ddd");
-            SemanaToolStripButton.Text = SemanaComMaiuscula[0].ToString().ToUpper() +
-                SemanaComMaiuscula[1].ToString() + SemanaComMaiuscula[2].ToString();
+            SemanaComMaiuscula = SemanaComMaiuscula[0].ToString().ToUpper() +
+                SemanaComMaiuscula[1].ToString() + SemanaComMaiuscula[2].ToString() ;
+            SemanaToolStripButton.Text =  string.Concat( ".", SemanaComMaiuscula) ;
         }
 
         private void MigrarToolStripButton_Click(object sender, EventArgs e)
