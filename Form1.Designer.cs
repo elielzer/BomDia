@@ -31,12 +31,12 @@ namespace BomDia
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ListBox PrioridadesListBox;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BomDia));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TarefasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TarefasDataSet = new System.Data.DataSet();
             this.BomDiaTarefas = new System.Data.DataTable();
@@ -210,7 +210,7 @@ namespace BomDia
             PrioridadesListBox.Location = new System.Drawing.Point(3, 3);
             PrioridadesListBox.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             PrioridadesListBox.Name = "PrioridadesListBox";
-            PrioridadesListBox.Size = new System.Drawing.Size(310, 151);
+            PrioridadesListBox.Size = new System.Drawing.Size(310, 150);
             PrioridadesListBox.TabIndex = 0;
             PrioridadesListBox.TabStop = false;
             PrioridadesListBox.ValueMember = "ItemPrioridade";
@@ -307,19 +307,19 @@ namespace BomDia
             // 
             // DataGridView1
             // 
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DataGridView1.AutoGenerateColumns = false;
             this.DataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iNDDataGridViewTextBoxColumn,
@@ -330,21 +330,21 @@ namespace BomDia
             this.pESODataGridViewTextBoxColumn,
             this.cRITÉRIODataGridViewTextBoxColumn});
             this.DataGridView1.DataSource = this.TarefasBindingSource;
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView1.DefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
             this.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridView1.Location = new System.Drawing.Point(4, 4);
             this.DataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.DataGridView1.Name = "DataGridView1";
             this.DataGridView1.RowHeadersWidth = 25;
             this.DataGridView1.RowTemplate.Height = 30;
-            this.DataGridView1.Size = new System.Drawing.Size(875, 482);
+            this.DataGridView1.Size = new System.Drawing.Size(875, 480);
             this.DataGridView1.TabIndex = 8;
             this.DataGridView1.SelectionChanged += new System.EventHandler(this.DataGridView1_SelectionChanged);
             this.DataGridView1.Enter += new System.EventHandler(this.DataGridView1_Enter);
@@ -352,8 +352,8 @@ namespace BomDia
             // iNDDataGridViewTextBoxColumn
             // 
             this.iNDDataGridViewTextBoxColumn.DataPropertyName = "IND";
-            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.DarkGray;
-            this.iNDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DarkGray;
+            this.iNDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.iNDDataGridViewTextBoxColumn.HeaderText = "ITENS";
             this.iNDDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.iNDDataGridViewTextBoxColumn.Name = "iNDDataGridViewTextBoxColumn";
@@ -633,7 +633,7 @@ namespace BomDia
             this.OQuePretendido.Location = new System.Drawing.Point(101, 4);
             this.OQuePretendido.Margin = new System.Windows.Forms.Padding(4);
             this.OQuePretendido.Name = "OQuePretendido";
-            this.OQuePretendido.Size = new System.Drawing.Size(909, 63);
+            this.OQuePretendido.Size = new System.Drawing.Size(907, 63);
             this.OQuePretendido.TabIndex = 4;
             this.OQuePretendido.Text = "";
             // 
@@ -742,7 +742,6 @@ namespace BomDia
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posição";
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(58, 31);
@@ -1966,12 +1965,1023 @@ namespace BomDia
             "16/01/2025",
             "17/01/2025",
             "18/01/2025",
-            "19/01/2025"});
+            "19/01/2025",
+            "20/01/2025",
+            "21/01/2025",
+            "22/01/2025",
+            "23/01/2025",
+            "24/01/2025",
+            "25/01/2025",
+            "26/01/2025",
+            "27/01/2025",
+            "28/01/2025",
+            "29/01/2025",
+            "30/01/2025",
+            "31/01/2025",
+            "01/02/2025",
+            "02/02/2025",
+            "03/02/2025",
+            "04/02/2025",
+            "05/02/2025",
+            "06/02/2025",
+            "07/02/2025",
+            "08/02/2025",
+            "09/02/2025",
+            "10/02/2025",
+            "11/02/2025",
+            "12/02/2025",
+            "13/02/2025",
+            "14/02/2025",
+            "15/02/2025",
+            "16/02/2025",
+            "17/02/2025",
+            "18/02/2025",
+            "19/02/2025",
+            "20/02/2025",
+            "21/02/2025",
+            "22/02/2025",
+            "23/02/2025",
+            "24/02/2025",
+            "25/02/2025",
+            "26/02/2025",
+            "27/02/2025",
+            "28/02/2025",
+            "01/03/2025",
+            "02/03/2025",
+            "03/03/2025",
+            "04/03/2025",
+            "05/03/2025",
+            "06/03/2025",
+            "07/03/2025",
+            "08/03/2025",
+            "09/03/2025",
+            "10/03/2025",
+            "11/03/2025",
+            "12/03/2025",
+            "13/03/2025",
+            "14/03/2025",
+            "15/03/2025",
+            "16/03/2025",
+            "17/03/2025",
+            "18/03/2025",
+            "19/03/2025",
+            "20/03/2025",
+            "21/03/2025",
+            "22/03/2025",
+            "23/03/2025",
+            "24/03/2025",
+            "25/03/2025",
+            "26/03/2025",
+            "27/03/2025",
+            "28/03/2025",
+            "29/03/2025",
+            "30/03/2025",
+            "31/03/2025",
+            "01/04/2025",
+            "02/04/2025",
+            "03/04/2025",
+            "04/04/2025",
+            "05/04/2025",
+            "06/04/2025",
+            "07/04/2025",
+            "08/04/2025",
+            "09/04/2025",
+            "10/04/2025",
+            "11/04/2025",
+            "12/04/2025",
+            "13/04/2025",
+            "14/04/2025",
+            "15/04/2025",
+            "16/04/2025",
+            "17/04/2025",
+            "18/04/2025",
+            "19/04/2025",
+            "20/04/2025",
+            "21/04/2025",
+            "22/04/2025",
+            "23/04/2025",
+            "24/04/2025",
+            "25/04/2025",
+            "26/04/2025",
+            "27/04/2025",
+            "28/04/2025",
+            "29/04/2025",
+            "30/04/2025",
+            "01/05/2025",
+            "02/05/2025",
+            "03/05/2025",
+            "04/05/2025",
+            "05/05/2025",
+            "06/05/2025",
+            "07/05/2025",
+            "08/05/2025",
+            "09/05/2025",
+            "10/05/2025",
+            "11/05/2025",
+            "12/05/2025",
+            "13/05/2025",
+            "14/05/2025",
+            "15/05/2025",
+            "16/05/2025",
+            "17/05/2025",
+            "18/05/2025",
+            "19/05/2025",
+            "20/05/2025",
+            "21/05/2025",
+            "22/05/2025",
+            "23/05/2025",
+            "24/05/2025",
+            "25/05/2025",
+            "26/05/2025",
+            "27/05/2025",
+            "28/05/2025",
+            "29/05/2025",
+            "30/05/2025",
+            "31/05/2025",
+            "01/06/2025",
+            "02/06/2025",
+            "03/06/2025",
+            "04/06/2025",
+            "05/06/2025",
+            "06/06/2025",
+            "07/06/2025",
+            "08/06/2025",
+            "09/06/2025",
+            "10/06/2025",
+            "11/06/2025",
+            "12/06/2025",
+            "13/06/2025",
+            "14/06/2025",
+            "15/06/2025",
+            "16/06/2025",
+            "17/06/2025",
+            "18/06/2025",
+            "19/06/2025",
+            "20/06/2025",
+            "21/06/2025",
+            "22/06/2025",
+            "23/06/2025",
+            "24/06/2025",
+            "25/06/2025",
+            "26/06/2025",
+            "27/06/2025",
+            "28/06/2025",
+            "29/06/2025",
+            "30/06/2025",
+            "01/07/2025",
+            "02/07/2025",
+            "03/07/2025",
+            "04/07/2025",
+            "05/07/2025",
+            "06/07/2025",
+            "07/07/2025",
+            "08/07/2025",
+            "09/07/2025",
+            "10/07/2025",
+            "11/07/2025",
+            "12/07/2025",
+            "13/07/2025",
+            "14/07/2025",
+            "15/07/2025",
+            "16/07/2025",
+            "17/07/2025",
+            "18/07/2025",
+            "19/07/2025",
+            "20/07/2025",
+            "21/07/2025",
+            "22/07/2025",
+            "23/07/2025",
+            "24/07/2025",
+            "25/07/2025",
+            "26/07/2025",
+            "27/07/2025",
+            "28/07/2025",
+            "29/07/2025",
+            "30/07/2025",
+            "31/07/2025",
+            "01/08/2025",
+            "02/08/2025",
+            "03/08/2025",
+            "04/08/2025",
+            "05/08/2025",
+            "06/08/2025",
+            "07/08/2025",
+            "08/08/2025",
+            "09/08/2025",
+            "10/08/2025",
+            "11/08/2025",
+            "12/08/2025",
+            "13/08/2025",
+            "14/08/2025",
+            "15/08/2025",
+            "16/08/2025",
+            "17/08/2025",
+            "18/08/2025",
+            "19/08/2025",
+            "20/08/2025",
+            "21/08/2025",
+            "22/08/2025",
+            "23/08/2025",
+            "24/08/2025",
+            "25/08/2025",
+            "26/08/2025",
+            "27/08/2025",
+            "28/08/2025",
+            "29/08/2025",
+            "30/08/2025",
+            "31/08/2025",
+            "01/09/2025",
+            "02/09/2025",
+            "03/09/2025",
+            "04/09/2025",
+            "05/09/2025",
+            "06/09/2025",
+            "07/09/2025",
+            "08/09/2025",
+            "09/09/2025",
+            "10/09/2025",
+            "11/09/2025",
+            "12/09/2025",
+            "13/09/2025",
+            "14/09/2025",
+            "15/09/2025",
+            "16/09/2025",
+            "17/09/2025",
+            "18/09/2025",
+            "19/09/2025",
+            "20/09/2025",
+            "21/09/2025",
+            "22/09/2025",
+            "23/09/2025",
+            "24/09/2025",
+            "25/09/2025",
+            "26/09/2025",
+            "27/09/2025",
+            "28/09/2025",
+            "29/09/2025",
+            "30/09/2025",
+            "01/10/2025",
+            "02/10/2025",
+            "03/10/2025",
+            "04/10/2025",
+            "05/10/2025",
+            "06/10/2025",
+            "07/10/2025",
+            "08/10/2025",
+            "09/10/2025",
+            "10/10/2025",
+            "11/10/2025",
+            "12/10/2025",
+            "13/10/2025",
+            "14/10/2025",
+            "15/10/2025",
+            "16/10/2025",
+            "17/10/2025",
+            "18/10/2025",
+            "19/10/2025",
+            "20/10/2025",
+            "21/10/2025",
+            "22/10/2025",
+            "23/10/2025",
+            "24/10/2025",
+            "25/10/2025",
+            "26/10/2025",
+            "27/10/2025",
+            "28/10/2025",
+            "29/10/2025",
+            "30/10/2025",
+            "31/10/2025",
+            "01/11/2025",
+            "02/11/2025",
+            "03/11/2025",
+            "04/11/2025",
+            "05/11/2025",
+            "06/11/2025",
+            "07/11/2025",
+            "08/11/2025",
+            "09/11/2025",
+            "10/11/2025",
+            "11/11/2025",
+            "12/11/2025",
+            "13/11/2025",
+            "14/11/2025",
+            "15/11/2025",
+            "16/11/2025",
+            "17/11/2025",
+            "18/11/2025",
+            "19/11/2025",
+            "20/11/2025",
+            "21/11/2025",
+            "22/11/2025",
+            "23/11/2025",
+            "24/11/2025",
+            "25/11/2025",
+            "26/11/2025",
+            "27/11/2025",
+            "28/11/2025",
+            "29/11/2025",
+            "30/11/2025",
+            "01/12/2025",
+            "02/12/2025",
+            "03/12/2025",
+            "04/12/2025",
+            "05/12/2025",
+            "06/12/2025",
+            "07/12/2025",
+            "08/12/2025",
+            "09/12/2025",
+            "10/12/2025",
+            "11/12/2025",
+            "12/12/2025",
+            "13/12/2025",
+            "14/12/2025",
+            "15/12/2025",
+            "16/12/2025",
+            "17/12/2025",
+            "18/12/2025",
+            "19/12/2025",
+            "20/12/2025",
+            "21/12/2025",
+            "22/12/2025",
+            "23/12/2025",
+            "24/12/2025",
+            "25/12/2025",
+            "26/12/2025",
+            "27/12/2025",
+            "28/12/2025",
+            "29/12/2025",
+            "30/12/2025",
+            "31/12/2025",
+            "01/01/2026",
+            "02/01/2026",
+            "03/01/2026",
+            "04/01/2026",
+            "05/01/2026",
+            "06/01/2026",
+            "07/01/2026",
+            "08/01/2026",
+            "09/01/2026",
+            "10/01/2026",
+            "11/01/2026",
+            "12/01/2026",
+            "13/01/2026",
+            "14/01/2026",
+            "15/01/2026",
+            "16/01/2026",
+            "17/01/2026",
+            "18/01/2026",
+            "19/01/2026",
+            "20/01/2026",
+            "21/01/2026",
+            "22/01/2026",
+            "23/01/2026",
+            "24/01/2026",
+            "25/01/2026",
+            "26/01/2026",
+            "27/01/2026",
+            "28/01/2026",
+            "29/01/2026",
+            "30/01/2026",
+            "31/01/2026",
+            "01/02/2026",
+            "02/02/2026",
+            "03/02/2026",
+            "04/02/2026",
+            "05/02/2026",
+            "06/02/2026",
+            "07/02/2026",
+            "08/02/2026",
+            "09/02/2026",
+            "10/02/2026",
+            "11/02/2026",
+            "12/02/2026",
+            "13/02/2026",
+            "14/02/2026",
+            "15/02/2026",
+            "16/02/2026",
+            "17/02/2026",
+            "18/02/2026",
+            "19/02/2026",
+            "20/02/2026",
+            "21/02/2026",
+            "22/02/2026",
+            "23/02/2026",
+            "24/02/2026",
+            "25/02/2026",
+            "26/02/2026",
+            "27/02/2026",
+            "28/02/2026",
+            "01/03/2026",
+            "02/03/2026",
+            "03/03/2026",
+            "04/03/2026",
+            "05/03/2026",
+            "06/03/2026",
+            "07/03/2026",
+            "08/03/2026",
+            "09/03/2026",
+            "10/03/2026",
+            "11/03/2026",
+            "12/03/2026",
+            "13/03/2026",
+            "14/03/2026",
+            "15/03/2026",
+            "16/03/2026",
+            "17/03/2026",
+            "18/03/2026",
+            "19/03/2026",
+            "20/03/2026",
+            "21/03/2026",
+            "22/03/2026",
+            "23/03/2026",
+            "24/03/2026",
+            "25/03/2026",
+            "26/03/2026",
+            "27/03/2026",
+            "28/03/2026",
+            "29/03/2026",
+            "30/03/2026",
+            "31/03/2026",
+            "01/04/2026",
+            "02/04/2026",
+            "03/04/2026",
+            "04/04/2026",
+            "05/04/2026",
+            "06/04/2026",
+            "07/04/2026",
+            "08/04/2026",
+            "09/04/2026",
+            "10/04/2026",
+            "11/04/2026",
+            "12/04/2026",
+            "13/04/2026",
+            "14/04/2026",
+            "15/04/2026",
+            "16/04/2026",
+            "17/04/2026",
+            "18/04/2026",
+            "19/04/2026",
+            "20/04/2026",
+            "21/04/2026",
+            "22/04/2026",
+            "23/04/2026",
+            "24/04/2026",
+            "25/04/2026",
+            "26/04/2026",
+            "27/04/2026",
+            "28/04/2026",
+            "29/04/2026",
+            "30/04/2026",
+            "01/05/2026",
+            "02/05/2026",
+            "03/05/2026",
+            "04/05/2026",
+            "05/05/2026",
+            "06/05/2026",
+            "07/05/2026",
+            "08/05/2026",
+            "09/05/2026",
+            "10/05/2026",
+            "11/05/2026",
+            "12/05/2026",
+            "13/05/2026",
+            "14/05/2026",
+            "15/05/2026",
+            "16/05/2026",
+            "17/05/2026",
+            "18/05/2026",
+            "19/05/2026",
+            "20/05/2026",
+            "21/05/2026",
+            "22/05/2026",
+            "23/05/2026",
+            "24/05/2026",
+            "25/05/2026",
+            "26/05/2026",
+            "27/05/2026",
+            "28/05/2026",
+            "29/05/2026",
+            "30/05/2026",
+            "31/05/2026",
+            "01/06/2026",
+            "02/06/2026",
+            "03/06/2026",
+            "04/06/2026",
+            "05/06/2026",
+            "06/06/2026",
+            "07/06/2026",
+            "08/06/2026",
+            "09/06/2026",
+            "10/06/2026",
+            "11/06/2026",
+            "12/06/2026",
+            "13/06/2026",
+            "14/06/2026",
+            "15/06/2026",
+            "16/06/2026",
+            "17/06/2026",
+            "18/06/2026",
+            "19/06/2026",
+            "20/06/2026",
+            "21/06/2026",
+            "22/06/2026",
+            "23/06/2026",
+            "24/06/2026",
+            "25/06/2026",
+            "26/06/2026",
+            "27/06/2026",
+            "28/06/2026",
+            "29/06/2026",
+            "30/06/2026",
+            "01/07/2026",
+            "02/07/2026",
+            "03/07/2026",
+            "04/07/2026",
+            "05/07/2026",
+            "06/07/2026",
+            "07/07/2026",
+            "08/07/2026",
+            "09/07/2026",
+            "10/07/2026",
+            "11/07/2026",
+            "12/07/2026",
+            "13/07/2026",
+            "14/07/2026",
+            "15/07/2026",
+            "16/07/2026",
+            "17/07/2026",
+            "18/07/2026",
+            "19/07/2026",
+            "20/07/2026",
+            "21/07/2026",
+            "22/07/2026",
+            "23/07/2026",
+            "24/07/2026",
+            "25/07/2026",
+            "26/07/2026",
+            "27/07/2026",
+            "28/07/2026",
+            "29/07/2026",
+            "30/07/2026",
+            "31/07/2026",
+            "01/08/2026",
+            "02/08/2026",
+            "03/08/2026",
+            "04/08/2026",
+            "05/08/2026",
+            "06/08/2026",
+            "07/08/2026",
+            "08/08/2026",
+            "09/08/2026",
+            "10/08/2026",
+            "11/08/2026",
+            "12/08/2026",
+            "13/08/2026",
+            "14/08/2026",
+            "15/08/2026",
+            "16/08/2026",
+            "17/08/2026",
+            "18/08/2026",
+            "19/08/2026",
+            "20/08/2026",
+            "21/08/2026",
+            "22/08/2026",
+            "23/08/2026",
+            "24/08/2026",
+            "25/08/2026",
+            "26/08/2026",
+            "27/08/2026",
+            "28/08/2026",
+            "29/08/2026",
+            "30/08/2026",
+            "31/08/2026",
+            "01/09/2026",
+            "02/09/2026",
+            "03/09/2026",
+            "04/09/2026",
+            "05/09/2026",
+            "06/09/2026",
+            "07/09/2026",
+            "08/09/2026",
+            "09/09/2026",
+            "10/09/2026",
+            "11/09/2026",
+            "12/09/2026",
+            "13/09/2026",
+            "14/09/2026",
+            "15/09/2026",
+            "16/09/2026",
+            "17/09/2026",
+            "18/09/2026",
+            "19/09/2026",
+            "20/09/2026",
+            "21/09/2026",
+            "22/09/2026",
+            "23/09/2026",
+            "24/09/2026",
+            "25/09/2026",
+            "26/09/2026",
+            "27/09/2026",
+            "28/09/2026",
+            "29/09/2026",
+            "30/09/2026",
+            "01/10/2026",
+            "02/10/2026",
+            "03/10/2026",
+            "04/10/2026",
+            "05/10/2026",
+            "06/10/2026",
+            "07/10/2026",
+            "08/10/2026",
+            "09/10/2026",
+            "10/10/2026",
+            "11/10/2026",
+            "12/10/2026",
+            "13/10/2026",
+            "14/10/2026",
+            "15/10/2026",
+            "16/10/2026",
+            "17/10/2026",
+            "18/10/2026",
+            "19/10/2026",
+            "20/10/2026",
+            "21/10/2026",
+            "22/10/2026",
+            "23/10/2026",
+            "24/10/2026",
+            "25/10/2026",
+            "26/10/2026",
+            "27/10/2026",
+            "28/10/2026",
+            "29/10/2026",
+            "30/10/2026",
+            "31/10/2026",
+            "01/11/2026",
+            "02/11/2026",
+            "03/11/2026",
+            "04/11/2026",
+            "05/11/2026",
+            "06/11/2026",
+            "07/11/2026",
+            "08/11/2026",
+            "09/11/2026",
+            "10/11/2026",
+            "11/11/2026",
+            "12/11/2026",
+            "13/11/2026",
+            "14/11/2026",
+            "15/11/2026",
+            "16/11/2026",
+            "17/11/2026",
+            "18/11/2026",
+            "19/11/2026",
+            "20/11/2026",
+            "21/11/2026",
+            "22/11/2026",
+            "23/11/2026",
+            "24/11/2026",
+            "25/11/2026",
+            "26/11/2026",
+            "27/11/2026",
+            "28/11/2026",
+            "29/11/2026",
+            "30/11/2026",
+            "01/12/2026",
+            "02/12/2026",
+            "03/12/2026",
+            "04/12/2026",
+            "05/12/2026",
+            "06/12/2026",
+            "07/12/2026",
+            "08/12/2026",
+            "09/12/2026",
+            "10/12/2026",
+            "11/12/2026",
+            "12/12/2026",
+            "13/12/2026",
+            "14/12/2026",
+            "15/12/2026",
+            "16/12/2026",
+            "17/12/2026",
+            "18/12/2026",
+            "19/12/2026",
+            "20/12/2026",
+            "21/12/2026",
+            "22/12/2026",
+            "23/12/2026",
+            "24/12/2026",
+            "25/12/2026",
+            "26/12/2026",
+            "27/12/2026",
+            "28/12/2026",
+            "29/12/2026",
+            "30/12/2026",
+            "31/12/2026",
+            "01/01/2027",
+            "02/01/2027",
+            "03/01/2027",
+            "04/01/2027",
+            "05/01/2027",
+            "06/01/2027",
+            "07/01/2027",
+            "08/01/2027",
+            "09/01/2027",
+            "10/01/2027",
+            "11/01/2027",
+            "12/01/2027",
+            "13/01/2027",
+            "14/01/2027",
+            "15/01/2027",
+            "16/01/2027",
+            "17/01/2027",
+            "18/01/2027",
+            "19/01/2027",
+            "20/01/2027",
+            "21/01/2027",
+            "22/01/2027",
+            "23/01/2027",
+            "24/01/2027",
+            "25/01/2027",
+            "26/01/2027",
+            "27/01/2027",
+            "28/01/2027",
+            "29/01/2027",
+            "30/01/2027",
+            "31/01/2027",
+            "01/02/2027",
+            "02/02/2027",
+            "03/02/2027",
+            "04/02/2027",
+            "05/02/2027",
+            "06/02/2027",
+            "07/02/2027",
+            "08/02/2027",
+            "09/02/2027",
+            "10/02/2027",
+            "11/02/2027",
+            "12/02/2027",
+            "13/02/2027",
+            "14/02/2027",
+            "15/02/2027",
+            "16/02/2027",
+            "17/02/2027",
+            "18/02/2027",
+            "19/02/2027",
+            "20/02/2027",
+            "21/02/2027",
+            "22/02/2027",
+            "23/02/2027",
+            "24/02/2027",
+            "25/02/2027",
+            "26/02/2027",
+            "27/02/2027",
+            "28/02/2027",
+            "01/03/2027",
+            "02/03/2027",
+            "03/03/2027",
+            "04/03/2027",
+            "05/03/2027",
+            "06/03/2027",
+            "07/03/2027",
+            "08/03/2027",
+            "09/03/2027",
+            "10/03/2027",
+            "11/03/2027",
+            "12/03/2027",
+            "13/03/2027",
+            "14/03/2027",
+            "15/03/2027",
+            "16/03/2027",
+            "17/03/2027",
+            "18/03/2027",
+            "19/03/2027",
+            "20/03/2027",
+            "21/03/2027",
+            "22/03/2027",
+            "23/03/2027",
+            "24/03/2027",
+            "25/03/2027",
+            "26/03/2027",
+            "27/03/2027",
+            "28/03/2027",
+            "29/03/2027",
+            "30/03/2027",
+            "31/03/2027",
+            "01/04/2027",
+            "02/04/2027",
+            "03/04/2027",
+            "04/04/2027",
+            "05/04/2027",
+            "06/04/2027",
+            "07/04/2027",
+            "08/04/2027",
+            "09/04/2027",
+            "10/04/2027",
+            "11/04/2027",
+            "12/04/2027",
+            "13/04/2027",
+            "14/04/2027",
+            "15/04/2027",
+            "16/04/2027",
+            "17/04/2027",
+            "18/04/2027",
+            "19/04/2027",
+            "20/04/2027",
+            "21/04/2027",
+            "22/04/2027",
+            "23/04/2027",
+            "24/04/2027",
+            "25/04/2027",
+            "26/04/2027",
+            "27/04/2027",
+            "28/04/2027",
+            "29/04/2027",
+            "30/04/2027",
+            "01/05/2027",
+            "02/05/2027",
+            "03/05/2027",
+            "04/05/2027",
+            "05/05/2027",
+            "06/05/2027",
+            "07/05/2027",
+            "08/05/2027",
+            "09/05/2027",
+            "10/05/2027",
+            "11/05/2027",
+            "12/05/2027",
+            "13/05/2027",
+            "14/05/2027",
+            "15/05/2027",
+            "16/05/2027",
+            "17/05/2027",
+            "18/05/2027",
+            "19/05/2027",
+            "20/05/2027",
+            "21/05/2027",
+            "22/05/2027",
+            "23/05/2027",
+            "24/05/2027",
+            "25/05/2027",
+            "26/05/2027",
+            "27/05/2027",
+            "28/05/2027",
+            "29/05/2027",
+            "30/05/2027",
+            "31/05/2027",
+            "01/06/2027",
+            "02/06/2027",
+            "03/06/2027",
+            "04/06/2027",
+            "05/06/2027",
+            "06/06/2027",
+            "07/06/2027",
+            "08/06/2027",
+            "09/06/2027",
+            "10/06/2027",
+            "11/06/2027",
+            "12/06/2027",
+            "13/06/2027",
+            "14/06/2027",
+            "15/06/2027",
+            "16/06/2027",
+            "17/06/2027",
+            "18/06/2027",
+            "19/06/2027",
+            "20/06/2027",
+            "21/06/2027",
+            "22/06/2027",
+            "23/06/2027",
+            "24/06/2027",
+            "25/06/2027",
+            "26/06/2027",
+            "27/06/2027",
+            "28/06/2027",
+            "29/06/2027",
+            "30/06/2027",
+            "01/07/2027",
+            "02/07/2027",
+            "03/07/2027",
+            "04/07/2027",
+            "05/07/2027",
+            "06/07/2027",
+            "07/07/2027",
+            "08/07/2027",
+            "09/07/2027",
+            "10/07/2027",
+            "11/07/2027",
+            "12/07/2027",
+            "13/07/2027",
+            "14/07/2027",
+            "15/07/2027",
+            "16/07/2027",
+            "17/07/2027",
+            "18/07/2027",
+            "19/07/2027",
+            "20/07/2027",
+            "21/07/2027",
+            "22/07/2027",
+            "23/07/2027",
+            "24/07/2027",
+            "25/07/2027",
+            "26/07/2027",
+            "27/07/2027",
+            "28/07/2027",
+            "29/07/2027",
+            "30/07/2027",
+            "31/07/2027",
+            "01/08/2027",
+            "02/08/2027",
+            "03/08/2027",
+            "04/08/2027",
+            "05/08/2027",
+            "06/08/2027",
+            "07/08/2027",
+            "08/08/2027",
+            "09/08/2027",
+            "10/08/2027",
+            "11/08/2027",
+            "12/08/2027",
+            "13/08/2027",
+            "14/08/2027",
+            "15/08/2027",
+            "16/08/2027",
+            "17/08/2027",
+            "18/08/2027",
+            "19/08/2027",
+            "20/08/2027",
+            "21/08/2027",
+            "22/08/2027",
+            "23/08/2027",
+            "24/08/2027",
+            "25/08/2027",
+            "26/08/2027",
+            "27/08/2027",
+            "28/08/2027",
+            "29/08/2027",
+            "30/08/2027",
+            "31/08/2027",
+            "01/09/2027",
+            "02/09/2027",
+            "03/09/2027",
+            "04/09/2027",
+            "05/09/2027",
+            "06/09/2027",
+            "07/09/2027",
+            "08/09/2027",
+            "09/09/2027",
+            "10/09/2027",
+            "11/09/2027",
+            "12/09/2027",
+            "13/09/2027",
+            "14/09/2027",
+            "15/09/2027",
+            "16/09/2027",
+            "17/09/2027",
+            "18/09/2027",
+            "19/09/2027",
+            "20/09/2027",
+            "21/09/2027",
+            "22/09/2027",
+            "23/09/2027",
+            "24/09/2027",
+            "25/09/2027",
+            "26/09/2027",
+            "27/09/2027",
+            "28/09/2027",
+            "29/09/2027",
+            "30/09/2027",
+            "01/10/2027",
+            "02/10/2027",
+            "03/10/2027",
+            "04/10/2027",
+            "05/10/2027",
+            "06/10/2027",
+            "07/10/2027",
+            "08/10/2027",
+            "09/10/2027",
+            "10/10/2027",
+            "11/10/2027",
+            "12/10/2027",
+            "13/10/2027",
+            "14/10/2027",
+            "15/10/2027",
+            "16/10/2027",
+            "17/10/2027",
+            "18/10/2027",
+            "19/10/2027",
+            "20/10/2027",
+            "21/10/2027",
+            "22/10/2027",
+            "23/10/2027",
+            "24/10/2027",
+            "25/10/2027",
+            "26/10/2027",
+            "27/10/2027"});
             this.ListaDeDatas.Location = new System.Drawing.Point(0, 0);
             this.ListaDeDatas.Margin = new System.Windows.Forms.Padding(4);
             this.ListaDeDatas.Name = "ListaDeDatas";
             this.ListaDeDatas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ListaDeDatas.Size = new System.Drawing.Size(89, 458);
+            this.ListaDeDatas.Size = new System.Drawing.Size(89, 454);
             this.ListaDeDatas.TabIndex = 9;
             this.ListaDeDatas.SelectedValueChanged += new System.EventHandler(this.ListaDeDatas_SelectedValueChanged);
             // 
@@ -2062,7 +3072,7 @@ namespace BomDia
             this.PictureBox1.InitialImage = null;
             this.PictureBox1.Location = new System.Drawing.Point(3, 3);
             this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new System.Drawing.Size(20, 19);
+            this.PictureBox1.Size = new System.Drawing.Size(20, 21);
             this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBox1.TabIndex = 16;
             this.PictureBox1.TabStop = false;
@@ -2113,7 +3123,7 @@ namespace BomDia
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.Padding = new System.Windows.Forms.Padding(0);
             this.bindingNavigator1.PositionItem = null;
-            this.bindingNavigator1.Size = new System.Drawing.Size(104, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(104, 27);
             this.bindingNavigator1.TabIndex = 2;
             this.bindingNavigator1.TabStop = true;
             this.bindingNavigator1.Text = "bindingNavigator1";
@@ -2208,7 +3218,7 @@ namespace BomDia
             this.StatusStripBomDia.Location = new System.Drawing.Point(0, 0);
             this.StatusStripBomDia.Name = "StatusStripBomDia";
             this.StatusStripBomDia.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.StatusStripBomDia.Size = new System.Drawing.Size(1182, 25);
+            this.StatusStripBomDia.Size = new System.Drawing.Size(1182, 27);
             this.StatusStripBomDia.SizingGrip = false;
             this.StatusStripBomDia.TabIndex = 15;
             this.StatusStripBomDia.Text = "Bom dia.";
@@ -2219,7 +3229,7 @@ namespace BomDia
             this.MSGtoolStripStatusLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MSGtoolStripStatusLabel.ForeColor = System.Drawing.Color.Blue;
             this.MSGtoolStripStatusLabel.Name = "MSGtoolStripStatusLabel";
-            this.MSGtoolStripStatusLabel.Size = new System.Drawing.Size(88, 18);
+            this.MSGtoolStripStatusLabel.Size = new System.Drawing.Size(88, 20);
             this.MSGtoolStripStatusLabel.Text = "Bom dia.";
             // 
             // DataHoje
@@ -2298,7 +3308,7 @@ namespace BomDia
             this.splitContainer8.Panel2.Controls.Add(this.BindingNavigatorSalva);
             this.splitContainer8.Panel2.Controls.Add(this.BindingExclui);
             this.splitContainer8.Size = new System.Drawing.Size(1154, 146);
-            this.splitContainer8.SplitterDistance = 1014;
+            this.splitContainer8.SplitterDistance = 1012;
             this.splitContainer8.SplitterWidth = 6;
             this.splitContainer8.TabIndex = 12;
             // 
@@ -2319,7 +3329,7 @@ namespace BomDia
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.11357F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.88642F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1014, 146);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1012, 146);
             this.tableLayoutPanel6.TabIndex = 19;
             // 
             // tableLayoutPanel9
@@ -2336,7 +3346,7 @@ namespace BomDia
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(1014, 71);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(1012, 71);
             this.tableLayoutPanel9.TabIndex = 20;
             // 
             // tableLayoutPanel7
@@ -2356,7 +3366,7 @@ namespace BomDia
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1006, 23);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1004, 23);
             this.tableLayoutPanel7.TabIndex = 5;
             // 
             // label6
@@ -2389,7 +3399,7 @@ namespace BomDia
             // 
             this.splitContainer7.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer7.Size = new System.Drawing.Size(1318, 574);
-            this.splitContainer7.SplitterDistance = 543;
+            this.splitContainer7.SplitterDistance = 541;
             this.splitContainer7.SplitterWidth = 6;
             this.splitContainer7.TabIndex = 12;
             // 
@@ -2408,7 +3418,7 @@ namespace BomDia
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer3.Size = new System.Drawing.Size(1318, 543);
+            this.splitContainer3.Size = new System.Drawing.Size(1318, 541);
             this.splitContainer3.SplitterDistance = 89;
             this.splitContainer3.SplitterWidth = 6;
             this.splitContainer3.TabIndex = 11;
@@ -2431,8 +3441,8 @@ namespace BomDia
             this.splitContainer9.Panel2.AutoScroll = true;
             this.splitContainer9.Panel2.Controls.Add(this.tableLayoutPanel8);
             this.splitContainer9.Panel2MinSize = 35;
-            this.splitContainer9.Size = new System.Drawing.Size(89, 543);
-            this.splitContainer9.SplitterDistance = 458;
+            this.splitContainer9.Size = new System.Drawing.Size(89, 541);
+            this.splitContainer9.SplitterDistance = 454;
             this.splitContainer9.SplitterWidth = 6;
             this.splitContainer9.TabIndex = 11;
             // 
@@ -2482,7 +3492,7 @@ namespace BomDia
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1223, 543);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1223, 541);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // tableLayoutPanel4
@@ -2500,7 +3510,7 @@ namespace BomDia
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.50756F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.49244F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(332, 482);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(332, 480);
             this.tableLayoutPanel4.TabIndex = 11;
             // 
             // tabControl1
@@ -2509,11 +3519,11 @@ namespace BomDia
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(3, 287);
+            this.tabControl1.Location = new System.Drawing.Point(3, 286);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(326, 192);
+            this.tabControl1.Size = new System.Drawing.Size(326, 191);
             this.tabControl1.TabIndex = 11;
             // 
             // tabPage1
@@ -2524,7 +3534,7 @@ namespace BomDia
             this.tabPage1.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(318, 159);
+            this.tabPage1.Size = new System.Drawing.Size(318, 158);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Preferências";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -2535,7 +3545,7 @@ namespace BomDia
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(318, 156);
+            this.tabPage2.Size = new System.Drawing.Size(318, 159);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Referências";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -2555,14 +3565,14 @@ namespace BomDia
             this.itemPrioridadeDataGridViewTextBoxColumn,
             this.denominationDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.PrioridadesBindingSource;
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle50.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle50.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(0, 4, 4, 4);
@@ -2570,7 +3580,7 @@ namespace BomDia
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 20;
             this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(312, 150);
+            this.dataGridView2.Size = new System.Drawing.Size(312, 153);
             this.dataGridView2.TabIndex = 10;
             // 
             // itemPrioridadeDataGridViewTextBoxColumn
@@ -2601,7 +3611,7 @@ namespace BomDia
             this.tableLayoutPanel3.Controls.Add(this.BindingNavegador, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.BindingNavigatorMigrar, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.BindingNavigatorNovo, 3, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 494);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 492);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -2628,7 +3638,7 @@ namespace BomDia
             this.splitContainer2.Panel2.Controls.Add(this.INDPretendido);
             this.splitContainer2.Panel2.Controls.Add(this.DetalheQuando);
             this.splitContainer2.Panel2.Controls.Add(this.DetalhePorQue);
-            this.splitContainer2.Size = new System.Drawing.Size(1318, 25);
+            this.splitContainer2.Size = new System.Drawing.Size(1318, 27);
             this.splitContainer2.SplitterDistance = 130;
             this.splitContainer2.SplitterWidth = 6;
             this.splitContainer2.TabIndex = 18;
@@ -2647,7 +3657,7 @@ namespace BomDia
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(130, 25);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(130, 27);
             this.tableLayoutPanel5.TabIndex = 17;
             // 
             // timer2
