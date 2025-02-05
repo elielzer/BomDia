@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Linq;
+using System.Xml.Schema;
 
 namespace BomDia
 {
@@ -16,8 +17,10 @@ namespace BomDia
         int LarguraReduzida = 0;
         //int LarguraDateTimeePiker1 = 0;
         int AlturaReduzida = 0;
+        int NRow = 0; // Usado na contagem de Rows no dadagridview1
         DateTime DataSemana ;
-        string BancoDados = "C:/Users/elielzer/Documents/Bom-Dia/XmlDoc.xml";
+        string BancoDados =
+            "C:/Users/elielzer/Documents/Bom-Dia/XmlDoc.xml";
         public BomDia()
         {
             InitializeComponent();
@@ -41,8 +44,10 @@ namespace BomDia
             // Layout mini janela
             FormBorderStyle = FormBorderStyle.None;
             StatusStripBomDia.Visible = false;
-            LarguraReduzida = (int)(((ushort)dateTimePicker1.Width) * 1.73);
-            AlturaReduzida = (int)(((ushort)dateTimePicker1.Height) * 1.1);
+            LarguraReduzida =
+                (int)(((ushort)dateTimePicker1.Width) * 1.73);
+            AlturaReduzida =
+                (int)(((ushort)dateTimePicker1.Height) * 1.1);
             Width = LarguraReduzida;
             this.BackColor = Color.Black;
             // Transição altura da mini janela
@@ -262,23 +267,42 @@ namespace BomDia
             SemanaToolStripButton.Text =  string.Concat( ".", SemanaComMaiuscula) ;
         }
 
+        // Pré inserir um registro existente para nova data
         private void MigrarToolStripButton_Click(object sender, EventArgs e)
         {
-            DataRow Row;
-            Row = BomDiaTarefas.NewRow();
-            Row["QUANDO"] = DateTime.Today.ToShortDateString();
-            Row["OQUE"] = DataGridView1.CurrentRow.Cells[1].Value; //4ª col
-            Row["PORQUE"] = DataGridView1.CurrentRow.Cells[4].Value; //5ª col
+            for (int i = 0; i < NRow; i++)
+            {
+                
+                switch (DataGridView1.Rows[i].Cells[7].Value)
+                {
+                    case  true:
+                        
+                        DataRow Row;
+                        Row = BomDiaTarefas.NewRow();
+                        Row["QUANDO"] = DateTime.Today.ToShortDateString();
+                        Row["OQUE"] = DataGridView1.Rows[i].Cells[1].Value; //4ª col
+                        Row["PORQUE"] = DataGridView1.Rows[i].Cells[4].Value; //5ª col
 
 
-            Row["PESO"] = DataGridView1.CurrentRow.Cells[5].Value; //6ª col
-            Row["CRITÉRIO"] = DataGridView1.CurrentRow.Cells[6].Value; //7ª col
-            Row["DIAMARCADO"] = DataGridView1.CurrentRow.Cells[3].Value; //3ª col
+                        Row["PESO"] = DataGridView1.Rows[i].Cells[5].Value; //6ª col
+                        Row["CRITÉRIO"] = DataGridView1.Rows[i].Cells[6].Value; //7ª col
+                        Row["DIAMARCADO"] = DataGridView1.Rows[i].Cells[3].Value; //3ª col
 
-            // Índice
-            BomDiaTarefas.Rows.Add(Row);
-            MSGtoolStripStatusLabel.Text =
-                "Migrado IND(" + DataGridView1.CurrentRow.Cells[0].Value + ")" + " para hoje";
+                        // Índice
+                        BomDiaTarefas.Rows.Add(Row);
+                        MSGtoolStripStatusLabel.Text =
+                            "Migrado IND(" + DataGridView1.Rows[i].Cells[0].Value + ")" + " para hoje";
+                        
+                        break;
+                    case  false:
+                        ;
+                        break;
+                }
+                
+             }
+
+
+            
         }
 
         public void VoltarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -303,6 +327,8 @@ namespace BomDia
         private void DataGridView1_Enter(object sender, EventArgs e)
         {
             MSGtoolStripStatusLabel.Text = "Bom dia. Arquivo de dados: " + TarefasDataSet.Namespace;
+            NRow = DataGridView1.RowCount-1;
+            this.Text = Application.ProductName + " " + NRow.ToString() + "Tasks";
         }
 
         private void hojeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -315,6 +341,7 @@ namespace BomDia
         //-----------------------------------------------------------------------------
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+            
             //this.label1.Image = null; // imagem ao registro atual não mais existe
             this.label1.Image = global::BomDia.Properties.Resources.Edit1;
             this.label1.Text = "Editar item";
@@ -338,8 +365,8 @@ namespace BomDia
             else
             // Redefine o texto atual da barra de status
             MSGtoolStripStatusLabel.Text = "Indexador: " + DataGridView1.CurrentRow.Cells[0].Value;
-
-                if (DataGridView1.CurrentRow.Cells[3].Value.ToString() == "")
+            
+            if (DataGridView1.CurrentRow.Cells[3].Value.ToString() == "")
                 {
                     try
                     {
@@ -470,6 +497,11 @@ namespace BomDia
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DataGridView1_Leave(object sender, EventArgs e)
+        {
+            this.Text = Application.ProductName  ;
         }
     }
 
