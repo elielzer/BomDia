@@ -535,9 +535,9 @@ namespace BomDia
                 e.Graphics.DrawString(column.HeaderText, column.InheritedStyle.Font, Brushes.Black, leftMargin, currentY);
                 leftMargin += columnWidth;
             }
-
-            currentY += rowHeight;
-
+            // 2*rowHeight
+            currentY += 20;
+            
             // Print the rows
             foreach (DataGridViewRow row in dataGridView.Rows)
             {
@@ -547,7 +547,8 @@ namespace BomDia
                 {
                     cellWidth = cell.Size.Width;
                     cellHeight = cell.Size.Height;
-                    e.Graphics.DrawString(cell.FormattedValue.ToString(), cell.InheritedStyle.Font, Brushes.Black, leftMargin, currentY);
+                    e.Graphics.DrawString(cell.FormattedValue.ToString(), 
+                        cell.InheritedStyle.Font, Brushes.Black, leftMargin, currentY);
                     leftMargin += cellWidth;
                 }
                 currentY += rowHeight;
@@ -566,6 +567,16 @@ namespace BomDia
         private void PrintButton_Click(object sender, EventArgs e)
         {
             PrintDataGridView(DataGridView1);
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        }
+
+        private void BomDia_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
         }
     }
 
