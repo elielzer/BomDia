@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using System.Globalization;
 using System.Linq;
 using System.Xml.Schema;
+using System.Drawing.Printing;
+
 
 namespace BomDia
 {
@@ -301,8 +303,8 @@ namespace BomDia
                 
              }
 
-
             
+
         }
 
         public void VoltarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -491,7 +493,6 @@ namespace BomDia
             label1.Text = "Escrever item";
             this.label1.Image = global::BomDia.Properties.Resources.NEW;
 
-
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -503,6 +504,70 @@ namespace BomDia
         {
             this.Text = Application.ProductName  ;
         }
+        // Manipular a operação de saída de relatório
+        private void PrintDataGridView(DataGridView dataGridView)
+        {
+            PrintDocument printDocument = new PrintDocument();
+            printDocument.PrintPage += (sender, e) => PrintPageHandler(sender, e, dataGridView);
+            PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog
+            {
+                Document = printDocument
+            };
+            printPreviewDialog.Show();
+        }
+        
+        // Constrói o método de saída de relatório
+        private void PrintPageHandler(object sender, PrintPageEventArgs e, DataGridView dataGridView)
+        {
+            int leftMargin = e.MarginBounds.Left;
+            int topMargin = e.MarginBounds.Top;
+            bool morePagesToPrint = false;
+            int rowHeight = 0;
+            int columnWidth = 0;
+            int cellHeight = 0;
+            int cellWidth = 0;
+            int currentY = topMargin;
+
+            // Print the header
+            foreach (DataGridViewColumn column in dataGridView.Columns)
+            {
+                columnWidth = column.Width;
+                e.Graphics.DrawString(column.HeaderText, column.InheritedStyle.Font, Brushes.Black, leftMargin, currentY);
+                leftMargin += columnWidth;
+            }
+
+            currentY += rowHeight;
+
+            // Print the rows
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                leftMargin = e.MarginBounds.Left;
+                rowHeight = row.Height;
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    cellWidth = cell.Size.Width;
+                    cellHeight = cell.Size.Height;
+                    e.Graphics.DrawString(cell.FormattedValue.ToString(), cell.InheritedStyle.Font, Brushes.Black, leftMargin, currentY);
+                    leftMargin += cellWidth;
+                }
+                currentY += rowHeight;
+
+                // Check if we need to print more pages
+                if (currentY + rowHeight > e.MarginBounds.Bottom)
+                {
+                    morePagesToPrint = true;
+                    break;
+                }
+            }
+
+            e.HasMorePages = morePagesToPrint;
+        }
+
+        private void PrintButton_Click(object sender, EventArgs e)
+        {
+            PrintDataGridView(DataGridView1);
+        }
     }
+
 
 }
