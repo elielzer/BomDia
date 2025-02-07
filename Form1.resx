@@ -123,15 +123,6 @@
   <metadata name="TarefasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>415, 17</value>
   </metadata>
-  <metadata name="PrioridadesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 55</value>
-  </metadata>
-  <metadata name="TarefasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>415, 17</value>
-  </metadata>
-  <metadata name="TarefasDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="TarefasDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -188,10 +179,10 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADmSURBVDhP7ZM9DoJAFIS39gyewwNQ0FNacgroPQLhFiYS
-        LuGaEHu1oFMbQEPes3xmNlkMuxREWycZstn3zfCvmFl+scIhCIKvbAratpUwDEXvD/LonrMMFhl7Bduy
+        LuGaEHu1oFMbQEnes3xmNlkMuxREWycZstn3zfCvmFl+scIhCIKvbAratpUwDEXvD/LonrMMFhl7Bduy
         LCWKIjmfLh7sGgxYZJBVIrJg5mOe5xLHsdyudy9kjRkYsMggqyAiWvZ9f0vTVJIkkbbpvDD2MAMDFhkT
         tiKiVdM0L5whyzKvAHuYgQE7Clsx87qua3OPxa4YwlhjDzMwbm4kItporc1TtgVYV1UlmLn8pOy3YQuG
-        dz5X/4JPgffjzBXgKbsc9AaxzBQbABNDVQAAAABJRU5ErkJggg==
+        dz5X/4JPgffjzBXgKbsc9AahyhQVnB7DYwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="toolStripButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

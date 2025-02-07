@@ -584,7 +584,8 @@ namespace BomDia
             // Assuming you have a DataGridView named dataGridView1
             // and a DataTable named dataTable
             DataView dataView = new DataView(BomDiaTarefas);
-            dataView.RowFilter = "DIAMARCADO = '" + maskedTextBoxDia.Text +"'";
+            dataView.RowFilter = "DIAMARCADO = '" + maskedTextBoxDia.Text +
+                "' and QUANDO = '" + ListaDeDatas.Text + "'";
             DataGridView1.DataSource = dataView;
         }
 
