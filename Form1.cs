@@ -578,6 +578,20 @@ namespace BomDia
         {
             DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            // Assuming you have a DataGridView named dataGridView1
+            // and a DataTable named dataTable
+            DataView dataView = new DataView(BomDiaTarefas);
+            dataView.RowFilter = "DIAMARCADO = '" + maskedTextBoxDia.Text +"'";
+            DataGridView1.DataSource = dataView;
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            DataGridView1.DataSource = TarefasBindingSource;
+        }
     }
 
 
