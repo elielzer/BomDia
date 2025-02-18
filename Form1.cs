@@ -193,7 +193,7 @@ namespace BomDia
             ActiveControl = OQuePretendido;
             MSGtoolStripStatusLabel.Text = "Esboço...";
             this.label1.Image = global::BomDia.Properties.Resources.NEW;
-            label1.Text = "Escrever item";
+            label1.Text = "Escrever um item";
             label5.Text = "";
         }
 
@@ -331,6 +331,7 @@ namespace BomDia
             MSGtoolStripStatusLabel.Text = "Bom dia. Arquivo de dados: " + TarefasDataSet.Namespace;
             NRow = DataGridView1.RowCount-1;
             this.Text = Application.ProductName + " " + NRow.ToString() + "Tasks";
+            
         }
 
         private void hojeToolStripMenuItem_Click(object sender, EventArgs e)
