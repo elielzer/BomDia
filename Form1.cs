@@ -209,7 +209,8 @@ namespace BomDia
             tableLayoutPanel6.Enabled = true;
             BindingNavigatorNovo.Enabled = true;
             BindingExclui.Enabled = true;
-            BindingNavigatorSalva.Enabled = true;
+            //BindingNavigatorSalva.Enabled = true;
+            ButtonAnexa.Enabled = true;
             //altera a imagem da picture
             this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTON;
             PictureBox1.Visible = true; //figura indica modo gerenciamento
@@ -593,6 +594,41 @@ namespace BomDia
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             DataGridView1.DataSource = TarefasBindingSource;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TarefasBindingSource.EndEdit();
+                TarefasDataSet.AcceptChanges();
+
+                //
+                if (TarefasDataSet == null) { return; }
+
+                // Create a file name to write to.
+                string filename = "C:/Users/elielzer/Documents/Bom-Dia/XmlDoc.xml";
+
+                // Create the FileStream to write with.
+                System.IO.FileStream stream = new System.IO.FileStream
+                    (filename, System.IO.FileMode.Create);
+
+                // Create an XmlTextWriter with the fileStream.
+                System.Xml.XmlTextWriter xmlWriter =
+                    new System.Xml.XmlTextWriter(stream,
+                    System.Text.Encoding.Unicode);
+
+                // Write to the file with the WriteXml method.
+                TarefasDataSet.WriteXml(xmlWriter);
+                xmlWriter.Close();
+                MSGtoolStripStatusLabel.Text = "Anexada a tarefa no arquivo XML " +
+                    DateTime.Now.ToString();
+
+                this.label1.Image = global::BomDia.Properties.Resources.CLIP07;
+            }
+            catch
+            {
+            }
         }
     }
 
