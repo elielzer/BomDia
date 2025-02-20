@@ -368,7 +368,7 @@ namespace BomDia
             //
             else
             // Redefine o texto atual da barra de status
-            MSGtoolStripStatusLabel.Text = "Indexador: " + DataGridView1.CurrentRow.Cells[0].Value;
+            MSGtoolStripStatusLabel.Text = "Item: " + DataGridView1.CurrentRow.Cells[0].Value;
             
             if (DataGridView1.CurrentRow.Cells[3].Value.ToString() == "")
                 {
