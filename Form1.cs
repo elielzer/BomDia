@@ -6,6 +6,10 @@ using System.Globalization;
 using System.Linq;
 using System.Xml.Schema;
 using System.Drawing.Printing;
+using BomDia;
+using System.Drawing.Imaging;
+
+
 
 
 namespace BomDia
@@ -214,7 +218,7 @@ namespace BomDia
             //altera a imagem da picture
             this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTON;
             PictureBox1.Visible = true; //figura indica modo gerenciamento
-            bindingNavigator1.Visible = false;
+            //bindingNavigator1.Visible = false;
             
         }
 
@@ -243,18 +247,18 @@ namespace BomDia
             if (DataPara > DataHoje)
             {
                 //MSGtoolStripStatusLabel.Text = "Data futura";
-                DiaBomDiaLabel.Text = "Data é futura";
+                DiaBomDiaLabel.Text = "Data é futura".ToUpper();
             }
             if (DataPara < DataHoje)
             {
                 //MSGtoolStripStatusLabel.Text = "Data passada";
-                DiaBomDiaLabel.Text = "Data é passada";
+                DiaBomDiaLabel.Text = "Data é passada".ToUpper();
             }
             if (DataPara == DataHoje)
             {
                 MSGtoolStripStatusLabel.Text =
                     "Arquivo de dados: " + BancoDados;
-                DiaBomDiaLabel.Text = "Data é hoje";
+                DiaBomDiaLabel.Text = "Data é de hoje".ToUpper();
             }
         }
         //listbox
@@ -628,6 +632,44 @@ namespace BomDia
             }
             catch
             {
+            }
+        }
+
+        private void ButtonAtivarJanela_Click(object sender, EventArgs e)
+        {
+            tableLayoutPanel6.Enabled = true;
+            BindingNavigatorNovo.Enabled = true;
+            BindingExclui.Enabled = true;
+            //BindingNavigatorSalva.Enabled = true;
+            ButtonAnexa.Enabled = true;
+            //altera a imagem da picture
+            this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTON;
+            PictureBox1.Visible = true; //figura indica modo gerenciamento
+            ButtonAtivarJanela.Visible = false;
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            
+            {
+                switch (PictureBox1.Tag.ToString())
+                {
+                    case "Apagado":
+                        this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTON;
+                        PictureBox1.Tag = "Aceso";
+                        DataGridView1.BackgroundColor = Color.White;
+                        DataGridView1.DefaultCellStyle.BackColor = Color.White;
+                        DataGridView1.ForeColor = Color.Black;
+                        break;
+
+                    case "Aceso":
+                    this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTOFF;
+                        DataGridView1.BackgroundColor = Color.FromArgb(128, 64, 64);
+                        DataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(128, 64, 64);
+                        DataGridView1.ForeColor = Color.White;
+                        PictureBox1.Tag = "Apagado";
+                        break;
+                }
             }
         }
     }
