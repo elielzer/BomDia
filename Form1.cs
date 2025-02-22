@@ -178,7 +178,7 @@ namespace BomDia
                 MSGtoolStripStatusLabel.Text = "Anexada a tarefa no arquivo XML " + 
                     DateTime.Now.ToString();
                 
-                this.label1.Image = global::BomDia.Properties.Resources.CLIP07;
+                this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.CLIP07;
             }
             catch
             {
@@ -196,7 +196,8 @@ namespace BomDia
             DetalheQuando.Visible = false;
             ActiveControl = OQuePretendido;
             MSGtoolStripStatusLabel.Text = "Esboço...";
-            this.label1.Image = global::BomDia.Properties.Resources.NEW;
+            //this.label1.Image = global::BomDia.Properties.Resources.NEW;
+            this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.NEW;
             label1.Text = "Escrever um item";
             label5.Text = "";
         }
@@ -214,7 +215,6 @@ namespace BomDia
             BindingNavigatorNovo.Enabled = true;
             BindingExclui.Enabled = true;
             //BindingNavigatorSalva.Enabled = true;
-            ButtonAnexa.Enabled = true;
             //altera a imagem da picture
             this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTON;
             PictureBox1.Visible = true; //figura indica modo gerenciamento
@@ -351,7 +351,7 @@ namespace BomDia
         {
             
             //this.label1.Image = null; // imagem ao registro atual não mais existe
-            this.label1.Image = global::BomDia.Properties.Resources.Edit1;
+            this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.Edit1;
             this.label1.Text = "Editar item";
             if (DataGridView1.CurrentRow == null) //quando a posição está em linha nova
             {
@@ -497,7 +497,7 @@ namespace BomDia
         private void TarefasBindingSource_AddingNew(object sender, System.ComponentModel.AddingNewEventArgs e)
         {
             label1.Text = "Escrever item";
-            this.label1.Image = global::BomDia.Properties.Resources.NEW;
+            this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.NEW;
 
         }
 
@@ -628,7 +628,7 @@ namespace BomDia
                 MSGtoolStripStatusLabel.Text = "Anexada a tarefa no arquivo XML " +
                     DateTime.Now.ToString();
 
-                this.label1.Image = global::BomDia.Properties.Resources.CLIP07;
+                this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.CLIP07;
             }
             catch
             {
