@@ -352,7 +352,7 @@ namespace BomDia
             
             //this.label1.Image = null; // imagem ao registro atual não mais existe
             this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.Edit1;
-            this.label1.Text = "Editar item";
+            this.label1.Text = "Editar item...";
             if (DataGridView1.CurrentRow == null) //quando a posição está em linha nova
             {
                 try
@@ -383,7 +383,7 @@ namespace BomDia
                           upper: DateTime.Today);
                         if (DataGridView1.CurrentRow.Cells[3].Value.ToString() == "")
                         {
-                            label5.Text = "agenda do dia";
+                            label5.Text = "agenda do dia".ToUpper();
                             return;
                         }
                         else
@@ -391,7 +391,7 @@ namespace BomDia
                             DataSemana = (DateTime)DataGridView1.CurrentRow.Cells[3].Value;
                             if (DataSemana == DateTime.Today)
                             {
-                                label5.Text = "Hoje";
+                                label5.Text = "Hoje".ToUpper();
                                 return;
                             }
                             else
@@ -419,7 +419,7 @@ namespace BomDia
                         //
                         if (DataSemana == DateTime.Today)
                         {
-                            label5.Text = "Previsto para hoje";
+                            label5.Text = "Previsto para hoje".ToUpper();
                             return;
                         }
                         else
