@@ -643,7 +643,7 @@ namespace BomDia
             //BindingNavigatorSalva.Enabled = true;
             ButtonAnexa.Enabled = true;
             //altera a imagem da picture
-            this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTON;
+            //this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTON;
             PictureBox1.Visible = true; //figura indica modo gerenciamento
             ButtonAtivarJanela.Visible = false;
         }
