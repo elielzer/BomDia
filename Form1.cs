@@ -672,6 +672,40 @@ namespace BomDia
                 }
             }
         }
+
+        private void ButtonMoveLista_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < NRow; i++)
+            {
+
+                switch (DataGridView1.Rows[i].Cells[7].Value)
+                {
+                    case true:
+
+                        DataRow Row;
+                        Row = BomDiaTarefas.NewRow();
+                        Row["QUANDO"] = DateTime.Today.ToShortDateString();
+                        Row["OQUE"] = DataGridView1.Rows[i].Cells[1].Value; //4ª col
+                        Row["PORQUE"] = DataGridView1.Rows[i].Cells[4].Value; //5ª col
+
+
+                        Row["PESO"] = DataGridView1.Rows[i].Cells[5].Value; //6ª col
+                        Row["CRITÉRIO"] = DataGridView1.Rows[i].Cells[6].Value; //7ª col
+                        Row["DIAMARCADO"] = DataGridView1.Rows[i].Cells[3].Value; //3ª col
+
+                        // Índice
+                        BomDiaTarefas.Rows.Add(Row);
+                        MSGtoolStripStatusLabel.Text =
+                            "Migrados " + NRow + " itens. Último é IND(" + DataGridView1.Rows[i].Cells[0].Value + ")" + " para hoje";
+
+                        break;
+                    case false:
+                        ;
+                        break;
+                }
+                //
+            }
+        }
     }
 
 

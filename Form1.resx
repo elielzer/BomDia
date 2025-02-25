@@ -154,18 +154,6 @@
         uuHsQM65cML4ABzY5fA/eQGKIwMcVjm2bAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="BindingNavigatorMigrar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>477, 101</value>
-  </metadata>
-  <data name="MigrarToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAM5JREFUOE/ljzEKg0AQRQ0JpM2ZFCwEr2DhNVLkFra5g4KtIIInsBDSpbCwSNK8
-        dsJKVnTVhJgyC4/Zgflvdi3LOMAOOAJXQIAGOAFbc3ZygD0QF0UhYRiK4zgSBIGoHkiBy0t6MLN6c5ym
-        qXieJ0mSSNM0XVV9lmUSRZEKLwrOVVWJ7/tSlqUe7MjzXFzXFdu25wXARg/XdT0KK9RmFR4IZiWjoeG9
-        bdueVQJV77dHx+Qbw6eaoQ+Cjn7zXOidQNd/EgxZFHzDRLCGXvALT2fSpdeY/49UAAAAAElFTkSuQmCC
-</value>
-  </data>
   <metadata name="BindingNavegador.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>200, 17</value>
   </metadata>
@@ -291,6 +279,22 @@
   <metadata name="StatusStripBomDia.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 101</value>
   </metadata>
+  <data name="ButtonMoveLista.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        /9j/4AAQSkZJRgABAQEAAAAAAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8k
+        KDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3
+        Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCAAgACADASIAAhEBAxEB/8QA
+        GQAAAwADAAAAAAAAAAAAAAAABQYHAQME/8QAKBAAAQMDAwQCAgMAAAAAAAAAAQIDBAUREgAhMQZBUXFh
+        8BSBEyJS/8QAFQEBAQAAAAAAAAAAAAAAAAAABAD/xAAeEQADAAIDAAMAAAAAAAAAAAABAgMABBESYRMi
+        of/aAAwDAQACEQMRAD8AuOp91jP62YmPuU+KpmmN7JXHwcUof6IP9h+hYDzo/MrD7lRfZiuBtiOcFLCQ
+        Stfcb9hxrpYrrf4z5cQVvstKcDaOXQkXsn524+gT7EqsZBiDgqWnXmYYj0YgUDritNLSuW6mfGPKVJCV
+        D0QOfd9U+nTo9RiIlRV5Nr88pPcEedTNmMzVZjlUjMtsNyQFKYb3SlXc+/Ow86NwWpMFN47zraQcsUqN
+        ifXB4GhR3jNirHsMBrbdJsQx7LgdqqiMhaJgdafcfXlmhQuonza2ssGdUKkzFp2AdUcg4twJwt3Hckc2
+        G+2qFW6VHrVMegSgcHBsocoUOFD5GpZUuluqYDmKYn5qEEYSYrgufBxJBB+31V0mm4YfYZX06SYEDsP3
+        Hqq9NuMSV1ChhKXVm70VRsh35Hg/fe+mNPy3Wv5YL0ZDagtwu2FyNwE9zvbf40N6IX1cp8ivN4QUoOJf
+        xLpV2tY3/atOemprTdhXjjzHzgjn5ACPM//Z
+</value>
+  </data>
   <data name="ButtonAnexa.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
