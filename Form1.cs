@@ -664,8 +664,8 @@ namespace BomDia
 
                     case "Aceso":
                     this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTOFF;
-                        DataGridView1.BackgroundColor = Color.FromArgb(128, 64, 64);
-                        DataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(128, 64, 64);
+                        DataGridView1.BackgroundColor = Color.FromArgb(80, 64, 64);
+                        DataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(80, 64, 64);
                         DataGridView1.ForeColor = Color.White;
                         PictureBox1.Tag = "Apagado";
                         break;
