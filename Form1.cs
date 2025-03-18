@@ -79,7 +79,7 @@ namespace BomDia
             ListaDeDatas.Text = DateTime.Today.ToShortDateString();
                       
             //
-            DateTime DateObject = Convert.ToDateTime(ListaDeDatas.Text);
+            //DateTime DateObject = Convert.ToDateTime(ListaDeDatas.Text);
             //Str = @"QUANDO = " + DateObject.Day + "/" + DateObject.Month + "/" + DateObject.Year;
             TarefasBindingSource.Filter = String.Format("QUANDO = '{0:dd/MM/yyyy}'",ListaDeDatas.Text);
             //
@@ -524,21 +524,17 @@ namespace BomDia
         }
         
         // Constrói o método de saída de relatório
-        private void PrintPageHandler(object sender, PrintPageEventArgs e, DataGridView dataGridView)
+        public void PrintPageHandler(object sender, PrintPageEventArgs e, DataGridView dataGridView)
         {
             int leftMargin = e.MarginBounds.Left;
             int topMargin = e.MarginBounds.Top;
             bool morePagesToPrint = false;
-            int rowHeight = 0;
-            int columnWidth = 0;
-            int cellHeight = 0;
-            int cellWidth = 0;
             int currentY = topMargin;
 
             // Print the header
             foreach (DataGridViewColumn column in dataGridView.Columns)
             {
-                columnWidth = column.Width;
+                int columnWidth = column.Width;
                 e.Graphics.DrawString(column.HeaderText, column.InheritedStyle.Font, Brushes.Black, leftMargin, currentY);
                 leftMargin += columnWidth;
             }
@@ -549,11 +545,11 @@ namespace BomDia
             foreach (DataGridViewRow row in dataGridView.Rows)
             {
                 leftMargin = e.MarginBounds.Left;
-                rowHeight = row.Height;
+                int rowHeight = row.Height;
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    cellWidth = cell.Size.Width;
-                    cellHeight = cell.Size.Height;
+                    int cellWidth = cell.Size.Width;
+                    int cellHeight = cell.Size.Height;
                     e.Graphics.DrawString(cell.FormattedValue.ToString(), 
                         cell.InheritedStyle.Font, Brushes.Black, leftMargin, currentY);
                     leftMargin += cellWidth;
@@ -590,9 +586,11 @@ namespace BomDia
         {
             // Assuming you have a DataGridView named dataGridView1
             // and a DataTable named dataTable
-            DataView dataView = new DataView(BomDiaTarefas);
-            dataView.RowFilter = "DIAMARCADO = '" + maskedTextBoxDia.Value.ToShortDateString() +
-                "' and QUANDO = '" + ListaDeDatas.Text + "'";
+            DataView dataView = new DataView(BomDiaTarefas)
+            {
+                RowFilter = "DIAMARCADO = '" + maskedTextBoxDia.Value.ToShortDateString() +
+                    "' and QUANDO = '" + ListaDeDatas.Text + "'"
+            };
             DataGridView1.DataSource = dataView;
         }
 
@@ -679,6 +677,7 @@ namespace BomDia
             int NCaseTrue = 0;
             try 
             {
+                string MsgTexto="";
                 for (int i = 0; i < NRow; i++)
                 {
 
@@ -699,8 +698,12 @@ namespace BomDia
 
                             // Índice
                             BomDiaTarefas.Rows.Add(Row);
+
+                            
+                            MsgTexto = 
+                                DataGridView1.Rows[i].Cells[0].Value.ToString();
                             MSGtoolStripStatusLabel.Text =
-                                "Migrados " + NCaseTrue + " itens. Último é IND(" + DataGridView1.Rows[i].Cells[0].Value + ")" + " para hoje";
+                                "Ok.";
 
                             break;
                         case false:
@@ -709,8 +712,18 @@ namespace BomDia
                     }
                     //
                 }
-                const string message = "Resagate efetuado.";
-                const string caption = "Resgate de Tarefas";
+                string message = "";
+                if (NCaseTrue == 1)
+                {
+                    message = "Migrado item IND("  + MsgTexto + ") para hoje.";
+                }
+                else 
+                {
+                    message = "Migrados " + NCaseTrue + " itens para hoje." +
+                        "  Último foi IND(" + MsgTexto + ")";
+                }
+
+                    const string caption = "Resgate de Tarefas";
                 var result = MessageBox.Show(message, caption,
                                              MessageBoxButtons.OK,
                                              MessageBoxIcon.Information);
