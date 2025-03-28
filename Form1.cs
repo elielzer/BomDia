@@ -384,7 +384,7 @@ namespace BomDia
                           upper: DateTime.Today);
                         if (DataGridView1.CurrentRow.Cells[3].Value.ToString() == "")
                         {
-                            label5.Text = "agenda do dia".ToUpper();
+                            label5.Text = '\u2714' + " " +  "agenda do dia".ToUpper();
                             return;
                         }
                         else
@@ -488,11 +488,6 @@ namespace BomDia
 
             // definir a propriedade de menucontextstrip
             dateTimePicker1.ContextMenuStrip = ChaveadorContextMenuStrip;
-        }
-
-        private void splitContainer6_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void TarefasBindingSource_AddingNew(object sender, System.ComponentModel.AddingNewEventArgs e)
@@ -729,6 +724,25 @@ namespace BomDia
                                              MessageBoxIcon.Information);
             }
             catch{ };
+        }
+
+        private void ShowLineJoin(PaintEventArgs e)
+        {
+            // Create pen.
+            Pen bluePen = new Pen(Color.Black, 3);
+            bluePen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            // Create points that define line.
+            PointF point1 = new PointF(flowLayoutPanel1.Left, flowLayoutPanel1.Bottom-2);
+            PointF point2 =
+            new PointF(point1.X + flowLayoutPanel1.Width, point1.Y);
+
+            // Draw line to screen.
+            e.Graphics.DrawLine(bluePen, point1, point2);
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            ShowLineJoin(e);
         }
     }
 
