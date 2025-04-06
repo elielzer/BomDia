@@ -539,14 +539,16 @@ namespace BomDia
             // Print the rows
             foreach (DataGridViewRow row in dataGridView.Rows)
             {
+                dataGridView.Columns[2].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 leftMargin = e.MarginBounds.Left;
                 int rowHeight = row.Height;
                 foreach (DataGridViewCell cell in row.Cells)
                 {
+                    
                     int cellWidth = cell.Size.Width;
                     int cellHeight = cell.Size.Height;
-                    e.Graphics.DrawString(cell.FormattedValue.ToString(), 
-                        cell.InheritedStyle.Font, Brushes.Black, leftMargin, currentY);
+                    e.Graphics.DrawString(cell.EditedFormattedValue.ToString(), 
+                        cell.InheritedStyle.Font,  Brushes.Black, leftMargin, currentY);
                     leftMargin += cellWidth;
                 }
                 currentY += rowHeight;
@@ -570,6 +572,7 @@ namespace BomDia
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            //DataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void BomDia_FormClosing(object sender, FormClosingEventArgs e)
@@ -743,6 +746,24 @@ namespace BomDia
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
             ShowLineJoin(e);
+        }
+        private void ShowLineJoin_tableLayoutPanel5(PaintEventArgs e)
+        {
+            // Create pen.
+            Pen bluePen = new Pen(Color.Black, 3);
+            bluePen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            // Create points that define line.
+            PointF point1 = new PointF(tableLayoutPanel5.Left, tableLayoutPanel5.Bottom - 2);
+            PointF point2 =
+            new PointF(point1.X + tableLayoutPanel5.Width, point1.Y);
+
+            // Draw line to screen.
+            e.Graphics.DrawLine(bluePen, point1, point2);
+        }
+
+        private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
+        {
+            ShowLineJoin_tableLayoutPanel5(e);
         }
     }
 
