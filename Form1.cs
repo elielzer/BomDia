@@ -248,18 +248,18 @@ namespace BomDia
             if (DataPara > DataHoje)
             {
                 //MSGtoolStripStatusLabel.Text = "Data futura";
-                DiaBomDiaLabel.Text = "|Futuro".ToUpper();
+                DiaBomDiaLabel.Text = "Futuro".ToUpper();
             }
             if (DataPara < DataHoje)
             {
                 //MSGtoolStripStatusLabel.Text = "Data passada"; 
-                DiaBomDiaLabel.Text =  "Passado|".ToUpper();
+                DiaBomDiaLabel.Text =  "Passado".ToUpper();
             }
             if (DataPara == DataHoje)
             {
                 MSGtoolStripStatusLabel.Text =
                     "Arquivo de dados: " + BancoDados;
-                DiaBomDiaLabel.Text = "|Presente|".ToUpper();
+                DiaBomDiaLabel.Text = "Presente".ToUpper();
             }
         }
         //listbox
