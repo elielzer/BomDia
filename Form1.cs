@@ -765,6 +765,32 @@ namespace BomDia
         {
             ShowLineJoin_tableLayoutPanel5(e);
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime datetime = Convert.ToDateTime(ListaDeDatas.Text);
+                datetime = datetime.AddDays(1);
+                ListaDeDatas.Text = datetime.ToShortDateString();
+            }
+            catch { }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime datetime = Convert.ToDateTime(ListaDeDatas.Text);
+                datetime = datetime.AddDays(-1);
+                ListaDeDatas.Text = datetime.ToShortDateString();
+            }
+            catch
+            {
+                ;
+            }
+        }
     }
 
 

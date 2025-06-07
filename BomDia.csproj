@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>135</ApplicationRevision>
+    <ApplicationRevision>136</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -179,6 +179,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Edit_Parameter_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ARW06LT.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ARW02RT.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ARW02LT.ICO" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

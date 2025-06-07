@@ -63,6 +63,36 @@ namespace BomDia.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ARW02LT {
+            get {
+                object obj = ResourceManager.GetObject("ARW02LT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ARW02RT {
+            get {
+                object obj = ResourceManager.GetObject("ARW02RT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ARW06LT {
+            get {
+                object obj = ResourceManager.GetObject("ARW06LT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AzureIoTHubEdit_16x {
             get {
                 object obj = ResourceManager.GetObject("AzureIoTHubEdit_16x", resourceCulture);
