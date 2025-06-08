@@ -732,10 +732,10 @@ namespace BomDia
         private void ShowLineJoin(PaintEventArgs e)
         {
             // Create pen.
-            Pen bluePen = new Pen(Color.Black, 3);
+            Pen bluePen = new Pen(Color.Black, 2);
             bluePen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            // Create points that define line.
-            PointF point1 = new PointF(flowLayoutPanel1.Left, flowLayoutPanel1.Bottom-2);
+            // Create points that define line - linha superior do cabeçalho.
+            PointF point1 = new PointF(flowLayoutPanel1.Left, label1.Bottom+2);
             PointF point2 =
             new PointF(point1.X + flowLayoutPanel1.Width, point1.Y);
 
