@@ -41,11 +41,12 @@
             // button1
             // 
             this.button1.ContextMenuStrip = this.PadContextMenuStrip;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.Image = global::BomDia.Properties.Resources.ARW02RT;
-            this.button1.Location = new System.Drawing.Point(101, 0);
+            this.button1.Location = new System.Drawing.Point(102, 0);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 48);
+            this.button1.Size = new System.Drawing.Size(102, 38);
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -67,13 +68,13 @@
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.ContextMenuStrip = this.PadContextMenuStrip;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Image = global::BomDia.Properties.Resources.ARW02LT;
             this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 48);
+            this.button2.Size = new System.Drawing.Size(102, 38);
             this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -86,11 +87,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.button2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(202, 48);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(204, 38);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // Pad
@@ -102,13 +105,17 @@
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Pad";
             this.Opacity = 0.5D;
+            this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pad";
-            this.TopMost = true;
+            this.TransparencyKey = System.Drawing.SystemColors.Control;
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Pad_KeyPress);
             this.MouseLeave += new System.EventHandler(this.Pad_MouseLeave);
             this.PadContextMenuStrip.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

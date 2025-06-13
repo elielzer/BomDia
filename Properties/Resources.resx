@@ -124,14 +124,17 @@
   <data name="NEW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NEW.BMP;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ARW02RT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ARW02RT.ICO;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SECUR04" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SECUR04.ICO;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ARW06LT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ARW06LT.ICO;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="INTL_NO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\INTL_NO.BMP;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DISK35" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DISK35.WMF;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TRFFC13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TRFFC13.ICO;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,25 +148,31 @@
   <data name="TYPEWRTR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TYPEWRTR.WMF;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FilterRegions_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FilterRegions_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="filterTokenCancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filterTokenCancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Edit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit_Parameter_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SECUR04" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SECUR04.ICO;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ARW02RT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ARW02RT.ICO;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NOTE15" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NOTE15.ICO;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ARW02LT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ARW02LT.ICO;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LIGHTON" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LIGHTON.ICO;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DISK35" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DISK35.WMF;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CLIP07" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CLIP07.ICO;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ARW02LT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ARW02LT.ICO;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

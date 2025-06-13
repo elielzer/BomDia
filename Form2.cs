@@ -14,9 +14,11 @@ namespace BomDia
     public partial class Pad : Form
     {
         public event Action<object, string> Portal;
+        
         public Pad()
         {
             InitializeComponent();
+            this.TopMost = true; // Mantém o formulário sempre no topo
         }
 
         private void Pad_MouseLeave(object sender, EventArgs e)
@@ -27,8 +29,8 @@ namespace BomDia
 
         private void handleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FormBorderStyle != FormBorderStyle.FixedSingle)
-            { FormBorderStyle = FormBorderStyle.FixedSingle; }
+            if (FormBorderStyle != FormBorderStyle.FixedToolWindow)
+            { FormBorderStyle = FormBorderStyle.FixedToolWindow; }
         }
 
         public void button2_Clickado(BomDia bomDia, int Sinal )
@@ -53,8 +55,9 @@ namespace BomDia
             VariaveisGlobais.ListaDeDatasText = datetime.ToShortDateString();
             //bomDia.ListaDeDatas.Text = datetime.ToShortDateString();
             Portal?.Invoke(this, VariaveisGlobais.ListaDeDatasText);
-        }
 
+            
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             DateTime datetime = Convert.ToDateTime(VariaveisGlobais.ListaDeDatasText);
@@ -62,12 +65,46 @@ namespace BomDia
             VariaveisGlobais.ListaDeDatasText = datetime.ToShortDateString();
             //bomDia.ListaDeDatas.Text = datetime.ToShortDateString();
             Portal?.Invoke(this, VariaveisGlobais.ListaDeDatasText);
+
+        }
+        public void AtivarBomdia()
+        {
+            // Ativar o formulário principal de volta.
+            if (Program.Bomdia != null && !Program.Bomdia.IsDisposed)
+            {
+                Program.Bomdia.TopMost = true;
+                Program.Bomdia.Activate(); // Traz o formulário para frente
+            }
+            else
+            {
+                Program.Bomdia = new BomDia();
+                Program.Bomdia.Show();
+                
+            }
+        }
+
+        private void button1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void Pad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)27)
+            {
+                Hide();
+                AtivarBomdia();
+
+            }
+            ;
         }
     }
+    
 }
 public static class VariaveisGlobais
 {
-    //public static int ContadorGlobal = 0;
     // Armazena a data para o interface entre janelas
     public static string ListaDeDatasText = "";
+
+    // public static Form Bomdia { get; private set; }
 }

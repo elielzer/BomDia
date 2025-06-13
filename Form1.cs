@@ -79,8 +79,7 @@ namespace BomDia
             ListaDeDatas.Text = DateTime.Today.ToShortDateString();
                       
             //
-            //DateTime DateObject = Convert.ToDateTime(ListaDeDatas.Text);
-            //Str = @"QUANDO = " + DateObject.Day + "/" + DateObject.Month + "/" + DateObject.Year;
+
             TarefasBindingSource.Filter = String.Format("QUANDO = '{0:dd/MM/yyyy}'",ListaDeDatas.Text);
             //
             string SemanaComMaiuscula;
@@ -90,11 +89,14 @@ namespace BomDia
             SemanaToolStripButton.Text = string.Concat(".", SemanaComMaiuscula);
 
             this.BackColor = Color.Black;
+
             
         }
 
         private void CortinaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Apresentar o main em formato janela
+            //
             splitContainer1.Panel2Collapsed = false;
 
             StatusStripBomDia.Visible = true;
@@ -115,6 +117,7 @@ namespace BomDia
                ListaDeDatas.Text = DateTime.Today.ToShortDateString();
             }
             this.Tag = "Max";
+            DataGridView1.Focus();
         }
         public enum ValorTag
         {
@@ -122,6 +125,8 @@ namespace BomDia
         }
         public void BomDia_KeyPress(object sender, KeyPressEventArgs e)
         {
+
+
             if (e.KeyChar ==(char)27 )
             {
                 var EstaTag = this.Tag;
@@ -131,6 +136,7 @@ namespace BomDia
                         return;
 
                 }
+
                 HideForm();
                 // Menu suspenso para o comando Voltar.
                 //splitContainer2.Visible = false;
@@ -341,7 +347,9 @@ namespace BomDia
             MSGtoolStripStatusLabel.Text = "Bom dia. Arquivo de dados: " + TarefasDataSet.Namespace;
             NRow = DataGridView1.RowCount-1;
             this.Text = Application.ProductName + " " + NRow.ToString() + "Tasks";
-            
+
+           
+
         }
 
         private void hojeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -586,19 +594,7 @@ namespace BomDia
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            // Assuming you have a DataGridView named dataGridView1
-            // and a DataTable named dataTable
-            DataView dataView = new DataView(BomDiaTarefas)
-            {
-                RowFilter = "DIAMARCADO = '" + maskedTextBoxDia.Value.ToShortDateString() +
-                    "' and QUANDO = '" + ListaDeDatas.Text + "'"
-            };
-            DataGridView1.DataSource = dataView;
-        }
 
-        private void toolStripButton3_Click(object sender, EventArgs e)
-        {
-            DataGridView1.DataSource = TarefasBindingSource;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -647,6 +643,7 @@ namespace BomDia
             //this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTON;
             PictureBox1.Visible = true; //figura indica modo gerenciamento
             ButtonAtivarJanela.Visible = false;
+            ListaDeDatas.Focus();
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
@@ -797,7 +794,7 @@ namespace BomDia
         }
 
 
-
+        // Trasportar o registro correspondente para o presente.
         private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = e.RowIndex;
@@ -832,26 +829,6 @@ namespace BomDia
                 DataGridView1.Rows[i].Cells[7].Value = false;
             }
         }
-
-        private void DiaBomDiaLabel_DoubleClick(object sender, EventArgs e)
-        {
-            if (pad == null)
-                { pad = new Pad(); }
-            
-            pad.Portal += 
-                (s, Stexto) => ListaDeDatas.Text = Stexto; // Assina o evento
-
-            if (pad.Visible==true)
-            { pad.Activate(); }
-            else { pad.Show(); }
-        }
-
-        private void label2_DoubleClick(object sender, EventArgs e)
-        {
-            HideForm();
-
-
-        }
         private void HideForm()
         {
             if (pad == null)
@@ -860,7 +837,86 @@ namespace BomDia
             }
             else
             {
+                Program.Bomdia.TopMost = true;
                 pad.Hide();
+                
+            }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            // Aplicar um filtro de data
+            //
+            DataView dataView = new DataView(BomDiaTarefas)
+            {
+                RowFilter = "DIAMARCADO = '" + maskedTextBoxDia.Value.ToShortDateString() +
+        "' and QUANDO = '" + ListaDeDatas.Text + "'"
+            };
+            DataGridView1.DataSource = dataView;
+            MSGtoolStripStatusLabel.Text = "Aplicado um filtro de data";
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            DataGridView1.DataSource = TarefasBindingSource;
+        }
+
+        private void DiaBomDiaLabel_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ListaDeDatas_Enter(object sender, EventArgs e)
+        {
+            MSGtoolStripStatusLabel.Text = "Campo: Portal";
+        }
+
+        private void AbrirPad()
+        {
+
+            if (Program.Bomdia.TopMost == true)
+            {
+                Program.Bomdia.TopMost = false;
+            }
+
+            if (pad == null)
+            {
+                Program.Bomdia.TopMost = false; pad = new Pad(); pad.Activate();
+                pad.TopLevel = true;
+                pad.Portal +=
+                    (s, Stexto) => ListaDeDatas.Text = Stexto; // Assina o evento
+                return;
+            }
+
+            if (pad.Visible == true)
+            {
+                pad.Activate();
+            }
+            else { pad.Show(); pad.Activate(); }
+            
+
+        }
+
+        private void DataGridView1_MouseEnter(object sender, EventArgs e)
+        {
+            AbrirPad();
+        }
+
+        private void BomDia_Activated(object sender, EventArgs e)
+        {
+            // Desativar o formulário secundário.
+            if (pad != null && !pad.IsDisposed)
+            {
+                pad.Hide();
+                if(this.TopMost == true)
+                {
+                    return;
+                }
+                else
+                {
+                    this.TopMost = true;
+                }
+
             }
         }
     }

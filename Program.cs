@@ -8,7 +8,8 @@ namespace BomDia
 {
      class Program
     {
-        
+        public static BomDia Bomdia { get; set; }
+
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
@@ -18,7 +19,8 @@ namespace BomDia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BomDia());
+            Bomdia = new BomDia();
+            Application.Run(Bomdia);
             
         }
     }
