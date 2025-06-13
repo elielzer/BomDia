@@ -15,30 +15,34 @@ using System.Linq.Expressions;
 
 namespace BomDia
 {
-    public partial class BomDia : Form
+    public  partial class BomDia : Form
     {
         int LarguraForm = 0;
         int AlturaForm = 0;
         int Xloc = 0;
         int Yloc = 0;
         int LarguraReduzida = 0;
-        //int LarguraDateTimeePiker1 = 0;
+
+        Pad pad;
+
+        //
         int AlturaReduzida = 0;
         int NRow = 0; // Usado na contagem de Rows no dadagridview1
         DateTime DataSemana ;
         string BancoDados =
             "C:/Users/elielzer/Documents/Bom-Dia/XmlDoc.xml";
+
         public BomDia()
         {
             InitializeComponent();
+            
         }
 
         public void BomDia_Load(object sender, EventArgs e)
         {
-
             TarefasDataSet.ReadXml(BancoDados, XmlReadMode.ReadSchema);
             //
-
+            sender = this.ListaDeDatas;
             // Como está a janela do aplicativo 
             DataHoje.Visible = true;
             DataHoje.Text = DateTime.Today.ToShortDateString();
@@ -57,11 +61,9 @@ namespace BomDia
                 (int)(((ushort)dateTimePicker1.Height) * 1.1);
             Width = LarguraReduzida;
             this.BackColor = Color.Black;
+
             // Transição altura da mini janela
 
-
-            //Height = AlturaReduzida + DataHoje.Height;
-            //splitContainer2.Visible = false;
             splitContainer1.Panel2Collapsed = true;
             Height = AlturaReduzida;
 
@@ -71,8 +73,6 @@ namespace BomDia
             timer2.Start();
 
             // Mostra a data do dia
-
-
 
             Location = new Point(1050, 0);
 
@@ -131,7 +131,7 @@ namespace BomDia
                         return;
 
                 }
-
+                HideForm();
                 // Menu suspenso para o comando Voltar.
                 //splitContainer2.Visible = false;
                 StatusStripBomDia.Visible = false;
@@ -147,6 +147,7 @@ namespace BomDia
                 Location = new Point(1100, 0);
                 cortinaToolStripMenuItem.Enabled = true;
                 this.Tag = "Min";
+                
             };
             
         }
@@ -242,7 +243,8 @@ namespace BomDia
             DateTime DataPara = Convert.ToDateTime(ListaDeDatas.SelectedItem);
             if (CheckBoxIntegrador.Checked)
             {
-                TarefasBindingSource.Filter = String.Format("QUANDO = '{0:dd/MM/yyyy}'", ListaDeDatas.Text);
+                TarefasBindingSource.Filter = String.Format("QUANDO = '{0:dd/MM/yyyy}'",
+                    ListaDeDatas.Text);
             }
             //
             if (DataPara > DataHoje)
@@ -261,6 +263,8 @@ namespace BomDia
                     "Arquivo de dados: " + BancoDados;
                 DiaBomDiaLabel.Text = "Presente".ToUpper();
             }
+
+            VariaveisGlobais.ListaDeDatasText = ListaDeDatas.Text;
         }
         //listbox
         private void Timer1_Tick(object sender, EventArgs e)
@@ -309,8 +313,6 @@ namespace BomDia
                 
              }
 
-            
-
         }
 
         public void VoltarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -329,9 +331,11 @@ namespace BomDia
             this.BackColor = Color.Black;
             Location = new Point(1100, 0);
             cortinaToolStripMenuItem.Enabled = true;
+
+            // Ocultar menu-form
+            HideForm();
+
         }
-
-
         private void DataGridView1_Enter(object sender, EventArgs e)
         {
             MSGtoolStripStatusLabel.Text = "Bom dia. Arquivo de dados: " + TarefasDataSet.Namespace;
@@ -789,6 +793,74 @@ namespace BomDia
             catch
             {
                 ;
+            }
+        }
+
+
+
+        private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = e.RowIndex;
+            if (e.ColumnIndex == 0)
+            {
+                if (Convert.ToBoolean(DataGridView1.Rows[i].Cells[7].Value) == false)
+                {
+                    DataGridView1.Rows[i].Cells[7].Value = true;
+
+                }
+                // Migrar a linha atual
+                DataRow Row;
+                Row = BomDiaTarefas.NewRow();
+                Row["QUANDO"] = DateTime.Today.ToShortDateString();
+                Row["OQUE"] = DataGridView1.Rows[i].Cells[1].Value; //4ª col
+                Row["PORQUE"] = DataGridView1.Rows[i].Cells[4].Value; //5ª col
+
+
+                Row["PESO"] = DataGridView1.Rows[i].Cells[5].Value; //6ª col
+                Row["CRITÉRIO"] = DataGridView1.Rows[i].Cells[6].Value; //7ª col
+                Row["DIAMARCADO"] = DataGridView1.Rows[i].Cells[3].Value; //3ª col
+
+                // Índice
+                BomDiaTarefas.Rows.Add(Row);
+
+                string MsgTexto =
+                    DataGridView1.Rows[i].Cells[0].Value.ToString();
+
+                MsgTexto = "Migrado IND(" + MsgTexto + ") para o presente.";
+                MSGtoolStripStatusLabel.Text = "Ok. " + MsgTexto;
+                // Desmarcar linha
+                DataGridView1.Rows[i].Cells[7].Value = false;
+            }
+        }
+
+        private void DiaBomDiaLabel_DoubleClick(object sender, EventArgs e)
+        {
+            if (pad == null)
+                { pad = new Pad(); }
+            
+            pad.Portal += 
+                (s, Stexto) => ListaDeDatas.Text = Stexto; // Assina o evento
+
+            if (pad.Visible==true)
+            { pad.Activate(); }
+            else { pad.Show(); }
+        }
+
+        private void label2_DoubleClick(object sender, EventArgs e)
+        {
+            HideForm();
+
+
+        }
+        private void HideForm()
+        {
+            if (pad == null)
+            {
+                return;
+            }
+            else
+            {
+                pad.Hide();
             }
         }
     }
