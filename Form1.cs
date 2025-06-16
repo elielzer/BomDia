@@ -592,11 +592,6 @@ namespace BomDia
             DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             try
