@@ -856,11 +856,6 @@ namespace BomDia
             DataGridView1.DataSource = TarefasBindingSource;
         }
 
-        private void DiaBomDiaLabel_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
-
         private void ListaDeDatas_Enter(object sender, EventArgs e)
         {
             MSGtoolStripStatusLabel.Text = "Campo: Portal";
@@ -888,7 +883,7 @@ namespace BomDia
                 pad.Activate();
             }
             else { pad.Show(); pad.Activate(); }
-            
+            MSGtoolStripStatusLabel.Text = "Pad ativo.";
 
         }
 

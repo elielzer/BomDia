@@ -18,7 +18,7 @@ namespace BomDia
         public Pad()
         {
             InitializeComponent();
-            this.TopMost = true; // Mantém o formulário sempre no topo
+            //this.TopMost = true; // Mantém o formulário sempre no topo
         }
 
         private void Pad_MouseLeave(object sender, EventArgs e)
