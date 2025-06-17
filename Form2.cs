@@ -72,8 +72,10 @@ namespace BomDia
             // Ativar o formulário principal de volta.
             if (Program.Bomdia != null && !Program.Bomdia.IsDisposed)
             {
+                
+                
                 Program.Bomdia.TopMost = true;
-                Program.Bomdia.Activate(); // Traz o formulário para frente
+                //Program.Bomdia.Activate(); // Traz o formulário para frente
             }
             else
             {
@@ -92,8 +94,12 @@ namespace BomDia
         {
             if (e.KeyChar == (char)27)
             {
-                Hide();
+                Program.CharValue = (char)27;
+                this.Hide();
+
                 AtivarBomdia();
+
+
 
             }
             ;

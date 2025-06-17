@@ -9,6 +9,7 @@ using System.Drawing.Printing;
 using BomDia;
 using System.Drawing.Imaging;
 using System.Linq.Expressions;
+using System.ComponentModel;
 
 
 
@@ -129,6 +130,9 @@ namespace BomDia
 
             if (e.KeyChar ==(char)27 )
             {
+                // Zerar a variável global 
+                Program.CharValue = (char)0;
+
                 var EstaTag = this.Tag;
                 switch (EstaTag)
                 {
@@ -139,7 +143,8 @@ namespace BomDia
 
                 HideForm();
                 // Menu suspenso para o comando Voltar.
-                //splitContainer2.Visible = false;
+
+
                 StatusStripBomDia.Visible = false;
                 this.WindowState = FormWindowState.Normal;
                 FormBorderStyle = FormBorderStyle.None;
@@ -516,7 +521,7 @@ namespace BomDia
 
         private void DataGridView1_Leave(object sender, EventArgs e)
         {
-            this.Text = Application.ProductName  ;
+            this.Text = Application.ProductName.ToString() ;
         }
         // Manipular a operação de saída de relatório
         private void PrintDataGridView(DataGridView dataGridView)
@@ -889,22 +894,25 @@ namespace BomDia
 
         private void DataGridView1_MouseEnter(object sender, EventArgs e)
         {
+            if(Program.CharValue == (char)27) { Program.CharValue = (char)0;
+                SendKeys.Send("{ESC}"); return ; }
             AbrirPad();
         }
 
         private void BomDia_Activated(object sender, EventArgs e)
         {
             // Desativar o formulário secundário.
-            if (pad != null && !pad.IsDisposed)
+            if (pad != null && !pad.IsDisposed && pad.Visible != true )
             {
                 pad.Hide();
-                if(this.TopMost == true)
+                
+                if(Program.Bomdia.TopMost == true)
                 {
                     return;
                 }
                 else
                 {
-                    this.TopMost = true;
+                    Program.Bomdia.TopMost = true;
                 }
 
             }

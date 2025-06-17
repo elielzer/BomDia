@@ -8,6 +8,8 @@ namespace BomDia
 {
      class Program
     {
+        public static char CharValue;
+
         public static BomDia Bomdia { get; set; }
 
         /// <summary>
@@ -21,6 +23,7 @@ namespace BomDia
             Application.SetCompatibleTextRenderingDefault(false);
             Bomdia = new BomDia();
             Application.Run(Bomdia);
+            
             
         }
     }
