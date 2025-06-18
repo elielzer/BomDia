@@ -902,20 +902,27 @@ namespace BomDia
         private void BomDia_Activated(object sender, EventArgs e)
         {
             // Desativar o formulário secundário.
-            if (pad != null && !pad.IsDisposed && pad.Visible != true )
+            if (pad != null && !pad.IsDisposed && pad.Visible != true)
             {
                 pad.Hide();
-                
-                if(Program.Bomdia.TopMost == true)
-                {
-                    return;
-                }
-                else
-                {
-                    Program.Bomdia.TopMost = true;
-                }
-
+            }   
+            if(Program.Bomdia.TopMost == true)
+            {
+                Program.Bomdia.MSGtoolStripStatusLabel.Text = "Bom Dia.";
+                return;
             }
+            else
+            {
+                Program.Bomdia.TopMost = true;
+                Program.Bomdia.MSGtoolStripStatusLabel.Text = "Bom Dia.";
+            }
+
+            
+        }
+
+        private void DataGridView1_MouseLeave(object sender, EventArgs e)
+        {
+            Program.CharValue = (char)0;
         }
     }
 
