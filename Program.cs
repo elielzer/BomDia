@@ -11,7 +11,7 @@ namespace BomDia
         public static char CharValue;
 
         public static BomDia Bomdia { get; set; }
-
+        public static Pad pad { get; set; }
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
@@ -22,9 +22,12 @@ namespace BomDia
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Bomdia = new BomDia();
+            
+            pad = new Pad();
             Application.Run(Bomdia);
             
-            
+
+
         }
     }
 }

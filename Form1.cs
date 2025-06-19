@@ -24,7 +24,7 @@ namespace BomDia
         int Yloc = 0;
         int LarguraReduzida = 0;
 
-        Pad pad;
+        //Pad pad;
 
         //
         int AlturaReduzida = 0;
@@ -36,6 +36,7 @@ namespace BomDia
         public BomDia()
         {
             InitializeComponent();
+            
             
         }
 
@@ -90,8 +91,9 @@ namespace BomDia
             SemanaToolStripButton.Text = string.Concat(".", SemanaComMaiuscula);
 
             this.BackColor = Color.Black;
+        
 
-            
+
         }
 
         private void CortinaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -142,6 +144,7 @@ namespace BomDia
                 }
 
                 HideForm();
+                Program.Bomdia.TopMost = true;
                 // Menu suspenso para o comando Voltar.
 
 
@@ -352,9 +355,6 @@ namespace BomDia
             MSGtoolStripStatusLabel.Text = "Bom dia. Arquivo de dados: " + TarefasDataSet.Namespace;
             NRow = DataGridView1.RowCount-1;
             this.Text = Application.ProductName + " " + NRow.ToString() + "Tasks";
-
-           
-
         }
 
         private void hojeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -831,14 +831,14 @@ namespace BomDia
         }
         private void HideForm()
         {
-            if (pad == null)
+            if (Program.pad == null)
             {
                 return;
             }
             else
             {
-                Program.Bomdia.TopMost = true;
-                pad.Hide();
+
+                Program.pad.Hide();
                 
             }
         }
@@ -874,46 +874,62 @@ namespace BomDia
                 Program.Bomdia.TopMost = false;
             }
 
-            if (pad == null)
+            if (Program.pad == null)
             {
-                Program.Bomdia.TopMost = false; pad = new Pad(); pad.Activate();
-                pad.TopLevel = true;
-                pad.Portal +=
+                Program.Bomdia.TopMost = false; Program.pad = new Pad();
+                Program.pad.TopLevel = true;
+                Program.pad.Portal +=
                     (s, Stexto) => ListaDeDatas.Text = Stexto; // Assina o evento
                 return;
             }
 
-            if (pad.Visible == true)
-            {
-                pad.Activate();
-            }
-            else { pad.Show(); pad.Activate(); }
-            MSGtoolStripStatusLabel.Text = "Pad ativo.";
 
         }
 
         private void DataGridView1_MouseEnter(object sender, EventArgs e)
         {
-            if(Program.CharValue == (char)27) { Program.CharValue = (char)0;
-                SendKeys.Send("{ESC}"); return ; }
-            AbrirPad();
+            if(Program.CharValue == (char)27) 
+            {
+                Program.CharValue = (char)0;
+                SendKeys.Send("{ESC}"); return ; 
+            }
+            if (Program.pad == null ) 
+            {
+                AbrirPad(); 
+                
+            }
+            if (Program.pad.Visible == true)
+            {
+                Program.Bomdia.TopMost = false;
+                Program.pad.TopMost = true;
+                Program.pad.TopLevel = true;
+                Program.pad.Portal +=
+                (s, Stexto) => ListaDeDatas.Text = Stexto; // Assina o evento
+                
+                Program.Bomdia.Activate();
+                return;
+            }
+            else { Program.pad.Show(); Program.pad.TopMost = true; }
+            MSGtoolStripStatusLabel.Text = "Pad ativo.";
+
         }
 
         private void BomDia_Activated(object sender, EventArgs e)
         {
             // Desativar o formulário secundário.
-            if (pad != null && !pad.IsDisposed && pad.Visible != true)
+            if (Program.pad != null && !Program.pad.IsDisposed && Program.pad.Visible != true)
             {
-                pad.Hide();
+                Program.pad.TopMost = true;
             }   
             if(Program.Bomdia.TopMost == true)
             {
+                //Program.Bomdia.TopMost = false;
                 Program.Bomdia.MSGtoolStripStatusLabel.Text = "Bom Dia.";
                 return;
             }
             else
             {
-                Program.Bomdia.TopMost = true;
+                //Program.Bomdia.TopMost = false;
                 Program.Bomdia.MSGtoolStripStatusLabel.Text = "Bom Dia.";
             }
 
