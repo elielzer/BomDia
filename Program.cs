@@ -24,6 +24,7 @@ namespace BomDia
             Bomdia = new BomDia();
             
             pad = new Pad();
+
             Application.Run(Bomdia);
             
 

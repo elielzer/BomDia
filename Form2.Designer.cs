@@ -115,6 +115,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pad";
             this.TransparencyKey = System.Drawing.SystemColors.Control;
+            this.Load += new System.EventHandler(this.Pad_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Pad_KeyPress);
             this.MouseLeave += new System.EventHandler(this.Pad_MouseLeave);
             this.PadContextMenuStrip.ResumeLayout(false);

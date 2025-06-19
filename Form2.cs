@@ -79,8 +79,8 @@ namespace BomDia
             }
             else
             {
-                Program.Bomdia = new BomDia();
-                Program.Bomdia.Show();
+                //Program.Bomdia = new BomDia();
+                //Program.Bomdia.Show();
                 
             }
         }
@@ -99,10 +99,14 @@ namespace BomDia
 
                 AtivarBomdia();
 
-
-
             }
             ;
+        }
+
+        private void Pad_Load(object sender, EventArgs e)
+        {
+            Program.pad.Portal +=
+        (s, Stexto) => Program.Bomdia.ListaDeDatas.Text = Stexto; // Assina o evento
         }
     }
     

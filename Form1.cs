@@ -903,8 +903,7 @@ namespace BomDia
                 Program.Bomdia.TopMost = false;
                 Program.pad.TopMost = true;
                 Program.pad.TopLevel = true;
-                Program.pad.Portal +=
-                (s, Stexto) => ListaDeDatas.Text = Stexto; // Assina o evento
+
                 
                 Program.Bomdia.Activate();
                 return;
