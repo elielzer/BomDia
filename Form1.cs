@@ -36,8 +36,8 @@ namespace BomDia
         public BomDia()
         {
             InitializeComponent();
-            
-            
+            Symbol.Text = '\u25E3'.ToString();
+
         }
 
         public void BomDia_Load(object sender, EventArgs e)
@@ -268,7 +268,8 @@ namespace BomDia
             if (DataPara > DataHoje)
             {
                 //MSGtoolStripStatusLabel.Text = "Data futura";
-                DiaBomDiaLabel.Text = "Futuro".ToUpper();
+                DiaBomDiaLabel.Text =   "Futuro".ToUpper();
+                
             }
             if (DataPara < DataHoje)
             {
