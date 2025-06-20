@@ -24,7 +24,7 @@ namespace BomDia
         int Yloc = 0;
         int LarguraReduzida = 0;
 
-        //Pad pad;
+        Pad pad;
 
         //
         int AlturaReduzida = 0;
@@ -142,11 +142,15 @@ namespace BomDia
                         return;
 
                 }
-
-                HideForm();
+                //this.Close() ;
+                //Pad.ActiveForm.Close();
+                //
+                //HideForm();
+                //Program.pad.Show();
+                if(pad !=null)
+                { pad.Dispose(); }
                 Program.Bomdia.TopMost = true;
                 // Menu suspenso para o comando Voltar.
-
 
                 StatusStripBomDia.Visible = false;
                 this.WindowState = FormWindowState.Normal;
@@ -831,14 +835,15 @@ namespace BomDia
         }
         private void HideForm()
         {
-            if (Program.pad == null)
+            if (pad == null)
             {
                 return;
             }
             else
             {
 
-                Program.pad.Hide();
+                pad.Activate();
+                Dispose();
                 
             }
         }
@@ -874,11 +879,11 @@ namespace BomDia
                 Program.Bomdia.TopMost = false;
             }
 
-            if (Program.pad == null)
+            if (pad == null)
             {
-                Program.Bomdia.TopMost = false; Program.pad = new Pad();
-                Program.pad.TopLevel = true;
-                Program.pad.Portal +=
+                Program.Bomdia.TopMost = false; pad = new Pad();
+                pad.TopLevel = true;
+                pad.Portal +=
                     (s, Stexto) => ListaDeDatas.Text = Stexto; // Assina o evento
                 return;
             }
@@ -893,22 +898,40 @@ namespace BomDia
                 Program.CharValue = (char)0;
                 SendKeys.Send("{ESC}"); return ; 
             }
-            if (Program.pad == null ) 
+            
+            if (pad == null) 
             {
-                AbrirPad(); 
-                
-            }
-            if (Program.pad.Visible == true)
-            {
-                Program.Bomdia.TopMost = false;
-                Program.pad.TopMost = true;
-                Program.pad.TopLevel = true;
 
-                
-                Program.Bomdia.Activate();
-                return;
+                pad = new Pad(); ;
+                pad.Show();
             }
-            else { Program.pad.Show(); Program.pad.TopMost = true; }
+            else if (pad.IsDisposed)
+            {
+                pad = new Pad();
+                pad.Show();
+            }
+            //{
+
+           //Program.pad.Show();
+            Program.Bomdia.TopMost = false;
+            
+            pad.TopMost = true;
+            pad.TopLevel = true;
+            Program.Bomdia.Activate();
+
+            //}
+            //if (Program.pad.Visible == true)
+            //{
+             //   Program.pad.Show();
+            //    Program.Bomdia.TopMost = false;
+             //   Program.pad.TopMost = true;
+             //   Program.pad.TopLevel = true;
+
+
+            //    Program.Bomdia.Activate();
+             //   return;
+            //}
+            //else {Program.Bomdia.Activate(); Program.pad.TopMost = true; }
             MSGtoolStripStatusLabel.Text = "Pad ativo.";
 
         }
@@ -916,21 +939,23 @@ namespace BomDia
         private void BomDia_Activated(object sender, EventArgs e)
         {
             // Desativar o formulário secundário.
-            if (Program.pad != null && !Program.pad.IsDisposed && Program.pad.Visible != true)
-            {
-                Program.pad.TopMost = true;
-            }   
-            if(Program.Bomdia.TopMost == true)
-            {
-                //Program.Bomdia.TopMost = false;
-                Program.Bomdia.MSGtoolStripStatusLabel.Text = "Bom Dia.";
-                return;
-            }
-            else
-            {
-                //Program.Bomdia.TopMost = false;
-                Program.Bomdia.MSGtoolStripStatusLabel.Text = "Bom Dia.";
-            }
+            //if (pad != null && !pad.IsDisposed && pad.Visible != true)
+            //{
+            //    pad.Close();
+            //    Program.pad.TopMost = true;
+            //}   
+            //if(Program.Bomdia.TopMost == true)
+            //{
+            //Program.Bomdia.TopMost = false;
+            //    Program.Bomdia.MSGtoolStripStatusLabel.Text = "Bom Dia.";
+            //    return;
+            //}
+            //else
+            // {
+            //Program.Bomdia.TopMost = false;
+
+            Program.Bomdia.MSGtoolStripStatusLabel.Text = "Bom Dia.";
+            //}
 
             
         }
@@ -938,6 +963,8 @@ namespace BomDia
         private void DataGridView1_MouseLeave(object sender, EventArgs e)
         {
             Program.CharValue = (char)0;
+            //pad.Activate();
+            //pad.Close();
         }
     }
 

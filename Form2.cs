@@ -18,13 +18,14 @@ namespace BomDia
         public Pad()
         {
             InitializeComponent();
-            //this.TopMost = true; // Mantém o formulário sempre no topo
+            this.TopMost = true; // Mantém o formulário sempre no topo
         }
 
         private void Pad_MouseLeave(object sender, EventArgs e)
         {
             if(FormBorderStyle != FormBorderStyle.None)
             { FormBorderStyle = FormBorderStyle.None; }
+            //this.Close();   
         }
 
         private void handleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -95,7 +96,8 @@ namespace BomDia
             if (e.KeyChar == (char)27)
             {
                 Program.CharValue = (char)27;
-                this.Hide();
+                //Act   ivate();
+                this.Dispose();
 
                 AtivarBomdia();
 
@@ -105,7 +107,7 @@ namespace BomDia
 
         private void Pad_Load(object sender, EventArgs e)
         {
-            Program.pad.Portal +=
+            Portal +=
         (s, Stexto) => Program.Bomdia.ListaDeDatas.Text = Stexto; // Assina o evento
         }
     }
