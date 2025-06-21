@@ -32,11 +32,13 @@ namespace BomDia
         DateTime DataSemana ;
         string BancoDados =
             "C:/Users/elielzer/Documents/Bom-Dia/XmlDoc.xml";
-
+        public const char Triang = '\u25E3';
         public BomDia()
         {
             InitializeComponent();
-            Symbol.Text = '\u25E3'.ToString();
+
+            Symbol.Text = Triang.ToString();//'\u25E3'.ToString();
+            label4.Text = Triang.ToString();
 
         }
 
@@ -98,7 +100,7 @@ namespace BomDia
 
         private void CortinaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Apresentar o main em formato janela
+            //Apresentar a janela principal padrão
             //
             splitContainer1.Panel2Collapsed = false;
 
@@ -112,7 +114,8 @@ namespace BomDia
             ControlBox = true;
             //Refresh();
             cortinaToolStripMenuItem.Enabled = false;
-            //atualiza data hoje
+
+            //atualiza data padrão (data do dia)
             if (ListaDeDatas.Text == DateTime.Today.ToShortDateString())
             {
             }
@@ -142,14 +145,11 @@ namespace BomDia
                         return;
 
                 }
-                //this.Close() ;
-                //Pad.ActiveForm.Close();
-                //
-                //HideForm();
-                //Program.pad.Show();
+
                 if(pad !=null)
                 { pad.Dispose(); }
                 Program.Bomdia.TopMost = true;
+
                 // Menu suspenso para o comando Voltar.
 
                 StatusStripBomDia.Visible = false;
@@ -230,15 +230,15 @@ namespace BomDia
 
         private void AbrirToolStripButtonGerenciar_Click(object sender, EventArgs e)
         {
-            //GroupBox1.Enabled = true;
+
             tableLayoutPanel6.Enabled = true;
             BindingNavigatorNovo.Enabled = true;
             BindingExclui.Enabled = true;
-            //BindingNavigatorSalva.Enabled = true;
+
             //altera a imagem da picture
             this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTON;
             PictureBox1.Visible = true; //figura indica modo gerenciamento
-            //bindingNavigator1.Visible = false;
+
             
         }
 
@@ -267,13 +267,13 @@ namespace BomDia
             //
             if (DataPara > DataHoje)
             {
-                //MSGtoolStripStatusLabel.Text = "Data futura";
+
                 DiaBomDiaLabel.Text =   "Futuro".ToUpper();
                 
             }
             if (DataPara < DataHoje)
             {
-                //MSGtoolStripStatusLabel.Text = "Data passada"; 
+ 
                 DiaBomDiaLabel.Text =  "Passado".ToUpper();
             }
             if (DataPara == DataHoje)
@@ -285,12 +285,12 @@ namespace BomDia
 
             VariaveisGlobais.ListaDeDatasText = ListaDeDatas.Text;
         }
-        //listbox
+
         private void Timer1_Tick(object sender, EventArgs e)
         {
 
             dateTimePicker1.ResetText();
-            //SemanaToolStripButton.Text = DateTime.Today.ToString("ddd");
+
             string SemanaComMaiuscula;
             SemanaComMaiuscula = DateTime.Today.ToString("ddd");
             SemanaComMaiuscula = SemanaComMaiuscula[0].ToString().ToUpper() +
@@ -298,7 +298,7 @@ namespace BomDia
             SemanaToolStripButton.Text =  string.Concat( ".", SemanaComMaiuscula) ;
         }
 
-        // Pré inserir um registro existente para nova data
+        // Tornar os dados de um registro anterior como o registro para nova data
         private void MigrarToolStripButton_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < NRow; i++)
@@ -336,7 +336,7 @@ namespace BomDia
 
         public void VoltarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Menu suspenso para o comando Voltar para formato reduzido.
+            // Comando para redesenhar a janela para forma reduzida.
 
             StatusStripBomDia.Visible = false;
             this.WindowState = FormWindowState.Normal;
@@ -351,7 +351,7 @@ namespace BomDia
             Location = new Point(1100, 0);
             cortinaToolStripMenuItem.Enabled = true;
 
-            // Ocultar menu-form
+            // Ocultar 
             HideForm();
 
         }
@@ -368,7 +368,7 @@ namespace BomDia
         }
 
         //-----------------------------------------------------------------------------
-        // Escreve as mudanças dinâmicas de data de execução de tarefas para a interface
+        // Escreve as mudanças dinâmicas de data de execução de tarefas para o interface
         //-----------------------------------------------------------------------------
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
         {
@@ -594,7 +594,7 @@ namespace BomDia
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            //DataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
         }
 
         private void BomDia_FormClosing(object sender, FormClosingEventArgs e)
@@ -644,8 +644,9 @@ namespace BomDia
             BindingExclui.Enabled = true;
             //BindingNavigatorSalva.Enabled = true;
             ButtonAnexa.Enabled = true;
+
             //altera a imagem da picture
-            //this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTON;
+
             PictureBox1.Visible = true; //figura indica modo gerenciamento
             ButtonAtivarJanela.Visible = false;
             ListaDeDatas.Focus();
@@ -740,8 +741,9 @@ namespace BomDia
             // Create pen.
             Pen bluePen = new Pen(Color.Black, 2);
             bluePen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+
             // Create points that define line - linha superior do cabeçalho.
-            PointF point1 = new PointF(flowLayoutPanel1.Left, label1.Bottom+2);
+            PointF point1 = new PointF(label4.Left, label1.Bottom+2);
             PointF point2 =
             new PointF(point1.X + flowLayoutPanel1.Width, point1.Y);
 
@@ -844,7 +846,7 @@ namespace BomDia
             {
 
                 pad.Activate();
-                Dispose();
+                pad.Dispose();
                 
             }
         }
@@ -911,28 +913,13 @@ namespace BomDia
                 pad = new Pad();
                 pad.Show();
             }
-            //{
 
-           //Program.pad.Show();
             Program.Bomdia.TopMost = false;
             
             pad.TopMost = true;
             pad.TopLevel = true;
             Program.Bomdia.Activate();
 
-            //}
-            //if (Program.pad.Visible == true)
-            //{
-             //   Program.pad.Show();
-            //    Program.Bomdia.TopMost = false;
-             //   Program.pad.TopMost = true;
-             //   Program.pad.TopLevel = true;
-
-
-            //    Program.Bomdia.Activate();
-             //   return;
-            //}
-            //else {Program.Bomdia.Activate(); Program.pad.TopMost = true; }
             MSGtoolStripStatusLabel.Text = "Pad ativo.";
 
         }
@@ -940,32 +927,16 @@ namespace BomDia
         private void BomDia_Activated(object sender, EventArgs e)
         {
             // Desativar o formulário secundário.
-            //if (pad != null && !pad.IsDisposed && pad.Visible != true)
-            //{
-            //    pad.Close();
-            //    Program.pad.TopMost = true;
-            //}   
-            //if(Program.Bomdia.TopMost == true)
-            //{
-            //Program.Bomdia.TopMost = false;
-            //    Program.Bomdia.MSGtoolStripStatusLabel.Text = "Bom Dia.";
-            //    return;
-            //}
-            //else
-            // {
-            //Program.Bomdia.TopMost = false;
+
 
             Program.Bomdia.MSGtoolStripStatusLabel.Text = "Bom Dia.";
-            //}
-
-            
+           
         }
 
         private void DataGridView1_MouseLeave(object sender, EventArgs e)
         {
+            // Variável global
             Program.CharValue = (char)0;
-            //pad.Activate();
-            //pad.Close();
         }
     }
 
