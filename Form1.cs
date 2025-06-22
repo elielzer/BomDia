@@ -218,7 +218,7 @@ namespace BomDia
             MSGtoolStripStatusLabel.Text = "Esboço...";
             //this.label1.Image = global::BomDia.Properties.Resources.NEW;
             this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.NEW;
-            label1.Text = "Escrever um item";
+            label1.Text = "Novo item...";
             label5.Text = "";
         }
 
