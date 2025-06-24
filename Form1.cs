@@ -39,6 +39,7 @@ namespace BomDia
 
             Symbol.Text = Triang.ToString();//'\u25E3'.ToString();
             label4.Text = Triang.ToString();
+            DiaBomDiaLabel.Text = "O Que Fazer ";
 
         }
 
@@ -267,20 +268,21 @@ namespace BomDia
             //
             if (DataPara > DataHoje)
             {
-
-                DiaBomDiaLabel.Text =   "Futuro".ToUpper();
+                DataGridView1.Columns[1].HeaderText = "Futuro".ToUpper() + Triang;
+                //DiaBomDiaLabel.Text =   "Futuro".ToUpper();
                 
             }
             if (DataPara < DataHoje)
             {
- 
-                DiaBomDiaLabel.Text =  "Passado".ToUpper();
+                DataGridView1.Columns[1].HeaderText = "Passado".ToUpper() + Triang;
+                //DiaBomDiaLabel.Text =  "Passado".ToUpper();
             }
             if (DataPara == DataHoje)
             {
                 MSGtoolStripStatusLabel.Text =
                     "Arquivo de dados: " + BancoDados;
-                DiaBomDiaLabel.Text = "Presente".ToUpper();
+                DataGridView1.Columns[1].HeaderText = "Presente".ToUpper() + Triang;
+                //DiaBomDiaLabel.Text = "Presente".ToUpper();
             }
 
             VariaveisGlobais.ListaDeDatasText = ListaDeDatas.Text;
