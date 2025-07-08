@@ -103,6 +103,16 @@ namespace BomDia.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CALENDAR {
+            get {
+                object obj = ResourceManager.GetObject("CALENDAR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CLIP07 {
             get {
                 object obj = ResourceManager.GetObject("CLIP07", resourceCulture);

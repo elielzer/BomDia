@@ -940,6 +940,33 @@ namespace BomDia
             // Variável global
             Program.CharValue = (char)0;
         }
+
+        private void memorizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Finaliza edição de um registro 
+            // conclui a transação para uma tabela temporária
+            TarefasBindingSource.EndEdit();
+            TarefasDataSet.AcceptChanges();
+
+            // Escreve um texto de status 
+            MSGtoolStripStatusLabel.Text = "Memorizado ok";
+        }
+
+        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void DataHoje_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void portalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Ativa o painel esquerdo de um contêiner
+            splitContainer2.Panel1Collapsed = false;
+        }
     }
 
 
