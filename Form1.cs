@@ -444,7 +444,7 @@ namespace BomDia
                         //
                         if (DataSemana == DateTime.Today)
                         {
-                            label5.Text = "Previsto para hoje".ToUpper();
+                            label5.Text = "⛳ Previsto para hoje".ToUpper();
                             return;
                         }
                         else
@@ -453,30 +453,30 @@ namespace BomDia
                             switch (DataSemana.DayOfWeek)
                             {
                                 case DayOfWeek.Monday:
-                                    label5.Text =  "segunda-feira".ToUpper();
+                                    label5.Text = "⮡ segunda-feira".ToUpper();
                                     break;
 
                                 case DayOfWeek.Tuesday:
-                                    label5.Text ="terça-feira".ToUpper();
+                                    label5.Text = "⮡ terça-feira".ToUpper();
                                     break;
 
                                 case DayOfWeek.Wednesday:
-                                    label5.Text = "quarta-feira".ToUpper();
+                                    label5.Text = "⮡ quarta-feira".ToUpper();
                                     break;
                                 case DayOfWeek.Thursday:
-                                    label5.Text = "quinta-feira".ToUpper();
+                                    label5.Text = "⮡ quinta-feira".ToUpper();
                                     break;
                                 case DayOfWeek.Friday:
-                                    label5.Text = "sexta-feira".ToUpper();
+                                    label5.Text = "⮡ sexta-feira".ToUpper();
                                     break;
                                 case DayOfWeek.Saturday:
-                                    label5.Text = "sábado".ToUpper();
+                                    label5.Text = "⮡ sábado".ToUpper();
                                     break;
                                 case DayOfWeek.Sunday:
-                                    label5.Text = "domingo".ToUpper();
+                                    label5.Text = "⮡ domingo".ToUpper();
                                     break;
                                 default:
-                                    label5.Text = "Não definido".ToUpper();
+                                    label5.Text = "Não definida".ToUpper();
                                     break;
                             }
                         }
@@ -510,7 +510,7 @@ namespace BomDia
             DataHoje.Visible = false;
             timer2.Stop();
 
-            // definir a propriedade de menucontextstrip
+            // definir a propriedade de um menu suspenso.
             dateTimePicker1.ContextMenuStrip = ChaveadorContextMenuStrip;
         }
 
@@ -952,15 +952,7 @@ namespace BomDia
             MSGtoolStripStatusLabel.Text = "Memorizado ok";
         }
 
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void DataHoje_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void portalToolStripMenuItem_Click(object sender, EventArgs e)
         {

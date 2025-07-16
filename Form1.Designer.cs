@@ -125,8 +125,12 @@ namespace BomDia
             this.DiaBomDiaLabel = new System.Windows.Forms.Label();
             this.Symbol = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.ListaDeDatasContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.portalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.ListaDeDatas = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.PortalImageList = new System.Windows.Forms.ImageList(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.ButtonAnexa = new System.Windows.Forms.Button();
@@ -145,14 +149,10 @@ namespace BomDia
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.itemPrioridadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.denominationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.PortalImageList = new System.Windows.Forms.ImageList(this.components);
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.ButtonAtivarJanela = new System.Windows.Forms.Button();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.ListaDeDatasContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.portalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.TarefasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TarefasDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BomDiaTarefas)).BeginInit();
@@ -202,6 +202,7 @@ namespace BomDia
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.ListaDeDatasContextMenuStrip.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -217,7 +218,6 @@ namespace BomDia
             this.TabPageReferencias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tableLayoutPanel12.SuspendLayout();
-            this.ListaDeDatasContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // TarefasBindingSource
@@ -845,7 +845,7 @@ namespace BomDia
             this.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTOFF;
             this.PictureBox1.InitialImage = null;
-            this.PictureBox1.Location = new System.Drawing.Point(1107, 2);
+            this.PictureBox1.Location = new System.Drawing.Point(1104, 2);
             this.PictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.PictureBox1.Name = "PictureBox1";
             this.PictureBox1.Size = new System.Drawing.Size(72, 21);
@@ -878,7 +878,7 @@ namespace BomDia
             this.CheckBoxIntegrador.Name = "CheckBoxIntegrador";
             this.CheckBoxIntegrador.Size = new System.Drawing.Size(238, 35);
             this.CheckBoxIntegrador.TabIndex = 10;
-            this.CheckBoxIntegrador.Text = "Seguir portal";
+            this.CheckBoxIntegrador.Text = "Modo automático";
             this.CheckBoxIntegrador.UseVisualStyleBackColor = false;
             this.CheckBoxIntegrador.Click += new System.EventHandler(this.CheckBoxIntegrador_Click);
             // 
@@ -961,7 +961,7 @@ namespace BomDia
             this.StatusStripBomDia.Location = new System.Drawing.Point(2, 2);
             this.StatusStripBomDia.Name = "StatusStripBomDia";
             this.StatusStripBomDia.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.StatusStripBomDia.Size = new System.Drawing.Size(1103, 21);
+            this.StatusStripBomDia.Size = new System.Drawing.Size(1100, 21);
             this.StatusStripBomDia.SizingGrip = false;
             this.StatusStripBomDia.Stretch = false;
             this.StatusStripBomDia.TabIndex = 15;
@@ -993,7 +993,6 @@ namespace BomDia
             this.DataHoje.TabStop = false;
             this.DataHoje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.DataHoje.Visible = false;
-            this.DataHoje.TextChanged += new System.EventHandler(this.DataHoje_TextChanged);
             // 
             // splitContainer1
             // 
@@ -1328,6 +1327,24 @@ namespace BomDia
             this.splitContainer2.SplitterDistance = 88;
             this.splitContainer2.TabIndex = 14;
             // 
+            // ListaDeDatasContextMenuStrip
+            // 
+            this.ListaDeDatasContextMenuStrip.BackgroundImage = global::BomDia.Properties.Resources.CALENDAR;
+            this.ListaDeDatasContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.ListaDeDatasContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.portalToolStripMenuItem});
+            this.ListaDeDatasContextMenuStrip.Name = "ListaDeDatasContextMenuStrip";
+            this.ListaDeDatasContextMenuStrip.Size = new System.Drawing.Size(138, 36);
+            // 
+            // portalToolStripMenuItem
+            // 
+            this.portalToolStripMenuItem.Image = global::BomDia.Properties.Resources.CALENDAR;
+            this.portalToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.portalToolStripMenuItem.Name = "portalToolStripMenuItem";
+            this.portalToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
+            this.portalToolStripMenuItem.Text = "Portal";
+            this.portalToolStripMenuItem.Click += new System.EventHandler(this.portalToolStripMenuItem_Click);
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
@@ -1340,7 +1357,7 @@ namespace BomDia
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.89362F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.10638F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(88, 428);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(88, 100);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // ListaDeDatas
@@ -3536,13 +3553,32 @@ namespace BomDia
             "26/10/2027",
             "27/10/2027",
             "28/10/2027"});
-            this.ListaDeDatas.Location = new System.Drawing.Point(3, 66);
+            this.ListaDeDatas.Location = new System.Drawing.Point(3, 17);
             this.ListaDeDatas.Name = "ListaDeDatas";
             this.ListaDeDatas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ListaDeDatas.Size = new System.Drawing.Size(82, 359);
+            this.ListaDeDatas.Size = new System.Drawing.Size(82, 80);
             this.ListaDeDatas.TabIndex = 0;
             this.ListaDeDatas.SelectedValueChanged += new System.EventHandler(this.ListaDeDatas_SelectedValueChanged);
             this.ListaDeDatas.Enter += new System.EventHandler(this.ListaDeDatas_Enter);
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.ImageIndex = 0;
+            this.label2.ImageList = this.PortalImageList;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 14);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Portal";
+            // 
+            // PortalImageList
+            // 
+            this.PortalImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("PortalImageList.ImageStream")));
+            this.PortalImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.PortalImageList.Images.SetKeyName(0, "CALENDAR.png");
             // 
             // tableLayoutPanel1
             // 
@@ -3749,7 +3785,7 @@ namespace BomDia
             this.TabPageDatas.Location = new System.Drawing.Point(4, 4);
             this.TabPageDatas.Name = "TabPageDatas";
             this.TabPageDatas.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPageDatas.Size = new System.Drawing.Size(916, 463);
+            this.TabPageDatas.Size = new System.Drawing.Size(1298, 460);
             this.TabPageDatas.TabIndex = 1;
             this.TabPageDatas.Text = "| CALENDÁRIO |";
             this.TabPageDatas.UseVisualStyleBackColor = true;
@@ -3760,7 +3796,7 @@ namespace BomDia
             this.TabPageReferencias.Location = new System.Drawing.Point(4, 4);
             this.TabPageReferencias.Name = "TabPageReferencias";
             this.TabPageReferencias.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPageReferencias.Size = new System.Drawing.Size(916, 463);
+            this.TabPageReferencias.Size = new System.Drawing.Size(1298, 460);
             this.TabPageReferencias.TabIndex = 2;
             this.TabPageReferencias.Text = "| REFERÊNCIAS |";
             this.TabPageReferencias.UseVisualStyleBackColor = true;
@@ -3813,32 +3849,13 @@ namespace BomDia
             this.denominationDataGridViewTextBoxColumn.Name = "denominationDataGridViewTextBoxColumn";
             this.denominationDataGridViewTextBoxColumn.Width = 150;
             // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.ImageIndex = 0;
-            this.label2.ImageList = this.PortalImageList;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 63);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Portal";
-            // 
-            // PortalImageList
-            // 
-            this.PortalImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("PortalImageList.ImageStream")));
-            this.PortalImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.PortalImageList.Images.SetKeyName(0, "CALENDAR.png");
-            // 
             // tableLayoutPanel12
             // 
             this.tableLayoutPanel12.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.tableLayoutPanel12.ColumnCount = 3;
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 93.86107F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.138934F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
             this.tableLayoutPanel12.Controls.Add(this.PictureBox1, 1, 0);
             this.tableLayoutPanel12.Controls.Add(this.ButtonAtivarJanela, 2, 0);
             this.tableLayoutPanel12.Controls.Add(this.StatusStripBomDia, 0, 0);
@@ -3858,10 +3875,10 @@ namespace BomDia
             this.ButtonAtivarJanela.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonAtivarJanela.FlatAppearance.BorderSize = 2;
             this.ButtonAtivarJanela.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonAtivarJanela.Location = new System.Drawing.Point(1181, 2);
+            this.ButtonAtivarJanela.Location = new System.Drawing.Point(1178, 2);
             this.ButtonAtivarJanela.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonAtivarJanela.Name = "ButtonAtivarJanela";
-            this.ButtonAtivarJanela.Size = new System.Drawing.Size(135, 21);
+            this.ButtonAtivarJanela.Size = new System.Drawing.Size(138, 21);
             this.ButtonAtivarJanela.TabIndex = 17;
             this.ButtonAtivarJanela.Text = "Ativar";
             this.ButtonAtivarJanela.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -3880,24 +3897,6 @@ namespace BomDia
             // 
             this.timer2.Interval = 5000;
             this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
-            // 
-            // ListaDeDatasContextMenuStrip
-            // 
-            this.ListaDeDatasContextMenuStrip.BackgroundImage = global::BomDia.Properties.Resources.CALENDAR;
-            this.ListaDeDatasContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.ListaDeDatasContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.portalToolStripMenuItem});
-            this.ListaDeDatasContextMenuStrip.Name = "ListaDeDatasContextMenuStrip";
-            this.ListaDeDatasContextMenuStrip.Size = new System.Drawing.Size(138, 36);
-            // 
-            // portalToolStripMenuItem
-            // 
-            this.portalToolStripMenuItem.Image = global::BomDia.Properties.Resources.CALENDAR;
-            this.portalToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.portalToolStripMenuItem.Name = "portalToolStripMenuItem";
-            this.portalToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
-            this.portalToolStripMenuItem.Text = "Portal";
-            this.portalToolStripMenuItem.Click += new System.EventHandler(this.portalToolStripMenuItem_Click);
             // 
             // BomDia
             // 
@@ -3978,6 +3977,7 @@ namespace BomDia
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.ListaDeDatasContextMenuStrip.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -3994,7 +3994,6 @@ namespace BomDia
             this.TabPageReferencias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tableLayoutPanel12.ResumeLayout(false);
-            this.ListaDeDatasContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
