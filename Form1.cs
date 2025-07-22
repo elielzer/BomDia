@@ -757,23 +757,23 @@ namespace BomDia
         {
             ShowLineJoin(e);
         }
-        private void ShowLineJoin_tableLayoutPanel5(PaintEventArgs e)
+        private void ShowLineJoin_tableLayoutPanel7(PaintEventArgs e)
         {
             // Create pen.
             Pen bluePen = new Pen(Color.Black, 3);
             bluePen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             // Create points that define line.
-            PointF point1 = new PointF(tableLayoutPanel5.Left, tableLayoutPanel5.Bottom - 2);
+            PointF point1 = new PointF(tableLayoutPanel7.Left, tableLayoutPanel7.Bottom - 2);
             PointF point2 =
-            new PointF(point1.X + tableLayoutPanel5.Width, point1.Y);
+            new PointF(point1.X + tableLayoutPanel7.Width, point1.Y);
 
             // Draw line to screen.
             e.Graphics.DrawLine(bluePen, point1, point2);
         }
 
-        private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
+        private void tableLayoutPanel7_Paint(object sender, PaintEventArgs e)
         {
-            ShowLineJoin_tableLayoutPanel5(e);
+            ShowLineJoin_tableLayoutPanel7(e);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
