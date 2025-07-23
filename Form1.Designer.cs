@@ -125,18 +125,35 @@ namespace BomDia
             this.PortalImageList = new System.Windows.Forms.ImageList(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.ButtonAnexa = new System.Windows.Forms.Button();
-            this.DetalheQuando = new System.Windows.Forms.TextBox();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.TabPageItens = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.ButtonMoveLista = new System.Windows.Forms.Button();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.maskedTextBoxDia = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.ButtonAnexa = new System.Windows.Forms.Button();
+            this.DetalheQuando = new System.Windows.Forms.TextBox();
+            this.BindingNavegador = new System.Windows.Forms.BindingNavigator(this.components);
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.PrintButton = new System.Windows.Forms.ToolStripButton();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.TabPageItens = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.ButtonMoveLista = new System.Windows.Forms.Button();
             this.TabPageDatas = new System.Windows.Forms.TabPage();
+            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.TabPageReferencias = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.itemPrioridadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -145,23 +162,6 @@ namespace BomDia
             this.ButtonAtivarJanela = new System.Windows.Forms.Button();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.PrintButton = new System.Windows.Forms.ToolStripButton();
-            this.BindingNavegador = new System.Windows.Forms.BindingNavigator(this.components);
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.TarefasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TarefasDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BomDiaTarefas)).BeginInit();
@@ -214,6 +214,9 @@ namespace BomDia
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingNavegador)).BeginInit();
+            this.BindingNavegador.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.TabPageItens.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -221,17 +224,14 @@ namespace BomDia
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
-            this.tableLayoutPanel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+            this.bindingNavigator1.SuspendLayout();
             this.TabPageDatas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
+            this.bindingNavigator2.SuspendLayout();
             this.TabPageReferencias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tableLayoutPanel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
-            this.bindingNavigator2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BindingNavegador)).BeginInit();
-            this.BindingNavegador.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
-            this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TarefasBindingSource
@@ -733,7 +733,7 @@ namespace BomDia
             this.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTOFF;
             this.PictureBox1.InitialImage = null;
-            this.PictureBox1.Location = new System.Drawing.Point(1096, 2);
+            this.PictureBox1.Location = new System.Drawing.Point(1090, 2);
             this.PictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.PictureBox1.Name = "PictureBox1";
             this.PictureBox1.Size = new System.Drawing.Size(71, 21);
@@ -849,7 +849,7 @@ namespace BomDia
             this.StatusStripBomDia.Location = new System.Drawing.Point(2, 2);
             this.StatusStripBomDia.Name = "StatusStripBomDia";
             this.StatusStripBomDia.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.StatusStripBomDia.Size = new System.Drawing.Size(1092, 21);
+            this.StatusStripBomDia.Size = new System.Drawing.Size(1086, 21);
             this.StatusStripBomDia.SizingGrip = false;
             this.StatusStripBomDia.Stretch = false;
             this.StatusStripBomDia.TabIndex = 15;
@@ -3544,6 +3544,55 @@ namespace BomDia
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1304, 47);
             this.tableLayoutPanel3.TabIndex = 12;
             // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel11.ColumnCount = 3;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.55769F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.44231F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel11.Controls.Add(this.maskedTextBoxDia, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel11.Controls.Add(this.button2, 2, 0);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(581, 3);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 1;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(273, 41);
+            this.tableLayoutPanel11.TabIndex = 20;
+            // 
+            // maskedTextBoxDia
+            // 
+            this.maskedTextBoxDia.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBoxDia.CustomFormat = "dd/mm/yyyy";
+            this.maskedTextBoxDia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.maskedTextBoxDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBoxDia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.maskedTextBoxDia.Location = new System.Drawing.Point(3, 3);
+            this.maskedTextBoxDia.Name = "maskedTextBoxDia";
+            this.maskedTextBoxDia.Size = new System.Drawing.Size(147, 30);
+            this.maskedTextBoxDia.TabIndex = 18;
+            // 
+            // button1
+            // 
+            this.button1.Image = global::BomDia.Properties.Resources.Filter;
+            this.button1.Location = new System.Drawing.Point(156, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(49, 35);
+            this.button1.TabIndex = 19;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // button2
+            // 
+            this.button2.Image = global::BomDia.Properties.Resources.filterTokenCancel;
+            this.button2.Location = new System.Drawing.Point(211, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(48, 35);
+            this.button2.TabIndex = 19;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // ButtonAnexa
             // 
             this.ButtonAnexa.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -3570,6 +3619,57 @@ namespace BomDia
             this.DetalheQuando.Size = new System.Drawing.Size(77, 26);
             this.DetalheQuando.TabIndex = 17;
             this.DetalheQuando.Visible = false;
+            // 
+            // BindingNavegador
+            // 
+            this.BindingNavegador.AddNewItem = null;
+            this.BindingNavegador.AllowItemReorder = true;
+            this.BindingNavegador.AutoSize = false;
+            this.BindingNavegador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BindingNavegador.BindingSource = this.TarefasBindingSource;
+            this.BindingNavegador.CountItem = null;
+            this.BindingNavegador.CountItemFormat = "/ {0}";
+            this.BindingNavegador.DeleteItem = null;
+            this.BindingNavegador.Dock = System.Windows.Forms.DockStyle.None;
+            this.BindingNavegador.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.BindingNavegador.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.BindingNavegador.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.PrintButton});
+            this.BindingNavegador.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.BindingNavegador.Location = new System.Drawing.Point(345, 0);
+            this.BindingNavegador.MoveFirstItem = null;
+            this.BindingNavegador.MoveLastItem = null;
+            this.BindingNavegador.MoveNextItem = null;
+            this.BindingNavegador.MovePreviousItem = null;
+            this.BindingNavegador.Name = "BindingNavegador";
+            this.BindingNavegador.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.BindingNavegador.PositionItem = null;
+            this.BindingNavegador.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.BindingNavegador.Size = new System.Drawing.Size(123, 47);
+            this.BindingNavegador.Stretch = true;
+            this.BindingNavegador.TabIndex = 5;
+            this.BindingNavegador.Text = "bindingNavigator1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(34, 28);
+            this.toolStripButton1.Text = "Formatar";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // PrintButton
+            // 
+            this.PrintButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.PrintButton.Image = ((System.Drawing.Image)(resources.GetObject("PrintButton.Image")));
+            this.PrintButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.PrintButton.Name = "PrintButton";
+            this.PrintButton.Size = new System.Drawing.Size(34, 28);
+            this.PrintButton.Text = "PrintButton";
+            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
             // tabControl2
             // 
@@ -3634,6 +3734,100 @@ namespace BomDia
             this.splitContainer4.SplitterDistance = 265;
             this.splitContainer4.TabIndex = 10;
             // 
+            // bindingNavigator1
+            // 
+            this.bindingNavigator1.AddNewItem = null;
+            this.bindingNavigator1.AllowItemReorder = true;
+            this.bindingNavigator1.AutoSize = false;
+            this.bindingNavigator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bindingNavigator1.BindingSource = this.TarefasBindingSource;
+            this.bindingNavigator1.CountItem = this.toolStripLabel1;
+            this.bindingNavigator1.CountItemFormat = "/ {0}";
+            this.bindingNavigator1.DeleteItem = null;
+            this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
+            this.bindingNavigator1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton2,
+            this.toolStripButton3,
+            this.toolStripTextBox1,
+            this.toolStripLabel1,
+            this.toolStripButton4,
+            this.toolStripButton5});
+            this.bindingNavigator1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, -3);
+            this.bindingNavigator1.MoveFirstItem = this.toolStripButton2;
+            this.bindingNavigator1.MoveLastItem = this.toolStripButton5;
+            this.bindingNavigator1.MoveNextItem = this.toolStripButton4;
+            this.bindingNavigator1.MovePreviousItem = this.toolStripButton3;
+            this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.bindingNavigator1.PositionItem = this.toolStripTextBox1;
+            this.bindingNavigator1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.bindingNavigator1.Size = new System.Drawing.Size(336, 44);
+            this.bindingNavigator1.Stretch = true;
+            this.bindingNavigator1.TabIndex = 18;
+            this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.AutoSize = false;
+            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 0);
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(48, 31);
+            this.toolStripLabel1.Text = "/ {0}";
+            this.toolStripLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolStripLabel1.ToolTipText = "Número total de itens";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton2.Size = new System.Drawing.Size(34, 28);
+            this.toolStripButton2.Text = "Mover primeiro";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton3.Size = new System.Drawing.Size(34, 28);
+            this.toolStripButton3.Text = "Mover anterior";
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.AccessibleName = "Posição";
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.toolStripTextBox1.Size = new System.Drawing.Size(58, 34);
+            this.toolStripTextBox1.Text = "0";
+            this.toolStripTextBox1.ToolTipText = "Posição atual";
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton4.Size = new System.Drawing.Size(34, 28);
+            this.toolStripButton4.Text = "Mover próximo";
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(34, 28);
+            this.toolStripButton5.Text = "Útimo";
+            this.toolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            // 
             // ButtonMoveLista
             // 
             this.ButtonMoveLista.Dock = System.Windows.Forms.DockStyle.Right;
@@ -3652,55 +3846,6 @@ namespace BomDia
             this.ButtonMoveLista.UseVisualStyleBackColor = true;
             this.ButtonMoveLista.Click += new System.EventHandler(this.ButtonMoveLista_Click);
             // 
-            // tableLayoutPanel11
-            // 
-            this.tableLayoutPanel11.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel11.ColumnCount = 3;
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.55769F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.44231F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
-            this.tableLayoutPanel11.Controls.Add(this.maskedTextBoxDia, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel11.Controls.Add(this.button2, 2, 0);
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(581, 3);
-            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
-            this.tableLayoutPanel11.RowCount = 1;
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(273, 41);
-            this.tableLayoutPanel11.TabIndex = 20;
-            // 
-            // maskedTextBoxDia
-            // 
-            this.maskedTextBoxDia.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxDia.CustomFormat = "dd/mm/yyyy";
-            this.maskedTextBoxDia.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.maskedTextBoxDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxDia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.maskedTextBoxDia.Location = new System.Drawing.Point(3, 3);
-            this.maskedTextBoxDia.Name = "maskedTextBoxDia";
-            this.maskedTextBoxDia.Size = new System.Drawing.Size(147, 30);
-            this.maskedTextBoxDia.TabIndex = 18;
-            // 
-            // button1
-            // 
-            this.button1.Image = global::BomDia.Properties.Resources.Filter;
-            this.button1.Location = new System.Drawing.Point(156, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(49, 35);
-            this.button1.TabIndex = 19;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
-            // 
-            // button2
-            // 
-            this.button2.Image = global::BomDia.Properties.Resources.filterTokenCancel;
-            this.button2.Location = new System.Drawing.Point(211, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(48, 35);
-            this.button2.TabIndex = 19;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
             // TabPageDatas
             // 
             this.TabPageDatas.Controls.Add(this.bindingNavigator2);
@@ -3712,114 +3857,6 @@ namespace BomDia
             this.TabPageDatas.TabIndex = 1;
             this.TabPageDatas.Text = "| CALENDÁRIO |";
             this.TabPageDatas.UseVisualStyleBackColor = true;
-            // 
-            // TabPageReferencias
-            // 
-            this.TabPageReferencias.Controls.Add(this.dataGridView2);
-            this.TabPageReferencias.Location = new System.Drawing.Point(4, 4);
-            this.TabPageReferencias.Name = "TabPageReferencias";
-            this.TabPageReferencias.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPageReferencias.Size = new System.Drawing.Size(1298, 460);
-            this.TabPageReferencias.TabIndex = 2;
-            this.TabPageReferencias.Text = "| REFERÊNCIAS |";
-            this.TabPageReferencias.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.ColumnHeadersVisible = false;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.itemPrioridadeDataGridViewTextBoxColumn,
-            this.denominationDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.PrioridadesBindingSource;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 0);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(0, 4, 4, 4);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 20;
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(381, 262);
-            this.dataGridView2.TabIndex = 10;
-            // 
-            // itemPrioridadeDataGridViewTextBoxColumn
-            // 
-            this.itemPrioridadeDataGridViewTextBoxColumn.DataPropertyName = "ItemPrioridade";
-            this.itemPrioridadeDataGridViewTextBoxColumn.HeaderText = "Prioridade";
-            this.itemPrioridadeDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.itemPrioridadeDataGridViewTextBoxColumn.Name = "itemPrioridadeDataGridViewTextBoxColumn";
-            this.itemPrioridadeDataGridViewTextBoxColumn.Width = 25;
-            // 
-            // denominationDataGridViewTextBoxColumn
-            // 
-            this.denominationDataGridViewTextBoxColumn.DataPropertyName = "Denomination";
-            this.denominationDataGridViewTextBoxColumn.HeaderText = "Denomination";
-            this.denominationDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.denominationDataGridViewTextBoxColumn.Name = "denominationDataGridViewTextBoxColumn";
-            this.denominationDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // tableLayoutPanel12
-            // 
-            this.tableLayoutPanel12.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
-            this.tableLayoutPanel12.ColumnCount = 3;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 93.86107F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.138934F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 146F));
-            this.tableLayoutPanel12.Controls.Add(this.PictureBox1, 1, 0);
-            this.tableLayoutPanel12.Controls.Add(this.ButtonAtivarJanela, 2, 0);
-            this.tableLayoutPanel12.Controls.Add(this.StatusStripBomDia, 0, 0);
-            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 1;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(1318, 25);
-            this.tableLayoutPanel12.TabIndex = 18;
-            // 
-            // ButtonAtivarJanela
-            // 
-            this.ButtonAtivarJanela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.ButtonAtivarJanela.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ButtonAtivarJanela.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ButtonAtivarJanela.FlatAppearance.BorderSize = 2;
-            this.ButtonAtivarJanela.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonAtivarJanela.Location = new System.Drawing.Point(1169, 2);
-            this.ButtonAtivarJanela.Margin = new System.Windows.Forms.Padding(0);
-            this.ButtonAtivarJanela.Name = "ButtonAtivarJanela";
-            this.ButtonAtivarJanela.Size = new System.Drawing.Size(147, 21);
-            this.ButtonAtivarJanela.TabIndex = 17;
-            this.ButtonAtivarJanela.Text = "Ativar";
-            this.ButtonAtivarJanela.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ButtonAtivarJanela.UseVisualStyleBackColor = false;
-            this.ButtonAtivarJanela.Click += new System.EventHandler(this.ButtonAtivarJanela_Click);
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.AutoSize = true;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 430);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(0, 0);
-            this.flowLayoutPanel3.TabIndex = 0;
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 5000;
-            this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
             // 
             // bindingNavigator2
             // 
@@ -3915,150 +3952,113 @@ namespace BomDia
             this.toolStripButton9.Text = "Útimo";
             this.toolStripButton9.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             // 
-            // toolStripButton1
+            // TabPageReferencias
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(34, 28);
-            this.toolStripButton1.Text = "Formatar";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.TabPageReferencias.Controls.Add(this.dataGridView2);
+            this.TabPageReferencias.Location = new System.Drawing.Point(4, 4);
+            this.TabPageReferencias.Name = "TabPageReferencias";
+            this.TabPageReferencias.Padding = new System.Windows.Forms.Padding(3);
+            this.TabPageReferencias.Size = new System.Drawing.Size(1298, 460);
+            this.TabPageReferencias.TabIndex = 2;
+            this.TabPageReferencias.Text = "| REFERÊNCIAS |";
+            this.TabPageReferencias.UseVisualStyleBackColor = true;
             // 
-            // PrintButton
+            // dataGridView2
             // 
-            this.PrintButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.PrintButton.Image = ((System.Drawing.Image)(resources.GetObject("PrintButton.Image")));
-            this.PrintButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.PrintButton.Name = "PrintButton";
-            this.PrintButton.Size = new System.Drawing.Size(34, 28);
-            this.PrintButton.Text = "PrintButton";
-            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.ColumnHeadersVisible = false;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.itemPrioridadeDataGridViewTextBoxColumn,
+            this.denominationDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.PrioridadesBindingSource;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 0);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(0, 4, 4, 4);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowHeadersWidth = 20;
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(381, 262);
+            this.dataGridView2.TabIndex = 10;
             // 
-            // BindingNavegador
+            // itemPrioridadeDataGridViewTextBoxColumn
             // 
-            this.BindingNavegador.AddNewItem = null;
-            this.BindingNavegador.AllowItemReorder = true;
-            this.BindingNavegador.AutoSize = false;
-            this.BindingNavegador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BindingNavegador.BindingSource = this.TarefasBindingSource;
-            this.BindingNavegador.CountItem = null;
-            this.BindingNavegador.CountItemFormat = "/ {0}";
-            this.BindingNavegador.DeleteItem = null;
-            this.BindingNavegador.Dock = System.Windows.Forms.DockStyle.None;
-            this.BindingNavegador.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.BindingNavegador.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.BindingNavegador.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.PrintButton});
-            this.BindingNavegador.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.BindingNavegador.Location = new System.Drawing.Point(345, 0);
-            this.BindingNavegador.MoveFirstItem = null;
-            this.BindingNavegador.MoveLastItem = null;
-            this.BindingNavegador.MoveNextItem = null;
-            this.BindingNavegador.MovePreviousItem = null;
-            this.BindingNavegador.Name = "BindingNavegador";
-            this.BindingNavegador.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.BindingNavegador.PositionItem = null;
-            this.BindingNavegador.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.BindingNavegador.Size = new System.Drawing.Size(123, 47);
-            this.BindingNavegador.Stretch = true;
-            this.BindingNavegador.TabIndex = 5;
-            this.BindingNavegador.Text = "bindingNavigator1";
+            this.itemPrioridadeDataGridViewTextBoxColumn.DataPropertyName = "ItemPrioridade";
+            this.itemPrioridadeDataGridViewTextBoxColumn.HeaderText = "Prioridade";
+            this.itemPrioridadeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.itemPrioridadeDataGridViewTextBoxColumn.Name = "itemPrioridadeDataGridViewTextBoxColumn";
+            this.itemPrioridadeDataGridViewTextBoxColumn.Width = 25;
             // 
-            // toolStripButton2
+            // denominationDataGridViewTextBoxColumn
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton2.Size = new System.Drawing.Size(34, 28);
-            this.toolStripButton2.Text = "Mover primeiro";
+            this.denominationDataGridViewTextBoxColumn.DataPropertyName = "Denomination";
+            this.denominationDataGridViewTextBoxColumn.HeaderText = "Denomination";
+            this.denominationDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.denominationDataGridViewTextBoxColumn.Name = "denominationDataGridViewTextBoxColumn";
+            this.denominationDataGridViewTextBoxColumn.Width = 150;
             // 
-            // toolStripButton3
+            // tableLayoutPanel12
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton3.Size = new System.Drawing.Size(34, 28);
-            this.toolStripButton3.Text = "Mover anterior";
+            this.tableLayoutPanel12.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.tableLayoutPanel12.ColumnCount = 3;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 93.86107F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.138934F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152F));
+            this.tableLayoutPanel12.Controls.Add(this.PictureBox1, 1, 0);
+            this.tableLayoutPanel12.Controls.Add(this.ButtonAtivarJanela, 2, 0);
+            this.tableLayoutPanel12.Controls.Add(this.StatusStripBomDia, 0, 0);
+            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 1;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(1318, 25);
+            this.tableLayoutPanel12.TabIndex = 18;
             // 
-            // toolStripTextBox1
+            // ButtonAtivarJanela
             // 
-            this.toolStripTextBox1.AccessibleName = "Posição";
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStripTextBox1.Size = new System.Drawing.Size(58, 34);
-            this.toolStripTextBox1.Text = "0";
-            this.toolStripTextBox1.ToolTipText = "Posição atual";
+            this.ButtonAtivarJanela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.ButtonAtivarJanela.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ButtonAtivarJanela.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonAtivarJanela.FlatAppearance.BorderSize = 2;
+            this.ButtonAtivarJanela.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButtonAtivarJanela.Location = new System.Drawing.Point(1163, 2);
+            this.ButtonAtivarJanela.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonAtivarJanela.Name = "ButtonAtivarJanela";
+            this.ButtonAtivarJanela.Size = new System.Drawing.Size(153, 21);
+            this.ButtonAtivarJanela.TabIndex = 17;
+            this.ButtonAtivarJanela.Text = "Ativar";
+            this.ButtonAtivarJanela.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ButtonAtivarJanela.UseVisualStyleBackColor = false;
+            this.ButtonAtivarJanela.Click += new System.EventHandler(this.ButtonAtivarJanela_Click);
             // 
-            // toolStripLabel1
+            // flowLayoutPanel3
             // 
-            this.toolStripLabel1.AutoSize = false;
-            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 0);
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(48, 31);
-            this.toolStripLabel1.Text = "/ {0}";
-            this.toolStripLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.toolStripLabel1.ToolTipText = "Número total de itens";
+            this.flowLayoutPanel3.AutoSize = true;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 430);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(0, 0);
+            this.flowLayoutPanel3.TabIndex = 0;
             // 
-            // toolStripButton4
+            // timer2
             // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton4.Size = new System.Drawing.Size(34, 28);
-            this.toolStripButton4.Text = "Mover próximo";
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(34, 28);
-            this.toolStripButton5.Text = "Útimo";
-            this.toolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            // 
-            // bindingNavigator1
-            // 
-            this.bindingNavigator1.AddNewItem = null;
-            this.bindingNavigator1.AllowItemReorder = true;
-            this.bindingNavigator1.AutoSize = false;
-            this.bindingNavigator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bindingNavigator1.BindingSource = this.TarefasBindingSource;
-            this.bindingNavigator1.CountItem = this.toolStripLabel1;
-            this.bindingNavigator1.CountItemFormat = "/ {0}";
-            this.bindingNavigator1.DeleteItem = null;
-            this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
-            this.bindingNavigator1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripTextBox1,
-            this.toolStripLabel1,
-            this.toolStripButton4,
-            this.toolStripButton5});
-            this.bindingNavigator1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, -3);
-            this.bindingNavigator1.MoveFirstItem = this.toolStripButton2;
-            this.bindingNavigator1.MoveLastItem = this.toolStripButton5;
-            this.bindingNavigator1.MoveNextItem = this.toolStripButton4;
-            this.bindingNavigator1.MovePreviousItem = this.toolStripButton3;
-            this.bindingNavigator1.Name = "bindingNavigator1";
-            this.bindingNavigator1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.bindingNavigator1.PositionItem = this.toolStripTextBox1;
-            this.bindingNavigator1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.bindingNavigator1.Size = new System.Drawing.Size(336, 44);
-            this.bindingNavigator1.Stretch = true;
-            this.bindingNavigator1.TabIndex = 18;
-            this.bindingNavigator1.Text = "bindingNavigator1";
+            this.timer2.Interval = 5000;
+            this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
             // 
             // BomDia
             // 
@@ -4143,6 +4143,10 @@ namespace BomDia
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BindingNavegador)).EndInit();
+            this.BindingNavegador.ResumeLayout(false);
+            this.BindingNavegador.PerformLayout();
             this.tabControl2.ResumeLayout(false);
             this.TabPageItens.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
@@ -4150,20 +4154,16 @@ namespace BomDia
             this.splitContainer4.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
-            this.tableLayoutPanel11.ResumeLayout(false);
-            this.TabPageDatas.ResumeLayout(false);
-            this.TabPageReferencias.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.tableLayoutPanel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
-            this.bindingNavigator2.ResumeLayout(false);
-            this.bindingNavigator2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BindingNavegador)).EndInit();
-            this.BindingNavegador.ResumeLayout(false);
-            this.BindingNavegador.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            this.TabPageDatas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
+            this.bindingNavigator2.ResumeLayout(false);
+            this.bindingNavigator2.PerformLayout();
+            this.TabPageReferencias.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tableLayoutPanel12.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

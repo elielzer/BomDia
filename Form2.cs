@@ -76,27 +76,18 @@ namespace BomDia
                 
                 
                 Program.Bomdia.TopMost = true;
-                //Program.Bomdia.Activate(); // Traz o formulário para frente
+                // Traz o formulário para frente
             }
-            else
-            {
-                //Program.Bomdia = new BomDia();
-                //Program.Bomdia.Show();
-                
-            }
-        }
-
-        private void button1_KeyPress(object sender, KeyPressEventArgs e)
-        {
 
         }
+
 
         private void Pad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)27)
+            if (e.KeyChar == (char)27) // Se tecla esc foi acionada
             {
                 Program.CharValue = (char)27;
-                //Act   ivate();
+
                 this.Dispose();
 
                 AtivarBomdia();
@@ -118,5 +109,4 @@ public static class VariaveisGlobais
     // Armazena a data para o interface entre janelas
     public static string ListaDeDatasText = "";
 
-    // public static Form Bomdia { get; private set; }
 }

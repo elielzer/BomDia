@@ -124,7 +124,7 @@ namespace BomDia
                ListaDeDatas.Text = DateTime.Today.ToShortDateString();
             }
             this.Tag = "Max";
-            DataGridView1.Focus();
+            //DataGridView1.Focus();
         }
         public enum ValorTag
         {
@@ -217,7 +217,6 @@ namespace BomDia
             DetalheQuando.Visible = false;
             ActiveControl = OQuePretendido;
             MSGtoolStripStatusLabel.Text = "Esboço...";
-            //this.label1.Image = global::BomDia.Properties.Resources.NEW;
             this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.NEW;
             label1.Text = "Novo item...";
             label5.Text = "";
@@ -238,8 +237,7 @@ namespace BomDia
 
             //altera a imagem da picture
             this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTON;
-            PictureBox1.Visible = true; //figura indica modo gerenciamento
-
+            PictureBox1.Visible = true; //figura indica modo operacional do aplicativo
             
         }
 
@@ -269,13 +267,11 @@ namespace BomDia
             if (DataPara > DataHoje)
             {
                 DataGridView1.Columns[1].HeaderText = "Futuro".ToUpper() + Triang;
-                //DiaBomDiaLabel.Text =   "Futuro".ToUpper();
                 
             }
             if (DataPara < DataHoje)
             {
-                DataGridView1.Columns[1].HeaderText = "Passado".ToUpper() + Triang;
-                //DiaBomDiaLabel.Text =  "Passado".ToUpper();
+                DataGridView1.Columns[1].HeaderText = "Passado".ToUpper() + Triang;;
             }
             if (DataPara == DataHoje)
             {
@@ -335,7 +331,6 @@ namespace BomDia
              }
 
         }
-
         public void VoltarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Comando para redesenhar a janela para forma reduzida.
@@ -803,7 +798,7 @@ namespace BomDia
         }
 
 
-        // Trasportar o registro correspondente para o presente.
+        // Transportar o registro correspondente para o presente.
         private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = e.RowIndex;
@@ -945,6 +940,7 @@ namespace BomDia
         {
             // Finaliza edição de um registro 
             // conclui a transação para uma tabela temporária
+            if(DataGridView1.RowCount == 0) { return; }
             TarefasBindingSource.EndEdit();
             TarefasDataSet.AcceptChanges();
 
