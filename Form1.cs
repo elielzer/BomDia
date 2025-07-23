@@ -63,7 +63,7 @@ namespace BomDia
             LarguraReduzida =
                 (int)(((ushort)dateTimePicker1.Width) * 1.73);
             AlturaReduzida =
-                (int)(((ushort)dateTimePicker1.Height) * 1.1);
+                (int)(((ushort)dateTimePicker1.Height) * 1.05);
             Width = LarguraReduzida;
             this.BackColor = Color.Black;
 
@@ -161,7 +161,7 @@ namespace BomDia
                 LarguraForm = Width;
                 AlturaForm = Height;
                 Width = LarguraReduzida;
-                Height = (int)(((ushort)dateTimePicker1.Height) * 1.1);
+                Height = (int)(((ushort)dateTimePicker1.Height) * 1.05);
                 this.BackColor = Color.Black;
                 Location = new Point(1100, 0);
                 cortinaToolStripMenuItem.Enabled = true;
@@ -741,11 +741,11 @@ namespace BomDia
         private void ShowLineJoin(PaintEventArgs e)
         {
             // Create pen.
-            Pen bluePen = new Pen(Color.Black, 2);
+            Pen bluePen = new Pen(Color.Black, 1);
             bluePen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
 
             // Create points that define line - linha superior do cabeçalho.
-            PointF point1 = new PointF(label4.Left, label1.Bottom+2);
+            PointF point1 = new PointF(label4.Left+label4.Width, label1.Bottom);
             PointF point2 =
             new PointF(point1.X + flowLayoutPanel1.Width, point1.Y);
 
