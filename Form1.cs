@@ -61,9 +61,11 @@ namespace BomDia
             FormBorderStyle = FormBorderStyle.None;
             StatusStripBomDia.Visible = false;
             LarguraReduzida =
-                (int)(((ushort)dateTimePicker1.Width) * 1.73);
+                (int)(((tableLayoutPanel2.Width * 1.03)));
+            //(int)(((ushort)dateTimePicker1.Width) * 1.5);
             AlturaReduzida =
-                (int)(((ushort)dateTimePicker1.Height) * 1.05);
+                (int)(tableLayoutPanel2.Height * 1.05);
+            //(int)(((ushort)dateTimePicker1.Height) * 1.09);
             Width = LarguraReduzida;
             this.BackColor = Color.Black;
 
