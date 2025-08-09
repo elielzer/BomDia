@@ -268,18 +268,18 @@ namespace BomDia
             //
             if (DataPara > DataHoje)
             {
-                DataGridView1.Columns[1].HeaderText = "Futuro".ToUpper() + Triang;
+                DataGridView1.Columns[1].HeaderText = "Programático ".ToUpper() + Triang;
                 
             }
             if (DataPara < DataHoje)
             {
-                DataGridView1.Columns[1].HeaderText = "Passado".ToUpper() + Triang;;
+                DataGridView1.Columns[1].HeaderText = "Em log ".ToUpper() + Triang;;
             }
             if (DataPara == DataHoje)
             {
                 MSGtoolStripStatusLabel.Text =
                     "Arquivo de dados: " + BancoDados;
-                DataGridView1.Columns[1].HeaderText = "Presente".ToUpper() + Triang;
+                DataGridView1.Columns[1].HeaderText = "Em tempo real ".ToUpper() +  Triang;
                 //DiaBomDiaLabel.Text = "Presente".ToUpper();
             }
 
@@ -349,7 +349,7 @@ namespace BomDia
             this.BackColor = Color.Black;
             Location = new Point(1100, 0);
             cortinaToolStripMenuItem.Enabled = true;
-
+            Program.Bomdia.TopMost = true;
             // Ocultar 
             HideForm();
 
@@ -667,7 +667,7 @@ namespace BomDia
 
                     case "Aceso":
                     this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTOFF;
-                        DataGridView1.BackgroundColor = Color.FromArgb(50, 10, 100);
+                        //DataGridView1.BackgroundColor = Color.FromArgb(50, 10, 100);
                         DataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(50, 10, 100);
                         DataGridView1.ForeColor = Color.White;
                         PictureBox1.Tag = "Apagado";
@@ -890,7 +890,6 @@ namespace BomDia
                 return;
             }
 
-
         }
 
         private void DataGridView1_MouseEnter(object sender, EventArgs e)
@@ -949,15 +948,11 @@ namespace BomDia
             // Escreve um texto de status 
             MSGtoolStripStatusLabel.Text = "Memorizado ok";
         }
-
-
-
         private void portalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Ativa o painel esquerdo de um contêiner
             splitContainer2.Panel1Collapsed = false;
         }
     }
-
 
 }
