@@ -37,9 +37,9 @@ namespace BomDia
         {
             InitializeComponent();
 
-            Symbol.Text = Triang.ToString();//'\u25E3'.ToString();
+            //Symbol.Text = Triang.ToString();//'\u25E3'.ToString();
             label4.Text = Triang.ToString();
-            DiaBomDiaLabel.Text = "O Que Fazer ";
+            DiaBomDiaLabel.Text = "O Que Fazer " + Triang.ToString();
 
         }
 
@@ -950,7 +950,8 @@ namespace BomDia
         }
         private void portalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Ativa o painel esquerdo de um contêiner
+            // exibe o painel esquerdo de um contêiner
+            if(splitContainer2.Panel1Collapsed == false) { splitContainer2.SplitterDistance = 86 ; return; }
             splitContainer2.Panel1Collapsed = false;
         }
     }
