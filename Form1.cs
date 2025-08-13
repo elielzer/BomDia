@@ -1,15 +1,16 @@
-﻿using System;
+﻿using BomDia;
+using System;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Windows.Forms;
+using System.Drawing.Imaging;
+using System.Drawing.Printing;
 using System.Globalization;
 using System.Linq;
-using System.Xml.Schema;
-using System.Drawing.Printing;
-using BomDia;
-using System.Drawing.Imaging;
 using System.Linq.Expressions;
-using System.ComponentModel;
+using System.Security.Principal;
+using System.Windows.Forms;
+using System.Xml.Schema;
 
 
 
@@ -18,28 +19,34 @@ namespace BomDia
 {
     public  partial class BomDia : Form
     {
-        int LarguraForm = 0;
-        int AlturaForm = 0;
-        int Xloc = 0;
-        int Yloc = 0;
-        int LarguraReduzida = 0;
-
+        int LarguraForm = 0; int AlturaForm = 0;
+        int Xloc = 0; int Yloc = 0; int LarguraReduzida = 0;
+        
         Pad pad;
+
+        // Identifica o usuário da agenda
+        public string Usuário = WindowsIdentity.GetCurrent().Name.ToString();
 
         //
         int AlturaReduzida = 0;
-        int NRow = 0; // Usado na contagem de Rows no dadagridview1
-        DateTime DataSemana ;
+        int NRow = 0; // Usado na contagem de linhas no datagridview1
+        DateTime DataSemana ; 
         string BancoDados =
             "C:/Users/elielzer/Documents/Bom-Dia/XmlDoc.xml";
         public const char Triang = '\u25E3';
+        //
+        public string PréPorque = ""; public string PréQuando ;
+            //PréUsuário = Usuário.ToString();
+
+
+
         public BomDia()
         {
             InitializeComponent();
 
-            //Symbol.Text = Triang.ToString();//'\u25E3'.ToString();
-            label4.Text = Triang.ToString();
-            DiaBomDiaLabel.Text = "O Que Fazer " + Triang.ToString();
+            
+            label4.Text = "◢"; DiaBomDiaLabel.Text = "Contextos de " + 
+                Usuário;
 
         }
 
@@ -48,7 +55,7 @@ namespace BomDia
             TarefasDataSet.ReadXml(BancoDados, XmlReadMode.ReadSchema);
             //
             sender = this.ListaDeDatas;
-            // Como está a janela do aplicativo 
+            // Como esteja a janela do aplicativo 
             DataHoje.Visible = true;
             DataHoje.Text = DateTime.Today.ToShortDateString();
 
@@ -96,9 +103,8 @@ namespace BomDia
             SemanaToolStripButton.Text = string.Concat(".", SemanaComMaiuscula);
 
             this.BackColor = Color.Black;
-        
 
-
+            DetalheUsuário.Hide(); //Campo invisível no interface
         }
 
         private void CortinaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -210,18 +216,20 @@ namespace BomDia
         // Entrada de novo registro, manualmente, ao arquivo XML ----------------
         private void BindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
+                     
+            PréPorque = "A"; PréQuando = DateTime.Today.ToShortDateString();
+
+            QuandoPrevisto.Text = PréQuando;
+            ComboBoxPorque.SelectedValue = PréPorque;
+
+            DetalheUsuário.DataBindings.Control.Text = Usuário;
             
-            DetalhePorQue.Visible = true ;
-            DetalheQuando.Visible = true ;
-            DetalhePorQue.Text = "A" ;
-            DetalheQuando.Text = DateTime.Today.ToShortDateString();
-            DetalhePorQue.Visible = false;
-            DetalheQuando.Visible = false;
-            ActiveControl = OQuePretendido;
+            ActiveControl = OQuePretendido; 
             MSGtoolStripStatusLabel.Text = "Esboço...";
-            this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.NEW;
-            label1.Text = "Novo item...";
-            label5.Text = "";
+            this.PictureBoxEditar.Image =
+                global::BomDia.Properties.Resources.NEW;
+            label1.Text = "Novo item..."; label5.Text = "";
+            bindingNavigatorAddNewItem.Enabled = false;
         }
 
         private void abrirToolStripButton_Click(object sender, EventArgs e)
@@ -374,7 +382,7 @@ namespace BomDia
             
             //this.label1.Image = null; // imagem ao registro atual não mais existe
             this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.Edit1;
-            this.label1.Text = "Editar item...";
+            this.label1.Text = "prompt ";
             if (DataGridView1.CurrentRow == null) //quando a posição está em linha nova
             {
                 try
@@ -513,15 +521,20 @@ namespace BomDia
 
         private void TarefasBindingSource_AddingNew(object sender, System.ComponentModel.AddingNewEventArgs e)
         {
+            if (PréPorque!="" & PréQuando != "") {
+                TarefasBindingSource.CancelEdit();
+                DialogResult dialogResult = 
+                    MessageBox.Show("Contexto incompleto","Alerta", MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                
+;                return; }
+
+
             label1.Text = "Escrever item";
             this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.NEW;
 
         }
 
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void DataGridView1_Leave(object sender, EventArgs e)
         {
@@ -600,7 +613,6 @@ namespace BomDia
         {
             DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -742,9 +754,10 @@ namespace BomDia
             bluePen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
 
             // Create points that define line - linha superior do cabeçalho.
-            PointF point1 = new PointF(label4.Left+label4.Width, label1.Bottom);
+            PointF point1 = 
+                new PointF(flowLayoutPanel1.Left + flowLayoutPanel1.Width, tableLayoutPanel14.Bottom-1);
             PointF point2 =
-            new PointF(point1.X + flowLayoutPanel1.Width, point1.Y);
+            new PointF(label4.Left, point1.Y);
 
             // Draw line to screen.
             e.Graphics.DrawLine(bluePen, point1, point2);
@@ -918,7 +931,7 @@ namespace BomDia
             pad.TopLevel = true;
             Program.Bomdia.Activate();
 
-            MSGtoolStripStatusLabel.Text = "Pad ativo.";
+            //MSGtoolStripStatusLabel.Text = "Pad ativo.";
 
         }
 
@@ -939,20 +952,54 @@ namespace BomDia
 
         private void memorizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Finaliza edição de um registro 
-            // conclui a transação para uma tabela temporária
-            if(DataGridView1.RowCount == 0) { return; }
+            // Se o arquivo está vazio então retorna
+            if(DataGridView1.RowCount == 0) { return; } 
+            // Senão prossegue
+            // Se a data ou descrição estiver vazio então retorna
+            // senão prossegue
+            if((QuandoPrevisto.Text == "")  || (OQuePretendido.Text == ""))
+            {
+                TarefasBindingSource.CancelEdit();
+                bindingNavigatorAddNewItem.Enabled = true;
+                return;
+            }
+
+            try
+            {
+            // Pré finaliza edição 
+            // conclui transpondo dados para uma tabela temporária
+
             TarefasBindingSource.EndEdit();
             TarefasDataSet.AcceptChanges();
 
+            }
+            catch { return; }
+
+            PréPorque = ""; PréQuando = "";
+            
             // Escreve um texto de status 
             MSGtoolStripStatusLabel.Text = "Memorizado ok";
+
+            // Se status de novo item for memorizado então habilita botão item novo
+            // senão continua desabilitado
+            
+            if (bindingNavigatorAddNewItem.Enabled == false)
+            {
+                bindingNavigatorAddNewItem.Enabled = true;
+            }
+            
+
         }
         private void portalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // exibe o painel esquerdo de um contêiner
             if(splitContainer2.Panel1Collapsed == false) { splitContainer2.SplitterDistance = 86 ; return; }
             splitContainer2.Panel1Collapsed = false;
+        }
+
+        private void tableLayoutPanel14_Paint(object sender, PaintEventArgs e)
+        {
+            ShowLineJoin(e);
         }
     }
 
