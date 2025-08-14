@@ -46,7 +46,7 @@ namespace BomDia
 
             
             label4.Text = "◢"; DiaBomDiaLabel.Text = "Contextos de " + 
-                Usuário;
+                Usuário + " " + Triang;
 
         }
 
@@ -413,7 +413,7 @@ namespace BomDia
                           upper: DateTime.Today);
                         if (DataGridView1.CurrentRow.Cells[3].Value.ToString() == "")
                         {
-                            label5.Text = '\u2714' + " " +  "agenda do dia".ToUpper();
+                            label5.Text = "☀" + " " +  "agenda do dia".ToUpper();
                             return;
                         }
                         else
