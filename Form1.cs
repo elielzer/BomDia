@@ -766,7 +766,7 @@ namespace BomDia
             PointF point1 = 
                 new PointF(flowLayoutPanel1.Left + flowLayoutPanel1.Width, tableLayoutPanel14.Bottom-1);
             PointF point2 =
-            new PointF(label4.Left, point1.Y);
+            new PointF(PictureBoxEditar.Left, point1.Y);
 
             // Draw line to screen.
             e.Graphics.DrawLine(bluePen, point1, point2);
@@ -784,7 +784,7 @@ namespace BomDia
             // Create points that define line.
             PointF point1 = new PointF(tableLayoutPanel7.Left, tableLayoutPanel7.Bottom - 2);
             PointF point2 =
-            new PointF(point1.X + tableLayoutPanel7.Width, point1.Y);
+            new PointF(point1.X +  tableLayoutPanel7.Width, point1.Y);
 
             // Draw line to screen.
             e.Graphics.DrawLine(bluePen, point1, point2);
