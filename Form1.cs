@@ -45,8 +45,8 @@ namespace BomDia
             InitializeComponent();
 
             
-            label4.Text = "◢"; DiaBomDiaLabel.Text = "Contextos de " + 
-                Usuário + " " + Triang;
+            label4.Text = "◢";
+            //DiaBomDiaLabel.Text = "Contextos de " +  Usuário + " " + Triang;
 
         }
 
@@ -94,12 +94,14 @@ namespace BomDia
                       
             //
 
-            TarefasBindingSource.Filter = String.Format("QUANDO = '{0:dd/MM/yyyy}'",ListaDeDatas.Text);
+            TarefasBindingSource.Filter =
+                String.Format("QUANDO = '{0:dd/MM/yyyy}'",ListaDeDatas.Text);
             //
             string SemanaComMaiuscula;
             SemanaComMaiuscula = DateTime.Today.ToString("ddd");
             SemanaComMaiuscula = SemanaComMaiuscula[0].ToString().ToUpper() +
                 SemanaComMaiuscula[1].ToString() + SemanaComMaiuscula[2].ToString();
+            
             SemanaToolStripButton.Text = string.Concat(".", SemanaComMaiuscula);
 
             this.BackColor = Color.Black;
@@ -161,6 +163,7 @@ namespace BomDia
 
                 // Menu suspenso para o comando Voltar.
 
+                StatusStripBomDia.Visible = false;
                 StatusStripBomDia.Visible = false;
                 this.WindowState = FormWindowState.Normal;
                 FormBorderStyle = FormBorderStyle.None;
@@ -272,26 +275,32 @@ namespace BomDia
             {
                 TarefasBindingSource.Filter = String.Format("QUANDO = '{0:dd/MM/yyyy}'",
                     ListaDeDatas.Text);
+                
             }
             //
             if (DataPara > DataHoje)
             {
-                DataGridView1.Columns[1].HeaderText = "Programático ".ToUpper() + Triang;
-                
+                DiaBomDiaLabel.Text = "Programático ".ToUpper() + Triang;
+                //DataGridView1.Columns[1].HeaderText = "Programático ".ToUpper() + Triang;
+
             }
             if (DataPara < DataHoje)
             {
-                DataGridView1.Columns[1].HeaderText = "Em log ".ToUpper() + Triang;;
+                DiaBomDiaLabel.Text = "Em log ".ToUpper() + Triang;
+
+                //DataGridView1.Columns[1].HeaderText = "Em log ".ToUpper() + Triang;
             }
             if (DataPara == DataHoje)
             {
                 MSGtoolStripStatusLabel.Text =
                     "Arquivo de dados: " + BancoDados;
-                DataGridView1.Columns[1].HeaderText = "Em tempo real ".ToUpper() +  Triang;
-                //DiaBomDiaLabel.Text = "Presente".ToUpper();
+                //DataGridView1.Columns[1].HeaderText = "Em tempo real ".ToUpper() +  Triang;
+                DiaBomDiaLabel.Text = "Em tempo real ".ToUpper() + Triang;
+
             }
 
             VariaveisGlobais.ListaDeDatasText = ListaDeDatas.Text;
+            
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -902,7 +911,6 @@ namespace BomDia
                     (s, Stexto) => ListaDeDatas.Text = Stexto; // Assina o evento
                 return;
             }
-
         }
 
         private void DataGridView1_MouseEnter(object sender, EventArgs e)
@@ -915,7 +923,6 @@ namespace BomDia
             
             if (pad == null) 
             {
-
                 pad = new Pad(); ;
                 pad.Show();
             }
@@ -931,14 +938,11 @@ namespace BomDia
             pad.TopLevel = true;
             Program.Bomdia.Activate();
 
-            //MSGtoolStripStatusLabel.Text = "Pad ativo.";
-
         }
 
         private void BomDia_Activated(object sender, EventArgs e)
         {
             // Desativar o formulário secundário.
-
 
             Program.Bomdia.MSGtoolStripStatusLabel.Text = "Bom Dia.";
            

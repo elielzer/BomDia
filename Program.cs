@@ -18,6 +18,8 @@ namespace BomDia
         /// </summary>
         [STAThread]
         //static void Main()
+        // Definição do delegate
+       
         public static void Main()
         {
             Application.EnableVisualStyles();
