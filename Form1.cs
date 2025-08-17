@@ -710,7 +710,6 @@ namespace BomDia
                 string MsgTexto="";
                 for (int i = 0; i < NRow; i++)
                 {
-
                     switch (DataGridView1.Rows[i].Cells[7].Value)
                     {
                         case true:
@@ -725,7 +724,7 @@ namespace BomDia
                             Row["PESO"] = DataGridView1.Rows[i].Cells[5].Value; //6ª col
                             Row["CRITÉRIO"] = DataGridView1.Rows[i].Cells[6].Value; //7ª col
                             Row["DIAMARCADO"] = DataGridView1.Rows[i].Cells[3].Value; //3ª col
-
+                            Row["User"] = DetalheUsuário2.Text;
                             // Índice
                             BomDiaTarefas.Rows.Add(Row);
 
@@ -849,7 +848,7 @@ namespace BomDia
                 Row["PESO"] = DataGridView1.Rows[i].Cells[5].Value; //6ª col
                 Row["CRITÉRIO"] = DataGridView1.Rows[i].Cells[6].Value; //7ª col
                 Row["DIAMARCADO"] = DataGridView1.Rows[i].Cells[3].Value; //3ª col
-
+                Row["User"] = DetalheUsuário2.Text;
                 // Índice
                 BomDiaTarefas.Rows.Add(Row);
 
