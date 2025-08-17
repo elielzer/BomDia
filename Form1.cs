@@ -45,7 +45,7 @@ namespace BomDia
             InitializeComponent();
 
             
-            label4.Text = "◢";
+            //label4.Text = "◢";
             //DiaBomDiaLabel.Text = "Contextos de " +  Usuário + " " + Triang;
 
         }
@@ -240,7 +240,6 @@ namespace BomDia
             tableLayoutPanel6.Enabled = true;
         }
 
-
         private void AbrirToolStripButtonGerenciar_Click(object sender, EventArgs e)
         {
 
@@ -253,8 +252,6 @@ namespace BomDia
             PictureBox1.Visible = true; //figura indica modo operacional do aplicativo
             
         }
-
-
         private void CheckBoxIntegrador_Click(object sender, EventArgs e)
         {
             if (CheckBoxIntegrador.Checked == true)
@@ -274,31 +271,39 @@ namespace BomDia
             if (CheckBoxIntegrador.Checked)
             {
                 TarefasBindingSource.Filter = String.Format("QUANDO = '{0:dd/MM/yyyy}'",
-                    ListaDeDatas.Text);
-                
+                    ListaDeDatas.Text);               
             }
             //
             if (DataPara > DataHoje)
             {
-                DiaBomDiaLabel.Text = "Programático ".ToUpper() + Triang;
-                //DataGridView1.Columns[1].HeaderText = "Programático ".ToUpper() + Triang;
+                DiaBomDiaLabel.Text = "Programático".ToUpper();
 
+                bindingNavigatorAddNewItem.Text = "&Criar";
+                if (bindingNavigatorAddNewItem.Text != "&Criar")
+                { bindingNavigatorAddNewItem.Text = "&Criar"; }
+
+                if (bindingNavigatorAddNewItem.Enabled == false)
+                { bindingNavigatorAddNewItem.Enabled = true; }
             }
             if (DataPara < DataHoje)
             {
-                DiaBomDiaLabel.Text = "Em log ".ToUpper() + Triang;
+                DiaBomDiaLabel.Text = "Em log".ToUpper();
 
-                //DataGridView1.Columns[1].HeaderText = "Em log ".ToUpper() + Triang;
+                if (bindingNavigatorAddNewItem.Enabled != false)
+                { bindingNavigatorAddNewItem.Enabled = false; }
             }
             if (DataPara == DataHoje)
             {
                 MSGtoolStripStatusLabel.Text =
                     "Arquivo de dados: " + BancoDados;
-                //DataGridView1.Columns[1].HeaderText = "Em tempo real ".ToUpper() +  Triang;
-                DiaBomDiaLabel.Text = "Em tempo real ".ToUpper() + Triang;
+                //DataGridView1.Columns[1].HeaderText = "Em tempo real".ToUpper() ;
+                DiaBomDiaLabel.Text = "Em tempo real ".ToUpper() ;
 
+                if (bindingNavigatorAddNewItem.Enabled == false)
+                { bindingNavigatorAddNewItem.Enabled = true; }
+                if (bindingNavigatorAddNewItem.Text != "&Inserir")
+                { bindingNavigatorAddNewItem.Text = "&Inserir"; }
             }
-
             VariaveisGlobais.ListaDeDatasText = ListaDeDatas.Text;
             
         }
