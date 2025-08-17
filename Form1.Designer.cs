@@ -31,16 +31,16 @@ namespace BomDia
         public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle91 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle97 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle98 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle92 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle93 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle94 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle95 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle96 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BomDia));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle99 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TarefasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TarefasDataSet = new System.Data.DataSet();
             this.BomDiaTarefas = new System.Data.DataTable();
@@ -121,8 +121,9 @@ namespace BomDia
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.DetalheUsuário2 = new System.Windows.Forms.TextBox();
             this.DiaBomDiaLabel = new System.Windows.Forms.Label();
+            this.DetalheUsuário2 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.ListaDeDatasContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.portalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -169,7 +170,6 @@ namespace BomDia
             this.ButtonAtivarJanela = new System.Windows.Forms.Button();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.TarefasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TarefasDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BomDiaTarefas)).BeginInit();
@@ -348,14 +348,14 @@ namespace BomDia
             this.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle91.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle91.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle91.Font = new System.Drawing.Font("MV Boli", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle91.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle91.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle91.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle91.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle91;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("MV Boli", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iNDDataGridViewTextBoxColumn,
@@ -367,14 +367,14 @@ namespace BomDia
             this.cRITÉRIODataGridViewTextBoxColumn,
             this.Sinalizar});
             this.DataGridView1.DataSource = this.TarefasBindingSource;
-            dataGridViewCellStyle97.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle97.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(10)))), ((int)(((byte)(100)))));
-            dataGridViewCellStyle97.Font = new System.Drawing.Font("Myanmar Text", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle97.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle97.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle97.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle97.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView1.DefaultCellStyle = dataGridViewCellStyle97;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(10)))), ((int)(((byte)(100)))));
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Myanmar Text", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView1.DefaultCellStyle = dataGridViewCellStyle34;
             this.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridView1.EnableHeadersVisualStyles = false;
             this.DataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -382,8 +382,8 @@ namespace BomDia
             this.DataGridView1.Name = "DataGridView1";
             this.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DataGridView1.RowHeadersWidth = 25;
-            dataGridViewCellStyle98.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle98;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle35;
             this.DataGridView1.RowTemplate.Height = 30;
             this.DataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.DataGridView1.Size = new System.Drawing.Size(1304, 402);
@@ -399,10 +399,10 @@ namespace BomDia
             // 
             this.iNDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.iNDDataGridViewTextBoxColumn.DataPropertyName = "IND";
-            dataGridViewCellStyle92.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle92.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle92.ForeColor = System.Drawing.Color.Blue;
-            this.iNDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle92;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Blue;
+            this.iNDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle29;
             this.iNDDataGridViewTextBoxColumn.DividerWidth = 1;
             this.iNDDataGridViewTextBoxColumn.Frozen = true;
             this.iNDDataGridViewTextBoxColumn.HeaderText = "ITEM";
@@ -416,8 +416,8 @@ namespace BomDia
             // 
             this.oQUEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.oQUEDataGridViewTextBoxColumn.DataPropertyName = "OQUE";
-            dataGridViewCellStyle93.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.oQUEDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle93;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.oQUEDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle30;
             this.oQUEDataGridViewTextBoxColumn.Frozen = true;
             this.oQUEDataGridViewTextBoxColumn.HeaderText = "CONTEXTOS";
             this.oQUEDataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -428,9 +428,9 @@ namespace BomDia
             // 
             this.qUANDODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.qUANDODataGridViewTextBoxColumn.DataPropertyName = "QUANDO";
-            dataGridViewCellStyle94.Format = "d";
-            dataGridViewCellStyle94.NullValue = null;
-            this.qUANDODataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle94;
+            dataGridViewCellStyle31.Format = "d";
+            dataGridViewCellStyle31.NullValue = null;
+            this.qUANDODataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle31;
             this.qUANDODataGridViewTextBoxColumn.FillWeight = 80F;
             this.qUANDODataGridViewTextBoxColumn.HeaderText = "QUANDO";
             this.qUANDODataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -451,9 +451,9 @@ namespace BomDia
             this.pORQUEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.pORQUEDataGridViewTextBoxColumn.DataPropertyName = "PORQUE";
             this.pORQUEDataGridViewTextBoxColumn.DataSource = this.PrioridadesBindingSource;
-            dataGridViewCellStyle95.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle95.ForeColor = System.Drawing.Color.Black;
-            this.pORQUEDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle95;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.Black;
+            this.pORQUEDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle32;
             this.pORQUEDataGridViewTextBoxColumn.DisplayMember = "Denomination";
             this.pORQUEDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.pORQUEDataGridViewTextBoxColumn.HeaderText = "POR QUÊ";
@@ -477,9 +477,9 @@ namespace BomDia
             // 
             this.cRITÉRIODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.cRITÉRIODataGridViewTextBoxColumn.DataPropertyName = "CRITÉRIO";
-            dataGridViewCellStyle96.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle96.ForeColor = System.Drawing.Color.Black;
-            this.cRITÉRIODataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle96;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.Black;
+            this.cRITÉRIODataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle33;
             this.cRITÉRIODataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.cRITÉRIODataGridViewTextBoxColumn.DividerWidth = 1;
             this.cRITÉRIODataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -575,8 +575,8 @@ namespace BomDia
             this.bindingNavigatorAddNewItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bindingNavigatorAddNewItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(140, 35);
-            this.bindingNavigatorAddNewItem.Text = "&Novo Item";
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(82, 35);
+            this.bindingNavigatorAddNewItem.Text = "&Criar";
             this.bindingNavigatorAddNewItem.ToolTipText = "Nova tarefa";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.BindingNavigatorAddNewItem_Click);
             // 
@@ -740,10 +740,10 @@ namespace BomDia
             this.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTOFF;
             this.PictureBox1.InitialImage = null;
-            this.PictureBox1.Location = new System.Drawing.Point(1059, 2);
+            this.PictureBox1.Location = new System.Drawing.Point(1057, 2);
             this.PictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new System.Drawing.Size(69, 21);
+            this.PictureBox1.Size = new System.Drawing.Size(68, 21);
             this.PictureBox1.TabIndex = 16;
             this.PictureBox1.TabStop = false;
             this.PictureBox1.Tag = "Apagado";
@@ -857,7 +857,7 @@ namespace BomDia
             this.StatusStripBomDia.Location = new System.Drawing.Point(2, 2);
             this.StatusStripBomDia.Name = "StatusStripBomDia";
             this.StatusStripBomDia.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.StatusStripBomDia.Size = new System.Drawing.Size(1055, 21);
+            this.StatusStripBomDia.Size = new System.Drawing.Size(1053, 21);
             this.StatusStripBomDia.SizingGrip = false;
             this.StatusStripBomDia.Stretch = false;
             this.StatusStripBomDia.TabIndex = 15;
@@ -1183,7 +1183,7 @@ namespace BomDia
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 136F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.tableLayoutPanel14.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel14.Controls.Add(this.label4, 3, 0);
             this.tableLayoutPanel14.Controls.Add(this.label1, 4, 0);
@@ -1311,17 +1311,6 @@ namespace BomDia
             this.tableLayoutPanel13.Size = new System.Drawing.Size(1318, 25);
             this.tableLayoutPanel13.TabIndex = 12;
             // 
-            // DetalheUsuário2
-            // 
-            this.DetalheUsuário2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DetalheUsuário2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.TarefasBindingSource, "User", true));
-            this.DetalheUsuário2.Font = new System.Drawing.Font("Lucida Console", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetalheUsuário2.Location = new System.Drawing.Point(547, 3);
-            this.DetalheUsuário2.Multiline = true;
-            this.DetalheUsuário2.Name = "DetalheUsuário2";
-            this.DetalheUsuário2.Size = new System.Drawing.Size(503, 19);
-            this.DetalheUsuário2.TabIndex = 22;
-            // 
             // DiaBomDiaLabel
             // 
             this.DiaBomDiaLabel.BackColor = System.Drawing.Color.Transparent;
@@ -1336,6 +1325,27 @@ namespace BomDia
             this.DiaBomDiaLabel.TabIndex = 11;
             this.DiaBomDiaLabel.Text = "Dia bom dia";
             this.DiaBomDiaLabel.UseCompatibleTextRendering = true;
+            // 
+            // DetalheUsuário2
+            // 
+            this.DetalheUsuário2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DetalheUsuário2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.TarefasBindingSource, "User", true));
+            this.DetalheUsuário2.Font = new System.Drawing.Font("Lucida Console", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DetalheUsuário2.Location = new System.Drawing.Point(547, 3);
+            this.DetalheUsuário2.Multiline = true;
+            this.DetalheUsuário2.Name = "DetalheUsuário2";
+            this.DetalheUsuário2.Size = new System.Drawing.Size(503, 19);
+            this.DetalheUsuário2.TabIndex = 22;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(492, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(49, 25);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "🚶";
             // 
             // splitContainer2
             // 
@@ -4079,14 +4089,14 @@ namespace BomDia
             this.itemPrioridadeDataGridViewTextBoxColumn,
             this.denominationDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.PrioridadesBindingSource;
-            dataGridViewCellStyle99.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle99.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle99.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle99.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle99.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle99.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle99.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle99;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle36;
             this.dataGridView2.Location = new System.Drawing.Point(3, 0);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(0, 4, 4, 4);
             this.dataGridView2.Name = "dataGridView2";
@@ -4118,7 +4128,7 @@ namespace BomDia
             this.tableLayoutPanel12.ColumnCount = 3;
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 93.86107F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.138934F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 188F));
             this.tableLayoutPanel12.Controls.Add(this.PictureBox1, 1, 0);
             this.tableLayoutPanel12.Controls.Add(this.ButtonAtivarJanela, 2, 0);
             this.tableLayoutPanel12.Controls.Add(this.StatusStripBomDia, 0, 0);
@@ -4138,10 +4148,10 @@ namespace BomDia
             this.ButtonAtivarJanela.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonAtivarJanela.FlatAppearance.BorderSize = 2;
             this.ButtonAtivarJanela.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonAtivarJanela.Location = new System.Drawing.Point(1130, 2);
+            this.ButtonAtivarJanela.Location = new System.Drawing.Point(1127, 2);
             this.ButtonAtivarJanela.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonAtivarJanela.Name = "ButtonAtivarJanela";
-            this.ButtonAtivarJanela.Size = new System.Drawing.Size(186, 21);
+            this.ButtonAtivarJanela.Size = new System.Drawing.Size(189, 21);
             this.ButtonAtivarJanela.TabIndex = 17;
             this.ButtonAtivarJanela.Text = "Habilitar";
             this.ButtonAtivarJanela.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -4160,16 +4170,6 @@ namespace BomDia
             // 
             this.timer2.Interval = 5000;
             this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(492, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 25);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "🚶";
             // 
             // BomDia
             // 
