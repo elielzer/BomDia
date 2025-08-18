@@ -22,9 +22,10 @@ namespace BomDia
         int LarguraForm = 0; int AlturaForm = 0;
         int Xloc = 0; int Yloc = 0; int LarguraReduzida = 0;
         
-        Pad pad;
+        
+        Pad pad; // Formulário popup
 
-        // Identifica o usuário da agenda
+        // obtém o nome de usuário do Windows
         public string Usuário = WindowsIdentity.GetCurrent().Name.ToString();
 
         //
@@ -36,9 +37,10 @@ namespace BomDia
         public const char Triang = '\u25E3';
         //
         public string PréPorque = ""; public string PréQuando ;
-            //PréUsuário = Usuário.ToString();
+        //PréUsuário = Usuário.ToString();
 
-
+        public DateTime dataHoje;
+        public DateTime dataPara ;
 
         public BomDia()
         {
@@ -219,8 +221,22 @@ namespace BomDia
         // Entrada de novo registro, manualmente, ao arquivo XML ----------------
         private void BindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-                     
-            PréPorque = "A"; PréQuando = DateTime.Today.ToShortDateString();
+            System.DateTime dTime = DateTime.Today;
+            System.TimeSpan tSpan = new System.TimeSpan(1, 0, 0, 0);
+            dTime = dTime + tSpan;
+            PréPorque = "A";
+
+            if (dataPara > dataHoje)
+            {
+                //dataPara = dataHoje;
+                PréQuando = dTime.ToShortDateString();
+                //PréQuando = DateTime.Today.ToShortDateString();
+            }
+            else
+            {
+                PréQuando = DateTime.Today.ToShortDateString();
+
+            }
 
             QuandoPrevisto.Text = PréQuando;
             ComboBoxPorque.SelectedValue = PréPorque;
@@ -266,15 +282,15 @@ namespace BomDia
 
         private void ListaDeDatas_SelectedValueChanged(object sender, EventArgs e)
         {
-            DateTime DataHoje = DateTime.Today;
-            DateTime DataPara = Convert.ToDateTime(ListaDeDatas.SelectedItem);
+            dataHoje = DateTime.Today;
+            dataPara = Convert.ToDateTime(ListaDeDatas.SelectedItem);
             if (CheckBoxIntegrador.Checked)
             {
                 TarefasBindingSource.Filter = String.Format("QUANDO = '{0:dd/MM/yyyy}'",
                     ListaDeDatas.Text);               
             }
             //
-            if (DataPara > DataHoje)
+            if (dataPara > dataHoje)
             {
                 DiaBomDiaLabel.Text = "Programático".ToUpper();
 
@@ -285,18 +301,18 @@ namespace BomDia
                 if (bindingNavigatorAddNewItem.Enabled == false)
                 { bindingNavigatorAddNewItem.Enabled = true; }
             }
-            if (DataPara < DataHoje)
+            if (dataPara < dataHoje)
             {
                 DiaBomDiaLabel.Text = "Em log".ToUpper();
 
                 if (bindingNavigatorAddNewItem.Enabled != false)
                 { bindingNavigatorAddNewItem.Enabled = false; }
             }
-            if (DataPara == DataHoje)
+            if (dataPara == dataHoje)
             {
                 MSGtoolStripStatusLabel.Text =
                     "Arquivo de dados: " + BancoDados;
-                //DataGridView1.Columns[1].HeaderText = "Em tempo real".ToUpper() ;
+
                 DiaBomDiaLabel.Text = "Em tempo real ".ToUpper() ;
 
                 if (bindingNavigatorAddNewItem.Enabled == false)
