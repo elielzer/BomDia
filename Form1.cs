@@ -690,7 +690,8 @@ namespace BomDia
 
             PictureBox1.Visible = true; //figura indica modo gerenciamento
             ButtonAtivarJanela.Visible = false;
-            ListaDeDatas.Focus();
+            DataGridView1.Focus();
+            //ListaDeDatas.Focus();
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
