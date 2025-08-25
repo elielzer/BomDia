@@ -961,7 +961,7 @@ namespace BomDia
 
             TarefasBindingSource.EndEdit();
             TarefasDataSet.AcceptChanges();
-
+            this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.CLIP07;
             }
             catch { return; }
 

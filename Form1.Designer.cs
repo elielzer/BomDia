@@ -250,7 +250,6 @@ namespace BomDia
             this.TarefasBindingSource.DataMember = "BomDiaTarefas";
             this.TarefasBindingSource.DataSource = this.TarefasDataSet;
             this.TarefasBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.TarefasBindingSource_AddingNew);
-            this.TarefasBindingSource.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.TarefasBindingSource_ListChanged);
             // 
             // TarefasDataSet
             // 
