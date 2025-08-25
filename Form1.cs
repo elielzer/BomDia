@@ -8,6 +8,7 @@ using System.Drawing.Printing;
 using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Security.Principal;
 using System.Windows.Forms;
 using System.Xml.Schema;
@@ -37,7 +38,7 @@ namespace BomDia
         public const char Triang = '\u25E3';
         //
         public string PréPorque = ""; public string PréQuando ;
-        //PréUsuário = Usuário.ToString();
+
 
         public DateTime dataHoje;
         public DateTime dataPara ;
@@ -46,9 +47,6 @@ namespace BomDia
         {
             InitializeComponent();
 
-            
-            //label4.Text = "◢";
-            //DiaBomDiaLabel.Text = "Contextos de " +  Usuário + " " + Triang;
 
         }
 
@@ -61,20 +59,24 @@ namespace BomDia
             DataHoje.Visible = true;
             DataHoje.Text = DateTime.Today.ToShortDateString();
 
-            Xloc = Location.X;
-            Yloc = Location.Y;
-            LarguraForm = Width;
-            AlturaForm = Height;
+            Xloc = Location.X;  Yloc = Location.Y;
+            LarguraForm = Width;   AlturaForm = Height;
 
             // Layout mini janela
+
+            Program.DiaBomDiaX = this.Location.X + this.Width/2 +70;
+            Program.DiaBomDiaY = this.Location.Y + 20;
+
+
+
             FormBorderStyle = FormBorderStyle.None;
             StatusStripBomDia.Visible = false;
             LarguraReduzida =
                 (int)(((tableLayoutPanel2.Width * 1.03)));
-            //(int)(((ushort)dateTimePicker1.Width) * 1.5);
+
             AlturaReduzida =
                 (int)(tableLayoutPanel2.Height * 1.05);
-            //(int)(((ushort)dateTimePicker1.Height) * 1.09);
+
             Width = LarguraReduzida;
             this.BackColor = Color.Black;
 
@@ -84,9 +86,7 @@ namespace BomDia
             Height = AlturaReduzida;
 
             Height = AlturaReduzida + DataHoje.Height;
-            timer2.Enabled = true;
-            timer2.Stop();
-            timer2.Start();
+            timer2.Enabled = true;  timer2.Stop();    timer2.Start();
 
             // Mostra a data do dia
 
@@ -108,7 +108,7 @@ namespace BomDia
 
             this.BackColor = Color.Black;
 
-            DetalheUsuário.Hide(); //Campo invisível no interface
+            DetalheUsuário.Hide(); // Torna o campo invisível no interface
         }
 
         private void CortinaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -117,15 +117,14 @@ namespace BomDia
             //
             splitContainer1.Panel2Collapsed = false;
 
-            StatusStripBomDia.Visible = true;
-            ActiveForm.Location = new Point(Xloc, Yloc);
-            Width = LarguraForm;
-            Height= AlturaForm;
+            StatusStripBomDia.Show();
+            Location = new Point(Xloc, Yloc); Width = LarguraForm; Height= AlturaForm;
+
             this.BackColor = Color.Gray;
             this.WindowState = FormWindowState.Normal;
             FormBorderStyle = FormBorderStyle.Sizable;
             ControlBox = true;
-            //Refresh();
+
             cortinaToolStripMenuItem.Enabled = false;
 
             //atualiza data padrão (data do dia)
@@ -136,7 +135,8 @@ namespace BomDia
                ListaDeDatas.Text = DateTime.Today.ToShortDateString();
             }
             this.Tag = "Max";
-            //DataGridView1.Focus();
+            //Program.DiaBomDiaX = Location.X + DiaBomDiaLabel.Width;
+            //Program.DiaBomDiaY = Location.Y + 20;
         }
         public enum ValorTag
         {
@@ -264,8 +264,8 @@ namespace BomDia
             BindingExclui.Enabled = true;
 
             //altera a imagem da picture
-            this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTON;
-            PictureBox1.Visible = true; //figura indica modo operacional do aplicativo
+            this.toolStripStatusLabel1.Image = global::BomDia.Properties.Resources.LIGHTON;
+            toolStripStatusLabel1.Visible = true; //figura indica modo operacional do aplicativo
             
         }
         private void CheckBoxIntegrador_Click(object sender, EventArgs e)
@@ -373,7 +373,7 @@ namespace BomDia
         }
         public void VoltarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Comando para redesenhar a janela para forma reduzida.
+            // Redesenhar a janela para forma reduzida.
 
             StatusStripBomDia.Visible = false;
             this.WindowState = FormWindowState.Normal;
@@ -540,7 +540,7 @@ namespace BomDia
 
         private void Timer2_Tick(object sender, EventArgs e)
         {
-            //splitContainer1.Panel2Collapsed = true;
+
             Height = AlturaReduzida;
             DataHoje.Visible = false;
             timer2.Stop();
@@ -558,13 +558,10 @@ namespace BomDia
                 
 ;                return; }
 
-
             label1.Text = "Escrever item";
             this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.NEW;
 
         }
-
-
 
         private void DataGridView1_Leave(object sender, EventArgs e)
         {
@@ -671,51 +668,11 @@ namespace BomDia
                 MSGtoolStripStatusLabel.Text = "Anexada a tarefa no arquivo XML " +
                     DateTime.Now.ToString();
 
-                this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.CLIP07;
+                //this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.CLIP07;
+                this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.Edit1;
             }
             catch
             {
-            }
-        }
-
-        private void ButtonAtivarJanela_Click(object sender, EventArgs e)
-        {
-            tableLayoutPanel6.Enabled = true;
-            BindingNavigatorNovo.Enabled = true;
-            BindingExclui.Enabled = true;
-            //BindingNavigatorSalva.Enabled = true;
-            ButtonAnexa.Enabled = true;
-
-            //altera a imagem da picture
-
-            PictureBox1.Visible = true; //figura indica modo gerenciamento
-            ButtonAtivarJanela.Visible = false;
-            DataGridView1.Focus();
-            //ListaDeDatas.Focus();
-        }
-
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-            
-            {
-                switch (PictureBox1.Tag.ToString())
-                {
-                    case "Apagado":
-                        this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTON;
-                        PictureBox1.Tag = "Aceso";
-                        DataGridView1.BackgroundColor = Color.White;
-                        DataGridView1.DefaultCellStyle.BackColor = Color.White;
-                        DataGridView1.ForeColor = Color.Black;
-                        break;
-
-                    case "Aceso":
-                    this.PictureBox1.Image = global::BomDia.Properties.Resources.LIGHTOFF;
-                        //DataGridView1.BackgroundColor = Color.FromArgb(50, 10, 100);
-                        DataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(50, 10, 100);
-                        DataGridView1.ForeColor = Color.White;
-                        PictureBox1.Tag = "Apagado";
-                        break;
-                }
             }
         }
 
@@ -936,7 +893,8 @@ namespace BomDia
 
         private void DataGridView1_MouseEnter(object sender, EventArgs e)
         {
-            if(Program.CharValue == (char)27) 
+
+            if (Program.CharValue == (char)27) 
             {
                 Program.CharValue = (char)0;
                 SendKeys.Send("{ESC}"); return ; 
@@ -944,12 +902,19 @@ namespace BomDia
             
             if (pad == null) 
             {
-                pad = new Pad(); ;
+                pad = new Pad();
+
+                pad.Location =
+                    new Point( Program.DiaBomDiaX,  Program.DiaBomDiaY);
                 pad.Show();
+
+
             }
             else if (pad.IsDisposed)
             {
                 pad = new Pad();
+                pad.Location =
+                    new Point(Program.DiaBomDiaX, Program.DiaBomDiaY);
                 pad.Show();
             }
 
@@ -1025,6 +990,77 @@ namespace BomDia
         private void tableLayoutPanel14_Paint(object sender, PaintEventArgs e)
         {
             ShowLineJoin(e);
+        }
+
+        private void dropToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tableLayoutPanel6.Enabled = true;
+            BindingNavigatorNovo.Enabled = true;
+            BindingExclui.Enabled = true;
+
+            ButtonAnexa.Enabled = true;
+
+            //altera imagem
+
+            //toolStripStatusLabel1.Visible = true; //figura indica modo gerenciamento
+            //dropToolStripMenuItem.Visible = false;
+            toolStripDropDownButton1.Visible = false;
+            DataGridView1.Focus();
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+            {
+                switch (toolStripStatusLabel1.Tag.ToString())
+                {
+                    case "Apagado":
+                        this.toolStripStatusLabel1.Image = global::BomDia.Properties.Resources.LIGHTON;
+                        toolStripStatusLabel1.Tag = "Aceso";
+                        DataGridView1.BackgroundColor = Color.White;
+                        DataGridView1.DefaultCellStyle.BackColor = Color.White;
+                        DataGridView1.ForeColor = Color.Black;
+                        break;
+
+                    case "Aceso":
+                        this.toolStripStatusLabel1.Image = global::BomDia.Properties.Resources.LIGHTOFF;
+
+                        DataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(50, 10, 100);
+                        DataGridView1.ForeColor = Color.White;
+                        toolStripStatusLabel1.Tag = "Apagado";
+                        break;
+                }
+            }
+        }
+
+        private void voltarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            // Redesenhar a janela para forma reduzida.
+
+            StatusStripBomDia.Hide();
+
+            this.WindowState = FormWindowState.Normal;
+            FormBorderStyle = FormBorderStyle.None;
+
+            Xloc = Location.X; Yloc = Location.Y;
+            LarguraForm = Width;  AlturaForm = Height;
+
+            Width = LarguraReduzida;
+            Height = (int)(((ushort)dateTimePicker1.Height) * 1.1);
+
+            this.BackColor = Color.Black; Location = new Point(1100, 0);
+
+            cortinaToolStripMenuItem.Enabled = true;
+
+            Program.Bomdia.TopMost = true;
+
+
+            // Ocultar o pad
+            HideForm();
+        }
+
+        private void TarefasBindingSource_ListChanged(object sender, ListChangedEventArgs e)
+        {
+            //this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.CLIP07;
         }
     }
 

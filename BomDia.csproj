@@ -210,5 +210,11 @@
   <ItemGroup>
     <None Include="Resources\CALENDAR.WMF" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de tela 2024-03-02 174446.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tela.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

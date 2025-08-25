@@ -19,13 +19,14 @@ namespace BomDia
         {
             InitializeComponent();
             this.TopMost = true; // Mantém o formulário sempre no topo
+
         }
 
         private void Pad_MouseLeave(object sender, EventArgs e)
         {
             if(FormBorderStyle != FormBorderStyle.None)
             { FormBorderStyle = FormBorderStyle.None; }
-            //this.Close();   
+
         }
 
         private void handleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,11 +75,9 @@ namespace BomDia
             if (Program.Bomdia != null && !Program.Bomdia.IsDisposed)
             {
                 
-                
                 Program.Bomdia.TopMost = true;
                 // Traz o formulário para frente
             }
-
         }
 
 
@@ -91,15 +90,17 @@ namespace BomDia
                 this.Dispose();
 
                 AtivarBomdia();
-
             }
-            ;
         }
 
         private void Pad_Load(object sender, EventArgs e)
         {
             Portal +=
         (s, Stexto) => Program.Bomdia.ListaDeDatas.Text = Stexto; // Assina o evento
+            
+            
+            
+
         }
     }
     

@@ -113,6 +113,16 @@ namespace BomDia.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_tela_2024_03_02_174446 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de tela 2024-03-02 174446", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CLIP07 {
             get {
                 object obj = ResourceManager.GetObject("CLIP07", resourceCulture);
@@ -236,6 +246,16 @@ namespace BomDia.Properties {
         internal static System.Drawing.Bitmap SECUR04 {
             get {
                 object obj = ResourceManager.GetObject("SECUR04", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tela {
+            get {
+                object obj = ResourceManager.GetObject("tela", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
