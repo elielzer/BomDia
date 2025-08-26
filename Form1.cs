@@ -412,7 +412,7 @@ namespace BomDia
             
             //this.label1.Image = null; // imagem ao registro atual não mais existe
             this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.Edit1;
-            this.label1.Text = "prompt ";
+            this.label1.Text = "Prompt ";
             if (DataGridView1.CurrentRow == null) //quando a posição está em linha nova
             {
                 try
