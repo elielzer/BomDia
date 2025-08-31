@@ -1000,12 +1000,32 @@ namespace BomDia
 
             ButtonAnexa.Enabled = true;
 
-            //altera imagem
-
-            //toolStripStatusLabel1.Visible = true; //figura indica modo gerenciamento
-            //dropToolStripMenuItem.Visible = false;
+            //altera estado da imagem
             toolStripDropDownButton1.Visible = false;
-            DataGridView1.Focus();
+
+            // libera a função de inserir
+            dataHoje = DateTime.Today;
+            dataPara = Convert.ToDateTime(ListaDeDatas.SelectedItem);
+            if (dataPara == dataHoje)
+            {
+                MSGtoolStripStatusLabel.Text =
+                    "Arquivo de dados: " + BancoDados;
+
+                //DiaBomDiaLabel.Text = "Em tempo real ".ToUpper();
+
+                if (bindingNavigatorAddNewItem.Enabled == false)
+                { bindingNavigatorAddNewItem.Enabled = true; }
+                if (bindingNavigatorAddNewItem.Text != "&Inserir")
+                { bindingNavigatorAddNewItem.Text = "&Inserir"; }
+            }
+
+
+
+            //DataGridView1.Focus();
+
+
+
+
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)

@@ -114,9 +114,9 @@ namespace BomDia
             this.label7 = new System.Windows.Forms.Label();
             this.QuandoPrevisto = new System.Windows.Forms.MaskedTextBox();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
-            this.PictureBoxEditar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.PictureBoxEditar = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -825,7 +825,7 @@ namespace BomDia
             // dropToolStripMenuItem
             // 
             this.dropToolStripMenuItem.Name = "dropToolStripMenuItem";
-            this.dropToolStripMenuItem.Size = new System.Drawing.Size(189, 36);
+            this.dropToolStripMenuItem.Size = new System.Drawing.Size(270, 36);
             this.dropToolStripMenuItem.Text = "Habilitar";
             this.dropToolStripMenuItem.Click += new System.EventHandler(this.dropToolStripMenuItem_Click);
             // 
@@ -1163,17 +1163,6 @@ namespace BomDia
             this.flowLayoutPanel7.Size = new System.Drawing.Size(503, 37);
             this.flowLayoutPanel7.TabIndex = 20;
             // 
-            // PictureBoxEditar
-            // 
-            this.PictureBoxEditar.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.Edit1;
-            this.PictureBoxEditar.Location = new System.Drawing.Point(86, 3);
-            this.PictureBoxEditar.Name = "PictureBoxEditar";
-            this.PictureBoxEditar.Size = new System.Drawing.Size(45, 35);
-            this.PictureBoxEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PictureBoxEditar.TabIndex = 5;
-            this.PictureBoxEditar.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -1200,6 +1189,17 @@ namespace BomDia
             this.label4.Size = new System.Drawing.Size(0, 29);
             this.label4.TabIndex = 5;
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // PictureBoxEditar
+            // 
+            this.PictureBoxEditar.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.Edit1;
+            this.PictureBoxEditar.Location = new System.Drawing.Point(86, 3);
+            this.PictureBoxEditar.Name = "PictureBoxEditar";
+            this.PictureBoxEditar.Size = new System.Drawing.Size(45, 35);
+            this.PictureBoxEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PictureBoxEditar.TabIndex = 5;
+            this.PictureBoxEditar.TabStop = false;
             // 
             // tableLayoutPanel14
             // 
