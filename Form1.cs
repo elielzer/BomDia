@@ -46,7 +46,7 @@ namespace BomDia
         public BomDia()
         {
             InitializeComponent();
-
+            
 
         }
 
@@ -66,7 +66,6 @@ namespace BomDia
 
             Program.DiaBomDiaX = this.Location.X + this.Width/2 +70;
             Program.DiaBomDiaY = this.Location.Y + 20;
-
 
 
             FormBorderStyle = FormBorderStyle.None;
@@ -94,7 +93,6 @@ namespace BomDia
 
             ListaDeDatas.Text = DateTime.Today.ToShortDateString();
                       
-            //
 
             TarefasBindingSource.Filter =
                 String.Format("QUANDO = '{0:dd/MM/yyyy}'",ListaDeDatas.Text);
@@ -109,6 +107,8 @@ namespace BomDia
             this.BackColor = Color.Black;
 
             DetalheUsuário.Hide(); // Torna o campo invisível no interface
+
+            label1.Text = "Desabilitado";
         }
 
         private void CortinaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -144,7 +144,7 @@ namespace BomDia
         }
         public void BomDia_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            
 
             if (e.KeyChar ==(char)27 )
             {
@@ -410,9 +410,9 @@ namespace BomDia
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             
-            //this.label1.Image = null; // imagem ao registro atual não mais existe
+
             this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.Edit1;
-            this.label1.Text = "Prompt ";
+            //this.label1.Text = "Prompt ";
             if (DataGridView1.CurrentRow == null) //quando a posição está em linha nova
             {
                 try
@@ -670,6 +670,7 @@ namespace BomDia
 
                 //this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.CLIP07;
                 this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.Edit1;
+                label1.Text = "Prompt";
             }
             catch
             {
@@ -775,28 +776,12 @@ namespace BomDia
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                DateTime datetime = Convert.ToDateTime(ListaDeDatas.Text);
-                datetime = datetime.AddDays(1);
-                ListaDeDatas.Text = datetime.ToShortDateString();
-            }
-            catch { }
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DateTime datetime = Convert.ToDateTime(ListaDeDatas.Text);
-                datetime = datetime.AddDays(-1);
-                ListaDeDatas.Text = datetime.ToShortDateString();
-            }
-            catch
-            {
-                ;
-            }
+
         }
 
 
@@ -997,7 +982,7 @@ namespace BomDia
             tableLayoutPanel6.Enabled = true;
             BindingNavigatorNovo.Enabled = true;
             BindingExclui.Enabled = true;
-
+            label1.Text = "Prompt";
             ButtonAnexa.Enabled = true;
 
             //altera estado da imagem
@@ -1010,8 +995,6 @@ namespace BomDia
             {
                 MSGtoolStripStatusLabel.Text =
                     "Arquivo de dados: " + BancoDados;
-
-                //DiaBomDiaLabel.Text = "Em tempo real ".ToUpper();
 
                 if (bindingNavigatorAddNewItem.Enabled == false)
                 { bindingNavigatorAddNewItem.Enabled = true; }
@@ -1081,6 +1064,56 @@ namespace BomDia
         private void TarefasBindingSource_ListChanged(object sender, ListChangedEventArgs e)
         {
             //this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.CLIP07;
+        }
+
+        public void DefinirStatus()
+            {
+            PictureBoxEditar.Image = global::BomDia.Properties.Resources.NOTE14;
+            if (label1.Text != "...") 
+            { 
+                label1.Text = "...";
+            }
+            }
+
+
+        private void QuandoPrevisto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            PictureBoxEditar.Image = global::BomDia.Properties.Resources.NOTE14;
+        }
+
+        private void OQuePretendido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DefinirStatus();
+        }
+
+        private void QuandoPrevisto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DefinirStatus();
+        }
+
+        private void DiaMarcadoPretendido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DefinirStatus();
+        }
+
+        private void ComboBoxPorque_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DefinirStatus();
+        }
+
+        private void DetalheUsuário2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DefinirStatus();
+        }
+
+        private void ComboBoxPorque_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DefinirStatus();
         }
     }
 
