@@ -1115,6 +1115,12 @@ namespace BomDia
         {
             DefinirStatus();
         }
+
+        public void button3_Click(object sender, EventArgs e)
+        {
+            Form calculator1 = new CalculatorForm();
+            calculator1.Show();
+        }
     }
 
 }
