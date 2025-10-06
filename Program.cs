@@ -29,5 +29,6 @@ namespace BomDia
             Application.Run(Bomdia);
         }
         public static int DiaBomDiaX = 0; public static int DiaBomDiaY = 0;
+
     }        
 }

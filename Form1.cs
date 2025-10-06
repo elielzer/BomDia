@@ -26,13 +26,14 @@ namespace BomDia
         
         Pad pad; // Formulário popup
 
-        // obtém o nome de usuário do Windows
+        // Obter o nome de usuário do Windows
         public string Usuário = WindowsIdentity.GetCurrent().Name.ToString();
 
         //
         int AlturaReduzida = 0;
         int NRow = 0; // Usado na contagem de linhas no datagridview1
         DateTime DataSemana ; 
+
         string BancoDados =
             "C:/Users/elielzer/Documents/Bom-Dia/XmlDoc.xml";
         public const char Triang = '\u25E3';
@@ -40,8 +41,8 @@ namespace BomDia
         public string PréPorque = ""; public string PréQuando ;
 
 
-        public DateTime dataHoje;
-        public DateTime dataPara ;
+        public DateTime dataHoje; public DateTime dataPara ;
+        public int ContadorDeClique = 0; public string Old_label = "";
 
         public BomDia()
         {
@@ -109,6 +110,7 @@ namespace BomDia
             DetalheUsuário.Hide(); // Torna o campo invisível no interface
 
             label1.Text = "Desabilitado";
+            Old_label = label1.Text;
         }
 
         private void CortinaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -248,6 +250,7 @@ namespace BomDia
             this.PictureBoxEditar.Image =
                 global::BomDia.Properties.Resources.NEW;
             label1.Text = "Novo item..."; label5.Text = "";
+            Old_label = label1.Text;
             bindingNavigatorAddNewItem.Enabled = false;
         }
 
@@ -559,6 +562,7 @@ namespace BomDia
 ;                return; }
 
             label1.Text = "Escrever item";
+            Old_label = label1.Text;
             this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.NEW;
 
         }
@@ -668,12 +672,13 @@ namespace BomDia
                 MSGtoolStripStatusLabel.Text = "Anexada a tarefa no arquivo XML " +
                     DateTime.Now.ToString();
 
-                //this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.CLIP07;
                 this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.Edit1;
                 label1.Text = "Prompt";
+                Old_label = label1.Text;
             }
-            catch
+            catch (Exception ex) 
             {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -779,13 +784,7 @@ namespace BomDia
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        // Transportar o registro correspondente para o presente.
+        /* Transportar o registro correspondente para o tempo real.*/
         private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = e.RowIndex;
@@ -810,10 +809,12 @@ namespace BomDia
                 Row["User"] = DetalheUsuário2.Text;
                 // Índice
                 BomDiaTarefas.Rows.Add(Row);
+                ContadorDeClique += 1;
 
                 string MsgTexto =
                     DataGridView1.Rows[i].Cells[0].Value.ToString();
 
+                label1.Text =  Old_label + "(" + ContadorDeClique + ")";
                 MsgTexto = "Migrado IND(" + MsgTexto + ") para o presente.";
                 MSGtoolStripStatusLabel.Text = "Ok. " + MsgTexto;
                 // Desmarcar linha
@@ -983,6 +984,7 @@ namespace BomDia
             BindingNavigatorNovo.Enabled = true;
             BindingExclui.Enabled = true;
             label1.Text = "Prompt";
+            Old_label = label1.Text;
             ButtonAnexa.Enabled = true;
 
             //altera estado da imagem
@@ -1072,6 +1074,7 @@ namespace BomDia
             if (label1.Text != "...") 
             { 
                 label1.Text = "...";
+                Old_label = label1.Text;
             }
             }
 
