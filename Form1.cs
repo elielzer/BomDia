@@ -491,27 +491,27 @@ namespace BomDia
                             switch (DataSemana.DayOfWeek)
                             {
                                 case DayOfWeek.Monday:
-                                    label5.Text = "⮡ segunda-feira".ToUpper();
+                                    label5.Text = "segunda-feira".ToUpper();
                                     break;
 
                                 case DayOfWeek.Tuesday:
-                                    label5.Text = "⮡ terça-feira".ToUpper();
+                                    label5.Text = "terça-feira".ToUpper();
                                     break;
 
                                 case DayOfWeek.Wednesday:
-                                    label5.Text = "⮡ quarta-feira".ToUpper();
+                                    label5.Text = "quarta-feira".ToUpper();
                                     break;
                                 case DayOfWeek.Thursday:
-                                    label5.Text = "⮡ quinta-feira".ToUpper();
+                                    label5.Text = "quinta-feira".ToUpper();
                                     break;
                                 case DayOfWeek.Friday:
-                                    label5.Text = "⮡ sexta-feira".ToUpper();
+                                    label5.Text = "sexta-feira".ToUpper();
                                     break;
                                 case DayOfWeek.Saturday:
                                     label5.Text = "⮡ sábado".ToUpper();
                                     break;
                                 case DayOfWeek.Sunday:
-                                    label5.Text = "⮡ domingo".ToUpper();
+                                    label5.Text = "domingo".ToUpper();
                                     break;
                                 default:
                                     label5.Text = "Não definida".ToUpper();
@@ -763,7 +763,7 @@ namespace BomDia
         private void ShowLineJoin_tableLayoutPanel7(PaintEventArgs e)
         {
             // Create pen.
-            Pen bluePen = new Pen(Color.Black, 3);
+            Pen bluePen = new Pen(Color.Black, 1);
             bluePen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             // Create points that define line.
             PointF point1 = new PointF(tableLayoutPanel7.Left, tableLayoutPanel7.Bottom - 2);
@@ -1123,6 +1123,11 @@ namespace BomDia
         {
             Form calculator1 = new CalculatorForm();
             calculator1.Show();
+        }
+
+        private void flowLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 
