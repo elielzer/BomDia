@@ -115,8 +115,8 @@ namespace BomDia
 
         private void CortinaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Apresentar a janela principal padrão
-            //
+            //Surgir a janela principal padrão
+            
             splitContainer1.Panel2Collapsed = false;
 
             StatusStripBomDia.Show();
@@ -129,7 +129,16 @@ namespace BomDia
 
             cortinaToolStripMenuItem.Enabled = false;
 
-            //atualiza data padrão (data do dia)
+            /* Mostra a data em lugar da hora */
+            dateTimePicker1.Format = 
+                DateTimePickerFormat.Short;
+
+            dateTimePicker1.Font =
+                new Font("Agency FB", 10F, FontStyle.Regular);
+
+
+
+            //atualiza data tempo real (data do Windows)
             if (ListaDeDatas.Text == DateTime.Today.ToShortDateString())
             {
             }
@@ -164,24 +173,33 @@ namespace BomDia
                 { pad.Dispose(); }
                 Program.Bomdia.TopMost = true;
 
+
                 // Menu suspenso para o comando Voltar.
 
-                StatusStripBomDia.Visible = false;
+
+
                 StatusStripBomDia.Visible = false;
                 this.WindowState = FormWindowState.Normal;
                 FormBorderStyle = FormBorderStyle.None;
-                Xloc = Location.X;
-                Yloc = Location.Y;
+                Xloc = Location.X;  Yloc = Location.Y;
                 LarguraForm = Width;
                 AlturaForm = Height;
                 Width = LarguraReduzida;
+
+
+                /* Muda formato */
+                dateTimePicker1.Format = DateTimePickerFormat.Custom;
+                dateTimePicker1.CustomFormat = "HH:mm";
+                dateTimePicker1.Font = new Font("Calibri", 22F, FontStyle.Bold);
+
                 Height = (int)(((ushort)dateTimePicker1.Height) * 1.05);
                 this.BackColor = Color.Black;
                 Location = new Point(1100, 0);
                 cortinaToolStripMenuItem.Enabled = true;
                 this.Tag = "Min";
-                
-            };
+
+            }
+            ;
             
         }
 
@@ -375,23 +393,30 @@ namespace BomDia
         }
         public void VoltarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            /* Formata o campo para hora */
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "HH:mm";
+            dateTimePicker1.Font = new Font("Calibri", 22F, FontStyle.Bold);
+
             // Redesenhar a janela para forma reduzida.
 
             StatusStripBomDia.Visible = false;
             this.WindowState = FormWindowState.Normal;
             FormBorderStyle = FormBorderStyle.None;
-            Xloc = Location.X;
-            Yloc = Location.Y;
-            LarguraForm = Width;
-            AlturaForm = Height;
+            Xloc = Location.X; Yloc = Location.Y;
+
+            LarguraForm = Width; AlturaForm = Height;
+
             Width = LarguraReduzida;
+
             Height = (int)(((ushort)dateTimePicker1.Height) * 1.1);
-            this.BackColor = Color.Black;
-            Location = new Point(1100, 0);
+            this.BackColor = Color.Black; Location = new Point(1100, 0);
+
             cortinaToolStripMenuItem.Enabled = true;
-            Program.Bomdia.TopMost = true;
-            // Ocultar 
-            HideForm();
+
+            Program.Bomdia.TopMost = true; HideForm();// Ocultar 
+
+
 
         }
         private void DataGridView1_Enter(object sender, EventArgs e)
@@ -672,10 +697,15 @@ namespace BomDia
                     DateTime.Now.ToString();
 
                 this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.Edit1;
-                label1.Text = "Prompt";
-                Old_label = label1.Text;
+                label1.Text = "Prompt"; Old_label = label1.Text;
+
+                if (ContadorDeClique > 0)
+                {
+                    ContadorDeClique = 0;
+                }
             }
-            catch (Exception ex) 
+
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -766,9 +796,9 @@ namespace BomDia
             bluePen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             // Create points that define line.
             PointF point1 = 
-                new PointF(splitContainer5.Left+ splitContainer5.SplitterDistance, splitContainer5.Top +
+                new PointF(splitContainer5.Left+ textBox1.Width, splitContainer5.Top +
                 splitContainer5.Height-label7.Height-30); 
-
+            
             PointF point2 =
             new PointF(point1.X +  tableLayoutPanel9.Width, point1.Y);
 
@@ -1050,6 +1080,11 @@ namespace BomDia
 
             Xloc = Location.X; Yloc = Location.Y;
             LarguraForm = Width;  AlturaForm = Height;
+
+            /* Muda formato */
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "HH:mm";
+            dateTimePicker1.Font = new Font("Calibri", 22F, FontStyle.Bold);
 
             Width = LarguraReduzida;
             Height = (int)(((ushort)dateTimePicker1.Height) * 1.1);
