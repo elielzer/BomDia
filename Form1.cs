@@ -312,7 +312,7 @@ namespace BomDia
             //
             if (dataPara > dataHoje)
             {
-                DiaBomDiaLabel.Text = "Programático".ToUpper();
+                DiaBomDiaLabel.Text = "◢ Programático".ToUpper();
 
                 bindingNavigatorAddNewItem.Text = "&Criar";
                 if (bindingNavigatorAddNewItem.Text != "&Criar")
@@ -323,7 +323,7 @@ namespace BomDia
             }
             if (dataPara < dataHoje)
             {
-                DiaBomDiaLabel.Text = "Em log".ToUpper();
+                DiaBomDiaLabel.Text = "◢ Em log".ToUpper();
 
                 if (bindingNavigatorAddNewItem.Enabled != false)
                 { bindingNavigatorAddNewItem.Enabled = false; }
@@ -333,7 +333,7 @@ namespace BomDia
                 MSGtoolStripStatusLabel.Text =
                     "Arquivo de dados: " + BancoDados;
 
-                DiaBomDiaLabel.Text = "Em tempo real ".ToUpper() ;
+                DiaBomDiaLabel.Text = "◢ Em tempo real ".ToUpper() ;
 
                 if (bindingNavigatorAddNewItem.Enabled == false)
                 { bindingNavigatorAddNewItem.Enabled = true; }
