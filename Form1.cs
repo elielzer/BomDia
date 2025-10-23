@@ -362,7 +362,7 @@ namespace BomDia
             for (int i = 0; i < NRow; i++)
             {
                 
-                switch (DataGridView1.Rows[i].Cells[7].Value)
+                switch (DataGridView1.Rows[i].Cells[8].Value)
                 {
                     case  true:
                         
@@ -719,7 +719,7 @@ namespace BomDia
                 string MsgTexto="";
                 for (int i = 0; i < NRow; i++)
                 {
-                    switch (DataGridView1.Rows[i].Cells[7].Value)
+                    switch (DataGridView1.Rows[i].Cells[8].Value)
                     {
                         case true:
                             NCaseTrue++;
@@ -822,9 +822,9 @@ namespace BomDia
             int i = e.RowIndex;
             if (e.ColumnIndex == 0)
             {
-                if (Convert.ToBoolean(DataGridView1.Rows[i].Cells[7].Value) == false)
+                if (Convert.ToBoolean(DataGridView1.Rows[i].Cells[8].Value) == false)
                 {
-                    DataGridView1.Rows[i].Cells[7].Value = true;
+                    DataGridView1.Rows[i].Cells[8].Value = true;
 
                 }
                 // Migrar a linha atual
@@ -850,7 +850,7 @@ namespace BomDia
                 MsgTexto = "Migrado IND(" + MsgTexto + ") para o presente.";
                 MSGtoolStripStatusLabel.Text = "Ok. " + MsgTexto;
                 // Desmarcar linha
-                DataGridView1.Rows[i].Cells[7].Value = false;
+                DataGridView1.Rows[i].Cells[8].Value = false;
             }
         }
         private void HideForm()
