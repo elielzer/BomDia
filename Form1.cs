@@ -47,7 +47,7 @@ namespace BomDia
         public BomDia()
         {
             InitializeComponent();
-            
+            splitContainer2.Panel1Collapsed = true;
 
         }
 
@@ -1162,9 +1162,14 @@ namespace BomDia
             calculator1.Show();
         }
 
-        private void flowLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            DataGridView1.DataSource = BomDiaTarefas ;
+        }
 
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            ListaDeDatas.Text =  dateTimePicker2.Value.ToShortDateString();
         }
     }
 
