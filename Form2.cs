@@ -109,5 +109,6 @@ public static class VariaveisGlobais
 {
     // Armazena a data para o interface entre janelas
     public static string ListaDeDatasText = "";
+    public static string MeuDisplay = "";
 
 }
