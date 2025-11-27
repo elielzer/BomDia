@@ -17,23 +17,33 @@ namespace BomDia
 
     public partial class CalculatorForm : Form
     {
-        
+        private void CalculatorForm_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            // Simular um delete
+            if (e.KeyCode == Keys.Delete)
+            {
+                Control[] controles = this.Controls.Find("display", true);
+
+                if (controles.Length > 0 && controles[0] is TextBox txtEncontrado)
+                {
+                    if (txtEncontrado.Name == "Display" && txtEncontrado.Text.Length>0) { txtEncontrado.Text = txtEncontrado.Text.Remove(0, 1); }
+                }
+                return;
+            }
+        }
         public void CalculatorForm_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
-            // Define button labels
-            string[] buttonLabels = { "7", "8", "9", "/", "4", "5", "6", "*", "1", "2", "3", "-", "0", ".", "=", "+", "CE" };
 
-            //MessageBox.Show("Teste");
+
+            // Simular um click de botão
             Control[] controles = this.Controls.Find(e.KeyChar.ToString(), true);
             if (controles.Length > 0 && controles[0] is Button btnEncontrado)
             {
                 btnEncontrado.PerformClick();
             }
-
             
         }
-
         
         public CalculatorForm()
         {           
@@ -41,17 +51,14 @@ namespace BomDia
         }   
 
         public void CalculatorForm_Load(object sender, EventArgs e)
-        {
-            Panel buttonPanel;
-            // Define button labels
-            string[] buttonLabels = { "7", "8", "9", "/", "4", "5", "6", "*", "1", "2", "3", "-", "0", ".", "=", "+", "CE" };
-            
+        {           
             // Set up the form
             this.Text = "Calculator";
             this.Width = 300;
             this.Height = 400;
             this.KeyPreview = true;
             this.KeyPress += CalculatorForm_KeyPress;
+            this.KeyDown += CalculatorForm_KeyDown;
 
             // Create a TextBox for displaying input/output
             TextBox display = new TextBox
@@ -67,16 +74,16 @@ namespace BomDia
             this.splitContainer1.Panel1.Controls.Add(display);
 
             // Create a panel to hold buttons
+            Panel buttonPanel;
             buttonPanel = new Panel
             {
                 Dock = DockStyle.Fill
             };
             //this.Controls.Add(buttonPanel);
             this.splitContainer1.Panel2.Controls.Add(buttonPanel);
-
             
-            // Define button labels
-            //string[] buttonLabels = { "7", "8", "9", "/", "4", "5", "6", "*", "1", "2", "3", "-", "0", ".", "=", "+" ,"CE"};
+            //Define button labels
+            string[] buttonLabels = { "7", "8", "9", "/", "4", "5", "6", "*", "1", "2", "3", "-", "0", ".", "=", "+" ,"CE"};
 
 
             // Add buttons dynamically
@@ -127,11 +134,6 @@ namespace BomDia
                 if (x > 3) { x = 0; y++; }
             }
         
-        }
-
-        private void CalculatorForm_KeyPress1(object sender, KeyPressEventArgs e)
-        {
-            throw new NotImplementedException();
         }
     }
 }
