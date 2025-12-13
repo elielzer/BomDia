@@ -868,19 +868,6 @@ namespace BomDia
             }
         }
 
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-            // Aplicar um filtro de data
-            //
-            DataView dataView = new DataView(BomDiaTarefas)
-            {
-                RowFilter = "DIAMARCADO = '" + maskedTextBoxDia.Value.ToShortDateString() +
-        "' and QUANDO = '" + ListaDeDatas.Text + "'"
-            };
-            DataGridView1.DataSource = dataView;
-            MSGtoolStripStatusLabel.Text = "Aplicado um filtro de data";
-        }
-
         private void button2_Click_1(object sender, EventArgs e)
         {
             DataGridView1.DataSource = TarefasBindingSource;
@@ -1156,20 +1143,44 @@ namespace BomDia
             DefinirStatus();
         }
 
-        public void button3_Click(object sender, EventArgs e)
-        {
-            Form calculator1 = new CalculatorForm();
-            calculator1.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            DataGridView1.DataSource = BomDiaTarefas ;
-        }
-
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
             ListaDeDatas.Text =  dateTimePicker2.Value.ToShortDateString();
+        }
+
+        private void toolStripButton10_Click(object sender, EventArgs e)
+        {
+            // Aplicar um filtro de data
+            //
+            string rowFilter = "";
+
+            switch (this.comboBoxCritério.Text)
+            {
+                case "Programático":
+
+                    //anular o filtro atual
+                    CheckBoxIntegrador.Checked = false;
+                    // aplicar filtro para o programático
+                    rowFilter = "QUANDO > '" + ListaDeDatas.Text + "'";
+                    TarefasBindingSource.Filter = rowFilter;
+                    break;
+                case "Contextual":
+                    //anular o filtro atual
+                    CheckBoxIntegrador.Checked = false;
+                    rowFilter = "DIAMARCADO is not null and QUANDO = '" + ListaDeDatas.Text + "'";
+                    TarefasBindingSource.Filter = rowFilter;
+                    break;
+
+
+            }
+
+            MSGtoolStripStatusLabel.Text = "Aplicado um filtro de data";
+        }
+
+        private void toolStripButton11_Click(object sender, EventArgs e)
+        {
+            Form calculator1 = new CalculatorForm();
+            calculator1.Show();
         }
     }
 
