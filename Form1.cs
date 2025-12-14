@@ -999,46 +999,25 @@ namespace BomDia
 
         private void dropToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tableLayoutPanel6.Enabled = true;
-            BindingNavigatorNovo.Enabled = true;
-            BindingExclui.Enabled = true;
-            label1.Text = "Prompt";
-            Old_label = label1.Text;
-            ButtonAnexa.Enabled = true;
 
-            //altera estado da imagem
-            toolStripDropDownButton1.Visible = false;
-
-            // libera a função de inserir
-            dataHoje = DateTime.Today;
-            dataPara = Convert.ToDateTime(ListaDeDatas.SelectedItem);
-            if (dataPara == dataHoje)
-            {
-                MSGtoolStripStatusLabel.Text =
-                    "Arquivo de dados: " + BancoDados;
-
-                if (bindingNavigatorAddNewItem.Enabled == false)
-                { bindingNavigatorAddNewItem.Enabled = true; }
-                if (bindingNavigatorAddNewItem.Text != "&Inserir")
-                { bindingNavigatorAddNewItem.Text = "&Inserir"; }
-            }
-
-
-
-            //DataGridView1.Focus();
 
 
 
 
         }
 
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        private DataGridView GetDataGridView1()
+        {
+            return DataGridView1;
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e, DataGridView dataGridView1)
         {
             {
                 switch (toolStripStatusLabel1.Tag.ToString())
                 {
                     case "Apagado":
-                        this.toolStripStatusLabel1.Image = global::BomDia.Properties.Resources.LIGHTON;
+                        toolStripStatusLabel1.Image = global::BomDia.Properties.Resources.LIGHTON;
                         toolStripStatusLabel1.Tag = "Aceso";
                         DataGridView1.BackgroundColor = Color.White;
                         DataGridView1.DefaultCellStyle.BackColor = Color.White;
@@ -1046,9 +1025,8 @@ namespace BomDia
                         break;
 
                     case "Aceso":
-                        this.toolStripStatusLabel1.Image = global::BomDia.Properties.Resources.LIGHTOFF;
-
-                        DataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(50, 10, 100);
+                        toolStripStatusLabel1.Image = global::BomDia.Properties.Resources.LIGHTOFF;
+                        dataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(50, 10, 100);
                         DataGridView1.ForeColor = Color.White;
                         toolStripStatusLabel1.Tag = "Apagado";
                         break;
@@ -1181,6 +1159,54 @@ namespace BomDia
         {
             Form calculator1 = new CalculatorForm();
             calculator1.Show();
+        }
+
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+            tableLayoutPanel6.Enabled = true;
+            BindingNavigatorNovo.Enabled = true;
+            BindingExclui.Enabled = true;
+            label1.Text = "Prompt";
+            Old_label = label1.Text;
+            ButtonAnexa.Enabled = true;
+
+            //altera estado da imagem
+            toolStripDropDownButton1.Visible = false;
+
+            // libera a função de inserir
+            dataHoje = DateTime.Today;
+            dataPara = Convert.ToDateTime(ListaDeDatas.SelectedItem);
+            if (dataPara == dataHoje)
+            {
+                MSGtoolStripStatusLabel.Text =
+                    "Arquivo de dados: " + BancoDados;
+
+                if (bindingNavigatorAddNewItem.Enabled == false)
+                { bindingNavigatorAddNewItem.Enabled = true; }
+                if (bindingNavigatorAddNewItem.Text != "&Inserir")
+                { bindingNavigatorAddNewItem.Text = "&Inserir"; }
+            }
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+            switch (toolStripStatusLabel1.Tag.ToString())
+            {
+                case "Apagado":
+                    toolStripStatusLabel1.Image = global::BomDia.Properties.Resources.LIGHTON;
+                    toolStripStatusLabel1.Tag = "Aceso";
+                    this.DataGridView1.BackgroundColor = Color.White;
+                    this.DataGridView1.DefaultCellStyle.BackColor = Color.White;
+                    this.DataGridView1.ForeColor = Color.Black;
+                    break;
+
+                case "Aceso":
+                    toolStripStatusLabel1.Image = global::BomDia.Properties.Resources.LIGHTOFF;
+                    this.DataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(50, 10, 100);
+                    this.DataGridView1.ForeColor = Color.White;
+                    toolStripStatusLabel1.Tag = "Apagado";
+                    break;
+            }
         }
     }
 
