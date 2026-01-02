@@ -49,6 +49,9 @@ namespace BomDia
             InitializeComponent();
             splitContainer2.Panel1Collapsed = true;
 
+            // Bloqueio prévio
+            OQuePretendido.Enabled = false; QuandoPrevisto.Enabled = false; ComboBoxPorque.Enabled = false; flowLayoutPanel4.Enabled = false; ButtonAnexa.Enabled = false; bindingNavigatorDeleteItem.Enabled = false;
+
         }
 
         public void BomDia_Load(object sender, EventArgs e)
@@ -138,7 +141,7 @@ namespace BomDia
 
 
 
-            //atualiza data tempo real (data do Windows)
+            //atualiza data tempo real com base no sistema operacional
             if (ListaDeDatas.Text == DateTime.Today.ToShortDateString())
             {
             }
@@ -670,45 +673,7 @@ namespace BomDia
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                TarefasBindingSource.EndEdit();
-                TarefasDataSet.AcceptChanges();
 
-                //
-                if (TarefasDataSet == null) { return; }
-
-                // Create a file name to write to.
-                string filename = "C:/Users/elielzer/Documents/Bom-Dia/XmlDoc.xml";
-
-                // Create the FileStream to write with.
-                System.IO.FileStream stream = new System.IO.FileStream
-                    (filename, System.IO.FileMode.Create);
-
-                // Create an XmlTextWriter with the fileStream.
-                System.Xml.XmlTextWriter xmlWriter =
-                    new System.Xml.XmlTextWriter(stream,
-                    System.Text.Encoding.Unicode);
-
-                // Write to the file with the WriteXml method.
-                TarefasDataSet.WriteXml(xmlWriter);
-                xmlWriter.Close();
-                MSGtoolStripStatusLabel.Text = "Anexada a tarefa no arquivo XML " +
-                    DateTime.Now.ToString();
-
-                this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.Edit1;
-                label1.Text = "Prompt"; Old_label = label1.Text;
-
-                if (ContadorDeClique > 0)
-                {
-                    ContadorDeClique = 0;
-                }
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void ButtonMoveLista_Click(object sender, EventArgs e)
@@ -847,7 +812,7 @@ namespace BomDia
                     DataGridView1.Rows[i].Cells[0].Value.ToString();
 
                 label1.Text =  Old_label + "(" + ContadorDeClique + ")";
-                MsgTexto = "Migrado IND(" + MsgTexto + ") para o presente.";
+                MsgTexto = "Migrado IND(" + MsgTexto + ") para o tempo real.";
                 MSGtoolStripStatusLabel.Text = "Ok. " + MsgTexto;
                 // Desmarcar linha
                 DataGridView1.Rows[i].Cells[8].Value = false;
@@ -1161,33 +1126,6 @@ namespace BomDia
             calculator1.Show();
         }
 
-        private void toolStripButton12_Click(object sender, EventArgs e)
-        {
-            tableLayoutPanel6.Enabled = true;
-            BindingNavigatorNovo.Enabled = true;
-            BindingExclui.Enabled = true;
-            label1.Text = "Prompt";
-            Old_label = label1.Text;
-            ButtonAnexa.Enabled = true;
-
-            //altera estado da imagem
-            toolStripDropDownButton1.Visible = false;
-
-            // libera a função de inserir
-            dataHoje = DateTime.Today;
-            dataPara = Convert.ToDateTime(ListaDeDatas.SelectedItem);
-            if (dataPara == dataHoje)
-            {
-                MSGtoolStripStatusLabel.Text =
-                    "Arquivo de dados: " + BancoDados;
-
-                if (bindingNavigatorAddNewItem.Enabled == false)
-                { bindingNavigatorAddNewItem.Enabled = true; }
-                if (bindingNavigatorAddNewItem.Text != "&Inserir")
-                { bindingNavigatorAddNewItem.Text = "&Inserir"; }
-            }
-        }
-
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
             switch (toolStripStatusLabel1.Tag.ToString())
@@ -1207,6 +1145,82 @@ namespace BomDia
                     toolStripStatusLabel1.Tag = "Apagado";
                     break;
             }
+        }
+
+        private void toolStripButton16_Click(object sender, EventArgs e)
+        {
+            //tableLayoutPanel6.Enabled = true;
+
+            // Desbloquear elementos
+            OQuePretendido.Enabled = true;  QuandoPrevisto.Enabled = true;ComboBoxPorque.Enabled = true;flowLayoutPanel4.Enabled = true;ButtonAnexa.Enabled = true;bindingNavigatorDeleteItem.Enabled = true;
+
+            BindingNavigatorNovo.Enabled = true;
+            BindingExclui.Enabled = true;
+            label1.Text = "Prompt";
+            Old_label = label1.Text;
+            ButtonAnexa.Enabled = true;
+
+            
+            toolStripButton16.Visible = false;
+
+            // libera a função de inserir
+            dataHoje = DateTime.Today;
+            dataPara = Convert.ToDateTime(ListaDeDatas.SelectedItem);
+            if (dataPara == dataHoje)
+            {
+                MSGtoolStripStatusLabel.Text =
+                    "Arquivo de dados: " + BancoDados;
+
+                if (bindingNavigatorAddNewItem.Enabled == false)
+                { bindingNavigatorAddNewItem.Enabled = true; }
+                if (bindingNavigatorAddNewItem.Text != "&Inserir")
+                { bindingNavigatorAddNewItem.Text = "&Inserir"; }
+            }
+
+        }
+
+        private void ButtonAnexa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TarefasBindingSource.EndEdit();
+                TarefasDataSet.AcceptChanges();
+
+                //
+                if (TarefasDataSet == null) { return; }
+
+                // Create a file name to write to.
+                string filename = "C:/Users/elielzer/Documents/Bom-Dia/XmlDoc.xml";
+
+                // Create the FileStream to write with.
+                System.IO.FileStream stream = new System.IO.FileStream
+                    (filename, System.IO.FileMode.Create);
+
+                // Create an XmlTextWriter with the fileStream.
+                System.Xml.XmlTextWriter xmlWriter =
+                    new System.Xml.XmlTextWriter(stream,
+                    System.Text.Encoding.Unicode);
+
+                // Write to the file with the WriteXml method.
+                TarefasDataSet.WriteXml(xmlWriter);
+                xmlWriter.Close();
+                MSGtoolStripStatusLabel.Text = "Anexada a tarefa no arquivo XML " +
+                    DateTime.Now.ToString();
+
+                this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.Edit1;
+                label1.Text = "Prompt"; Old_label = label1.Text;
+
+                if (ContadorDeClique > 0)
+                {
+                    ContadorDeClique = 0;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 
