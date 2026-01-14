@@ -279,18 +279,7 @@ namespace BomDia
             tableLayoutPanel6.Enabled = true;
         }
 
-        private void AbrirToolStripButtonGerenciar_Click(object sender, EventArgs e)
-        {
 
-            tableLayoutPanel6.Enabled = true;
-            BindingNavigatorNovo.Enabled = true;
-            BindingExclui.Enabled = true;
-
-            //altera a imagem da picture
-            this.toolStripStatusLabel1.Image = global::BomDia.Properties.Resources.LIGHTON;
-            toolStripStatusLabel1.Visible = true; //figura indica modo operacional do aplicativo
-            
-        }
         private void CheckBoxIntegrador_Click(object sender, EventArgs e)
         {
             if (CheckBoxIntegrador.Checked == true)
@@ -1173,6 +1162,7 @@ namespace BomDia
 
                 if (bindingNavigatorAddNewItem.Enabled == false)
                 { bindingNavigatorAddNewItem.Enabled = true; }
+                if(bindingNavigatorDeleteItem.Enabled == false) { bindingNavigatorDeleteItem.Enabled = true; }
                 if (bindingNavigatorAddNewItem.Text != "&Inserir")
                 { bindingNavigatorAddNewItem.Text = "&Inserir"; }
             }

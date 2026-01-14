@@ -1359,7 +1359,7 @@ namespace BomDia
             this.ButtonAnexa.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAnexa.Image")));
             this.ButtonAnexa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ButtonAnexa.Name = "ButtonAnexa";
-            this.ButtonAnexa.Size = new System.Drawing.Size(46, 34);
+            this.ButtonAnexa.Size = new System.Drawing.Size(47, 34);
             this.ButtonAnexa.Text = "✔";
             this.ButtonAnexa.ToolTipText = "Gravar";
             this.ButtonAnexa.Click += new System.EventHandler(this.ButtonAnexa_Click);
@@ -1401,7 +1401,6 @@ namespace BomDia
             this.BindingExclui.CountItem = null;
             this.BindingExclui.DeleteItem = this.bindingNavigatorDeleteItem;
             this.BindingExclui.Dock = System.Windows.Forms.DockStyle.None;
-            this.BindingExclui.Enabled = false;
             this.BindingExclui.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.BindingExclui.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator2,
@@ -1415,7 +1414,7 @@ namespace BomDia
             this.BindingExclui.Name = "BindingExclui";
             this.BindingExclui.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.BindingExclui.PositionItem = null;
-            this.BindingExclui.Size = new System.Drawing.Size(90, 34);
+            this.BindingExclui.Size = new System.Drawing.Size(136, 34);
             this.BindingExclui.TabIndex = 6;
             this.BindingExclui.Text = "bindingNavigator1";
             // 
@@ -1445,7 +1444,7 @@ namespace BomDia
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Image = global::BomDia.Properties.Resources.tela;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label1.Location = new System.Drawing.Point(100, 0);
+            this.label1.Location = new System.Drawing.Point(146, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 43);
