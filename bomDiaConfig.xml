@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<dataSetBiblioteca>
+	<Config>
+		<Segmento>0</Segmento>
+		<Tipo>Principal</Tipo>
+		<Valor>C:\Users\elielzer\Documents\Bom-Dia</Valor>
+	</Config>
+	<Config>
+		<Segmento>1</Segmento>
+		<Tipo>Conteúdo</Tipo>
+		<Valor>C:\Users\elielzer\Documents\Bom-Dia\BomRepos</Valor>
+	</Config>
+</dataSetBiblioteca>
+
