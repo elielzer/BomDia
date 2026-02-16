@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 
@@ -19,7 +13,6 @@ namespace BomDia
         {
             InitializeComponent();
             this.TopMost = true; // Mantém o formulário sempre no topo
-
         }
 
         private void Pad_MouseLeave(object sender, EventArgs e)
@@ -57,8 +50,6 @@ namespace BomDia
             VariaveisGlobais.ListaDeDatasText = datetime.ToShortDateString();
             //bomDia.ListaDeDatas.Text = datetime.ToShortDateString();
             Portal?.Invoke(this, VariaveisGlobais.ListaDeDatasText);
-
-            
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -67,19 +58,16 @@ namespace BomDia
             VariaveisGlobais.ListaDeDatasText = datetime.ToShortDateString();
             //bomDia.ListaDeDatas.Text = datetime.ToShortDateString();
             Portal?.Invoke(this, VariaveisGlobais.ListaDeDatasText);
-
         }
         public void AtivarBomdia()
         {
-            // Ativar o formulário principal de volta.
+            // Trás de volta o formulário principal
             if (Program.Bomdia != null && !Program.Bomdia.IsDisposed)
             {
-                
                 Program.Bomdia.TopMost = true;
-                // Traz o formulário para frente
+                // Define o formulário à frente dos demais
             }
         }
-
 
         private void Pad_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -95,12 +83,7 @@ namespace BomDia
 
         private void Pad_Load(object sender, EventArgs e)
         {
-            Portal +=
-        (s, Stexto) => Program.Bomdia.ListaDeDatas.Text = Stexto; // Assina o evento
-            
-            
-            
-
+            Portal += (s, Stexto) => Program.Bomdia.ListaDeDatas.Text = Stexto; // Assina o evento
         }
     }
     

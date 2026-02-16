@@ -10,5 +10,15 @@
 		<Tipo>Pastas</Tipo>
 		<Valor>C:\Users\elielzer\Documents\Bom-Dia\BomRepos</Valor>
 	</Config>
+	<Config>
+		<Segmento>2</Segmento>
+		<Tipo>BancoDados</Tipo>
+		<Valor>C:/Users/elielzer/Documents/Bom-Dia/XmlDoc.xml</Valor>
+	</Config>
+	<Config>
+		<Segmento>3</Segmento>
+		<Tipo>Impressos</Tipo>
+		<Valor>C:/Users/elielzer/Documents/Bom-Dia/Impressos</Valor>
+	</Config>
 </dataSetBiblioteca>
 

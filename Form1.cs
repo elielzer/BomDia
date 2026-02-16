@@ -17,17 +17,13 @@ using System.Xml.Schema;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
-
-
 namespace BomDia
 {
     public partial class BomDia : Form
     {
-        int LarguraForm = 0; int AlturaForm = 0;
-        int Xloc = 0; int Yloc = 0; int LarguraReduzida = 0;
+        int LarguraForm = 0; int AlturaForm = 0;  int Xloc = 0; int Yloc = 0; int LarguraReduzida = 0;
 
-
-        Pad pad; // Formulário popup
+        Pad pad; // Abre o formulário suspenso especial
 
         // Obter o nome de usuário do Windows
         public string Usuário = WindowsIdentity.GetCurrent().Name.ToString();
@@ -44,17 +40,15 @@ namespace BomDia
         public string PréPorque = ""; public string PréQuando;
 
 
-        public DateTime dataHoje; public DateTime dataPara;
-        public int ContadorDeClique = 0; public string Old_label = "";
+        public DateTime dataHoje; public DateTime dataPara;  public int ContadorDeClique = 0; public string Old_label = "";
 
         public BomDia()
         {
-            InitializeComponent();
-            splitContainer2.Panel1Collapsed = true;
+            InitializeComponent();    splitContainer2.Panel1Collapsed = true;
 
-            // Bloqueio prévio
+            // Restrição no comportamento de alguns controles
             OQuePretendido.Enabled = false; QuandoPrevisto.Enabled = false; ComboBoxPorque.Enabled = false; flowLayoutPanel4.Enabled = false; ButtonAnexa.Enabled = false; bindingNavigatorDeleteItem.Enabled = false;
-
+            PictureBoxEditar.Enabled = false;
         }
 
         public void BomDia_Load(object sender, EventArgs e)
@@ -91,24 +85,21 @@ namespace BomDia
             // Mostra a data do dia
             Location = new Point(1050, 0); ListaDeDatas.Text = DateTime.Today.ToShortDateString();
 
-            // Selecionar dados a apresentar 
-            TarefasBindingSource.Filter =
-                String.Format("QUANDO = '{0:dd/MM/yyyy}'", ListaDeDatas.Text);
+            // Selecionar dados a apresentar conforme critério
+            TarefasBindingSource.Filter =  String.Format("QUANDO = '{0:dd/MM/yyyy}'", ListaDeDatas.Text);
 
             // Formatação de datas
             string SemanaComMaiuscula; SemanaComMaiuscula = DateTime.Today.ToString("ddd");
             SemanaComMaiuscula = SemanaComMaiuscula[0].ToString().ToUpper() +
                 SemanaComMaiuscula[1].ToString() + SemanaComMaiuscula[2].ToString();
+
             SemanaToolStripButton.Text = string.Concat(".", SemanaComMaiuscula);
 
             // Controles invisíveis
-            DetalheUsuário.Hide(); PastaOculto.Hide();  
+            DetalheUsuário.Hide(); PastaOculto.Hide();  label1.Text = "Desabilitado"; Old_label = label1.Text;
 
 
-            label1.Text = "Desabilitado"; Old_label = label1.Text;
-
-
-            // Carregar tabela de configuração
+            // Carregar tabela de configuração para dentro da grade
             this.dataGridView3.DataSource = VariáveisGlobais.dataSetBiblioteca;
             this.dataGridView3.DataMember = VariáveisGlobais.dataSetBiblioteca.Tables[0].ToString();
 
@@ -116,34 +107,21 @@ namespace BomDia
 
         private void CortinaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Surgir a janela principal padrão
-
+            //Surgir a janela principal no tamanho padrão
             splitContainer1.Panel2Collapsed = false;
 
-            StatusStripBomDia.Show();
-            Location = new Point(Xloc, Yloc); Width = LarguraForm; Height = AlturaForm;
+            StatusStripBomDia.Show(); Location = new Point(Xloc, Yloc); Width = LarguraForm; Height = AlturaForm;
 
-            this.BackColor = Color.Gray;
-            this.WindowState = FormWindowState.Normal;
-            FormBorderStyle = FormBorderStyle.Sizable;
+            this.BackColor = Color.Gray; this.WindowState = FormWindowState.Normal; FormBorderStyle = FormBorderStyle.Sizable;
             ControlBox = true;
-
             cortinaToolStripMenuItem.Enabled = false;
 
-            /* Mostra a data em lugar da hora */
-            dateTimePicker1.Format =
-                DateTimePickerFormat.Short;
-
-            dateTimePicker1.Font =
-                new Font("Agency FB", 10F, FontStyle.Regular);
-
-
+            /* Mostra a data*/
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Font =  new Font("Agency FB", 10F, FontStyle.Regular);
 
             //atualiza data tempo real com base no sistema operacional
-            if (ListaDeDatas.Text == DateTime.Today.ToShortDateString())
-            {
-            }
-            else
+            if (ListaDeDatas.Text != DateTime.Today.ToShortDateString())
             {
                 ListaDeDatas.Text = DateTime.Today.ToShortDateString();
             }
@@ -177,8 +155,6 @@ namespace BomDia
 
 
                 // Menu suspenso para o comando Voltar.
-
-
 
                 StatusStripBomDia.Visible = false;
                 this.WindowState = FormWindowState.Normal;
@@ -340,8 +316,7 @@ namespace BomDia
 
             dateTimePicker1.ResetText();
 
-            string SemanaComMaiuscula;
-            SemanaComMaiuscula = DateTime.Today.ToString("ddd");
+            string SemanaComMaiuscula = DateTime.Today.ToString("ddd");
             SemanaComMaiuscula = SemanaComMaiuscula[0].ToString().ToUpper() +
                 SemanaComMaiuscula[1].ToString() + SemanaComMaiuscula[2].ToString();
             SemanaToolStripButton.Text = string.Concat(".", SemanaComMaiuscula);
@@ -954,15 +929,6 @@ namespace BomDia
             ShowLineJoin(e);
         }
 
-        private void dropToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
-
-
-
-        }
-
         private DataGridView GetDataGridView1()
         {
             return DataGridView1;
@@ -1144,15 +1110,15 @@ namespace BomDia
             //tableLayoutPanel6.Enabled = true;
 
             // Desbloquear elementos
-            OQuePretendido.Enabled = true; QuandoPrevisto.Enabled = true; ComboBoxPorque.Enabled = true; flowLayoutPanel4.Enabled = true; ButtonAnexa.Enabled = true; bindingNavigatorDeleteItem.Enabled = true;
-
+            OQuePretendido.Enabled = true; QuandoPrevisto.Enabled = true;
+            ComboBoxPorque.Enabled = true; flowLayoutPanel4.Enabled = true;
+            ButtonAnexa.Enabled = true; bindingNavigatorDeleteItem.Enabled = true;
+            ButtonAnexa.Enabled = true; BindingExclui.Enabled = true;
+            PictureBoxEditar.Enabled = true;
             //BindingNavigatorNovo.Enabled = true;
-            BindingExclui.Enabled = true;
-            label1.Text = "Prompt";
-            Old_label = label1.Text;
-            ButtonAnexa.Enabled = true;
-
-
+            
+            
+            label1.Text = "Prompt";   Old_label = label1.Text;
             toolStripButton16.Visible = false;
 
             // libera a função de inserir
@@ -1255,5 +1221,10 @@ namespace BomDia
 
         }
 
+        private void toolStripButtonImpressos_Click(object sender, EventArgs e)
+        {
+            // Abre uma pasta no explorer de arquivos
+            Process.Start(new ProcessStartInfo() {  FileName = VariáveisGlobais.CaminhoDosImpressos, UseShellExecute = true });
+        }
     }
 }

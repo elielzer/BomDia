@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -27,6 +28,32 @@ namespace BomDia
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             VariáveisGlobais.LerDados();
+            try
+{            foreach (DataRow rows in VariáveisGlobais.dataSetBiblioteca.Tables[0].Rows)
+                {
+                    string _ = rows.Field<string>("Valor").ToString();
+                    switch (rows.Field<string>("Tipo").ToString())
+                    {
+                        case "Principal":
+                            VariáveisGlobais.CaminhoDados = _;
+                            break;
+                        case "Pastas":
+                            VariáveisGlobais.CaminhoDasPastas = _;
+                            break;
+                        case "BancoDados":
+                            VariáveisGlobais.CaminhoBancoDeDados = _;
+                            break;
+                        case "Impressos":
+                            VariáveisGlobais.CaminhoDosImpressos = _;
+                            break;
+                    }
+                }
+            }
+            catch
+            {
+                return;
+            }
+            
 
             DataRow encontre_o = VariáveisGlobais.dataSetBiblioteca.Tables[0].Rows.Find(1);
             VariáveisGlobais.MyPath = encontre_o[2].ToString();
@@ -47,7 +74,11 @@ namespace BomDia
         public static DataRow row;
         public static string MyPath;
         public static string MyPathForLink;
-        public static DataView DVP;
+        //public static DataView DVP;
+        public static string CaminhoBancoDeDados;
+        public static string CaminhoDasPastas;
+        public static string CaminhoDados;
+        public static string CaminhoDosImpressos;
 
         public static DirectoryInfo nodeDirInfo; public static TreeNode newSelected;
         public static DirectoryInfo info;
@@ -87,10 +118,11 @@ namespace BomDia
             dataSetBiblioteca.Tables.Add(Config);
 
         }
-
+        
         public static void LerDados()
         {
             VariáveisGlobais.CriaTabela();
+            // Diretrizes de dados incluídos na publicação
             dataSetBiblioteca.ReadXml("bomDiaConfig.xml", XmlReadMode.ReadSchema);
 
 
