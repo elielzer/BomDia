@@ -62,21 +62,18 @@ namespace BomDia
             TarefasDataSet.ReadXml(BancoDados, XmlReadMode.ReadSchema);
             //
             sender = this.ListaDeDatas;
-            // Como esteja a janela do aplicativo 
-            DataHoje.Visible = true;
-            DataHoje.Text = DateTime.Today.ToShortDateString();
 
-            Xloc = Location.X; Yloc = Location.Y;
-            LarguraForm = Width; AlturaForm = Height;
+            // Como esteja a janela do aplicativo 
+            DataHoje.Visible = true;   DataHoje.Text = DateTime.Today.ToShortDateString();
+
+            Xloc = Location.X; Yloc = Location.Y;  LarguraForm = Width; AlturaForm = Height;
 
             // Layout mini janela
-
             Program.DiaBomDiaX = this.Location.X + this.Width / 2 + 70;
             Program.DiaBomDiaY = this.Location.Y + 20;
 
 
-            FormBorderStyle = FormBorderStyle.None;
-            StatusStripBomDia.Visible = false;
+            FormBorderStyle = FormBorderStyle.None;  StatusStripBomDia.Visible = false;
             LarguraReduzida =
                 (int)(((tableLayoutPanel2.Width * 1.03)));
 
@@ -84,39 +81,37 @@ namespace BomDia
                 (int)(tableLayoutPanel2.Height * 1.05);
 
             Width = LarguraReduzida;
-            this.BackColor = Color.Black;
+            this.BackColor = Color.Black; this.BackColor = Color.Black;
 
             // Transição altura da mini janela
+            splitContainer1.Panel2Collapsed = true;  Height = AlturaReduzida;
 
-            splitContainer1.Panel2Collapsed = true;
-            Height = AlturaReduzida;
-
-            Height = AlturaReduzida + DataHoje.Height;
-            timer2.Enabled = true; timer2.Stop(); timer2.Start();
+            Height = AlturaReduzida + DataHoje.Height;  timer2.Enabled = true; timer2.Stop(); timer2.Start();
 
             // Mostra a data do dia
+            Location = new Point(1050, 0); ListaDeDatas.Text = DateTime.Today.ToShortDateString();
 
-            Location = new Point(1050, 0);
-
-            ListaDeDatas.Text = DateTime.Today.ToShortDateString();
-
-
+            // Selecionar dados a apresentar 
             TarefasBindingSource.Filter =
                 String.Format("QUANDO = '{0:dd/MM/yyyy}'", ListaDeDatas.Text);
-            //
-            string SemanaComMaiuscula;
-            SemanaComMaiuscula = DateTime.Today.ToString("ddd");
+
+            // Formatação de datas
+            string SemanaComMaiuscula; SemanaComMaiuscula = DateTime.Today.ToString("ddd");
             SemanaComMaiuscula = SemanaComMaiuscula[0].ToString().ToUpper() +
                 SemanaComMaiuscula[1].ToString() + SemanaComMaiuscula[2].ToString();
-
             SemanaToolStripButton.Text = string.Concat(".", SemanaComMaiuscula);
 
-            this.BackColor = Color.Black;
+            // Controles invisíveis
+            DetalheUsuário.Hide(); PastaOculto.Hide();  
 
-            DetalheUsuário.Hide(); // Torna o campo invisível no interface
 
-            label1.Text = "Desabilitado";
-            Old_label = label1.Text;
+            label1.Text = "Desabilitado"; Old_label = label1.Text;
+
+
+            // Carregar tabela de configuração
+            this.dataGridView3.DataSource = VariáveisGlobais.dataSetBiblioteca;
+            this.dataGridView3.DataMember = VariáveisGlobais.dataSetBiblioteca.Tables[0].ToString();
+
         }
 
         private void CortinaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -667,10 +662,7 @@ namespace BomDia
         {
             DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void ButtonMoveLista_Click(object sender, EventArgs e)
         {
@@ -694,6 +686,7 @@ namespace BomDia
                             Row["PESO"] = DataGridView1.Rows[i].Cells[5].Value; //6ª col
                             Row["CRITÉRIO"] = DataGridView1.Rows[i].Cells[6].Value; //7ª col
                             Row["DIAMARCADO"] = DataGridView1.Rows[i].Cells[3].Value; //3ª col
+                            Row["Pasta"] = DataGridView1.Rows[i].Cells[9].Value;
                             Row["User"] = DetalheUsuário2.Text;
                             // Índice
                             BomDiaTarefas.Rows.Add(Row);
@@ -800,6 +793,7 @@ namespace BomDia
                 Row["PESO"] = DataGridView1.Rows[i].Cells[5].Value; //6ª col
                 Row["CRITÉRIO"] = DataGridView1.Rows[i].Cells[6].Value; //7ª col
                 Row["DIAMARCADO"] = DataGridView1.Rows[i].Cells[3].Value; //3ª col
+                Row["Pasta"] = DataGridView1.Rows[i].Cells[9].Value;
                 Row["User"] = DetalheUsuário2.Text;
                 // Índice
                 BomDiaTarefas.Rows.Add(Row);
@@ -1230,14 +1224,21 @@ namespace BomDia
                 {
                      return; 
                 }
-
                 string Caminho = VariáveisGlobais.MyPath + "\\" + textBox1.Text;
+                if (string.IsNullOrEmpty(PastaOculto.Text))
+                {
 
+                // Cria a pasta não existente
+                    if (!Directory.Exists(Caminho))
+                    { 
+                        // prevista uma mensagem de confirmação
+                        Directory.CreateDirectory(Caminho); PastaOculto.Text = textBox1.Text;
+                        goto Pasta; 
+                    }
 
-                if (!Directory.Exists(Caminho))
-                { 
-                    Directory.CreateDirectory(Caminho); goto Pasta; 
                 }
+                
+                Caminho = VariáveisGlobais.MyPath + "\\" + PastaOculto.Text;
                 Pasta:
                 Process.Start(new ProcessStartInfo()
                 {
