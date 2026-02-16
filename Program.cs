@@ -47,10 +47,9 @@ namespace BomDia
         public static DataRow row;
         public static string MyPath;
         public static string MyPathForLink;
+        public static DataView DVP;
 
         public static DirectoryInfo nodeDirInfo; public static TreeNode newSelected;
-
-
         public static DirectoryInfo info;
 
         public static void CriaTabela()

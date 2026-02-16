@@ -649,6 +649,7 @@ namespace BomDia
 
         private void PrintButton_Click(object sender, EventArgs e)
         {
+            DataGridView1.Refresh();
             PrintDataGridView(DataGridView1);
         }
 
@@ -1105,9 +1106,9 @@ namespace BomDia
                     TarefasBindingSource.Filter = rowFilter;
                     break;
 
-
+                    
             }
-
+            
             MSGtoolStripStatusLabel.Text = "Aplicado um filtro de data";
         }
 
@@ -1145,7 +1146,7 @@ namespace BomDia
             // Desbloquear elementos
             OQuePretendido.Enabled = true; QuandoPrevisto.Enabled = true; ComboBoxPorque.Enabled = true; flowLayoutPanel4.Enabled = true; ButtonAnexa.Enabled = true; bindingNavigatorDeleteItem.Enabled = true;
 
-            BindingNavigatorNovo.Enabled = true;
+            //BindingNavigatorNovo.Enabled = true;
             BindingExclui.Enabled = true;
             label1.Text = "Prompt";
             Old_label = label1.Text;
