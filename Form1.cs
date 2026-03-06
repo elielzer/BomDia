@@ -103,6 +103,12 @@ namespace BomDia
             this.dataGridView3.DataSource = VariáveisGlobais.dataSetBiblioteca;
             this.dataGridView3.DataMember = VariáveisGlobais.dataSetBiblioteca.Tables[0].ToString();
 
+
+            // Carregar dados para visão de prévias
+            string rowFilter = "QUANDO > '" + DateTime.Today + "'";
+            bindingSourcePrévia.Filter = rowFilter;
+            bindingSourcePrévia.Sort = "QUANDO";
+            dataGridViewPrévia.FirstDisplayedScrollingRowIndex = 0;
         }
 
         private void CortinaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -663,7 +669,7 @@ namespace BomDia
                             Row["CRITÉRIO"] = DataGridView1.Rows[i].Cells[6].Value; //7ª col
                             Row["DIAMARCADO"] = DataGridView1.Rows[i].Cells[3].Value; //3ª col
                             Row["Pasta"] = DataGridView1.Rows[i].Cells[9].Value;
-                            Row["User"] = DetalheUsuário2.Text;
+                            Row["User"] = Responsável.Text;
                             // Índice
                             BomDiaTarefas.Rows.Add(Row);
 
@@ -727,8 +733,9 @@ namespace BomDia
             bluePen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             // Create points that define line.
             PointF point1 =
-                new PointF(splitContainer5.Left + textBox1.Width, splitContainer5.Top +
-                splitContainer5.Height - label7.Height - 30);
+                new PointF(splitContainer5.Left + textBox1.Width,
+                splitContainer5.Top + tableLayoutPanel9.Height-panel4.Height
+               );
 
             PointF point2 =
             new PointF(point1.X + tableLayoutPanel9.Width, point1.Y);
@@ -770,7 +777,7 @@ namespace BomDia
                 Row["CRITÉRIO"] = DataGridView1.Rows[i].Cells[6].Value; //7ª col
                 Row["DIAMARCADO"] = DataGridView1.Rows[i].Cells[3].Value; //3ª col
                 Row["Pasta"] = DataGridView1.Rows[i].Cells[9].Value;
-                Row["User"] = DetalheUsuário2.Text;
+                Row["User"] = Responsável.Text;
                 // Índice
                 BomDiaTarefas.Rows.Add(Row);
                 ContadorDeClique += 1;
