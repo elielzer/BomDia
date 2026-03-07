@@ -13,6 +13,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Security.Principal;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using System.Xml.Schema;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -103,6 +104,15 @@ namespace BomDia
             this.dataGridView3.DataSource = VariáveisGlobais.dataSetBiblioteca;
             this.dataGridView3.DataMember = VariáveisGlobais.dataSetBiblioteca.Tables[0].ToString();
 
+            FiltraDadosPrévia();
+            checkBoxExibirPrévia.Text = "Prévia ligado";
+            checkBoxExibirPrévia.Refresh();
+
+
+        }
+
+        public void FiltraDadosPrévia()
+        {
 
             // Carregar dados para visão de prévias
             string rowFilter = "QUANDO > '" + DateTime.Today + "'";
@@ -110,6 +120,7 @@ namespace BomDia
             bindingSourcePrévia.Sort = "QUANDO";
             dataGridViewPrévia.FirstDisplayedScrollingRowIndex = 0;
         }
+
 
         private void CortinaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -285,7 +296,7 @@ namespace BomDia
             //
             if (dataPara > dataHoje)
             {
-                DiaBomDiaLabel.Text = "◢ Programático".ToUpper();
+                DiaBomDiaLabel.Text = "◢ Programático ◣".ToUpper();
 
                 bindingNavigatorAddNewItem.Text = "&Criar";
                 if (bindingNavigatorAddNewItem.Text != "&Criar")
@@ -296,7 +307,7 @@ namespace BomDia
             }
             if (dataPara < dataHoje)
             {
-                DiaBomDiaLabel.Text = "◢ Em log".ToUpper();
+                DiaBomDiaLabel.Text = "◢ Em log ◣".ToUpper();
 
                 if (bindingNavigatorAddNewItem.Enabled != false)
                 { bindingNavigatorAddNewItem.Enabled = false; }
@@ -306,7 +317,7 @@ namespace BomDia
                 MSGtoolStripStatusLabel.Text =
                     "Arquivo de dados: " + BancoDados;
 
-                DiaBomDiaLabel.Text = "◢ Em tempo real ".ToUpper();
+                DiaBomDiaLabel.Text = "◢ Em tempo real ◣".ToUpper();
 
                 if (bindingNavigatorAddNewItem.Enabled == false)
                 { bindingNavigatorAddNewItem.Enabled = true; }
@@ -411,7 +422,7 @@ namespace BomDia
 
 
             this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.Edit1;
-            //this.label1.Text = "Prompt ";
+            //this.label1.Text = (string)"Prompt";
             if (DataGridView1.CurrentRow == null) //quando a posição está em linha nova
             {
                 try
@@ -709,12 +720,12 @@ namespace BomDia
         private void ShowLineJoin(PaintEventArgs e)
         {
             // Create pen.
-            Pen bluePen = new Pen(Color.Black, 1);
+            Pen bluePen = new Pen(Color.Black, 100);
             bluePen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
 
             // Create points that define line - linha superior do cabeçalho.
             PointF point1 =
-                new PointF(flowLayoutPanel1.Left + flowLayoutPanel1.Width, tableLayoutPanel14.Bottom - 1);
+                new PointF(tableLayoutPanel9.Left, tableLayoutPanel9.Bottom);
             PointF point2 =
             new PointF(PictureBoxEditar.Left, point1.Y);
 
@@ -734,7 +745,7 @@ namespace BomDia
             // Create points that define line.
             PointF point1 =
                 new PointF(splitContainer5.Left + textBox1.Width,
-                splitContainer5.Top + tableLayoutPanel9.Height-panel4.Height
+                splitContainer5.Top + splitContainer5.Height - flowLayoutPanel6.Height
                );
 
             PointF point2 =
@@ -1125,7 +1136,7 @@ namespace BomDia
             //BindingNavigatorNovo.Enabled = true;
             
             
-            label1.Text = "Prompt";   Old_label = label1.Text;
+            label1.Text = "Prompt".ToUpper();   Old_label = label1.Text;
             toolStripButton16.Visible = false;
 
             // libera a função de inserir
@@ -1174,7 +1185,7 @@ namespace BomDia
                     DateTime.Now.ToString();
 
                 this.PictureBoxEditar.Image = global::BomDia.Properties.Resources.Edit1;
-                label1.Text = "Prompt"; Old_label = label1.Text;
+                label1.Text = "Prompt".ToUpper(); Old_label = label1.Text;
 
                 if (ContadorDeClique > 0)
                 {
@@ -1232,6 +1243,22 @@ namespace BomDia
         {
             // Abre uma pasta no explorer de arquivos
             Process.Start(new ProcessStartInfo() {  FileName = VariáveisGlobais.CaminhoDosImpressos, UseShellExecute = true });
+        }
+
+        private void checkBoxExibirPrévia_Click(object sender, EventArgs e)
+        {
+            if(checkBoxExibirPrévia.Checked == false )
+            {
+                splitContainer7.Panel1Collapsed = true;
+                checkBoxExibirPrévia.Text = "Prévia desligado";
+            }
+            else
+            {
+                splitContainer7.Panel1Collapsed = false;
+                checkBoxExibirPrévia.Text = "Prévia ligado";
+                FiltraDadosPrévia();
+            }
+            ;
         }
     }
 }
