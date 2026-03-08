@@ -78,6 +78,11 @@ namespace BomDia
             Width = LarguraReduzida;
             this.BackColor = Color.Black; this.BackColor = Color.Black;
 
+            // Controles invisíveis
+            DetalheUsuário.Hide(); PastaOculto.Hide(); label1.Text = "Desabilitado"; Old_label = label1.Text;
+            BindingNavegador.Hide();
+
+
             // Transição altura da mini janela
             splitContainer1.Panel2Collapsed = true;  Height = AlturaReduzida;
 
@@ -96,19 +101,18 @@ namespace BomDia
 
             SemanaToolStripButton.Text = string.Concat(".", SemanaComMaiuscula);
 
-            // Controles invisíveis
-            DetalheUsuário.Hide(); PastaOculto.Hide();  label1.Text = "Desabilitado"; Old_label = label1.Text;
 
 
             // Carregar tabela de configuração para dentro da grade
             this.dataGridView3.DataSource = VariáveisGlobais.dataSetBiblioteca;
             this.dataGridView3.DataMember = VariáveisGlobais.dataSetBiblioteca.Tables[0].ToString();
 
+            // Carregar dados para a prévia
             FiltraDadosPrévia();
             checkBoxExibirPrévia.Text = "Prévia ligado";
             checkBoxExibirPrévia.Refresh();
 
-
+            
         }
 
         public void FiltraDadosPrévia()
@@ -130,8 +134,7 @@ namespace BomDia
             StatusStripBomDia.Show(); Location = new Point(Xloc, Yloc); Width = LarguraForm; Height = AlturaForm;
 
             this.BackColor = Color.Gray; this.WindowState = FormWindowState.Normal; FormBorderStyle = FormBorderStyle.Sizable;
-            ControlBox = true;
-            cortinaToolStripMenuItem.Enabled = false;
+            ControlBox = true; cortinaToolStripMenuItem.Enabled = false; BindingNavegador.Visible = true;
 
             /* Mostra a data*/
             dateTimePicker1.Format = DateTimePickerFormat.Short;
@@ -176,7 +179,7 @@ namespace BomDia
                 StatusStripBomDia.Visible = false;
                 this.WindowState = FormWindowState.Normal;
                 FormBorderStyle = FormBorderStyle.None;
-                Xloc = Location.X; Yloc = Location.Y;
+                Xloc = Location.X; Yloc = Location.Y; 
                 LarguraForm = Width;
                 AlturaForm = Height;
                 Width = LarguraReduzida;
@@ -381,13 +384,10 @@ namespace BomDia
             dateTimePicker1.CustomFormat = "HH:mm";
             dateTimePicker1.Font = new Font("Calibri", 22F, FontStyle.Bold);
 
-            // Redesenhar a janela para forma reduzida.
-
-            StatusStripBomDia.Visible = false;
+            // Redesenhar a janela para forma reduzida
             this.WindowState = FormWindowState.Normal;
-            FormBorderStyle = FormBorderStyle.None;
-            Xloc = Location.X; Yloc = Location.Y;
-
+            StatusStripBomDia.Visible = false;
+            FormBorderStyle = FormBorderStyle.None;  Xloc = Location.X; Yloc = Location.Y;
             LarguraForm = Width; AlturaForm = Height;
 
             Width = LarguraReduzida;
@@ -398,9 +398,6 @@ namespace BomDia
             cortinaToolStripMenuItem.Enabled = true;
 
             Program.Bomdia.TopMost = true; HideForm();// Ocultar 
-
-
-
         }
         private void DataGridView1_Enter(object sender, EventArgs e)
         {
