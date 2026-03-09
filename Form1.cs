@@ -34,8 +34,8 @@ namespace BomDia
         int NRow = 0; // Usado na contagem de linhas no datagridview1
         DateTime DataSemana;
 
-        string BancoDados =
-            "C:/Users/elielzer/Documents/Bom-Dia/XmlDoc.xml";
+        string BancoDados = VariáveisGlobais.CaminhoBancoDeDados;
+        
         public const char Triang = '\u25E3';
         //
         public string PréPorque = ""; public string PréQuando;
@@ -80,7 +80,7 @@ namespace BomDia
 
             // Controles invisíveis
             DetalheUsuário.Hide(); PastaOculto.Hide(); label1.Text = "Desabilitado"; Old_label = label1.Text;
-            BindingNavegador.Hide();
+            BindingNavegador.Hide(); Responsável.Hide();
 
 
             // Transição altura da mini janela
@@ -101,8 +101,6 @@ namespace BomDia
 
             SemanaToolStripButton.Text = string.Concat(".", SemanaComMaiuscula);
 
-
-
             // Carregar tabela de configuração para dentro da grade
             this.dataGridView3.DataSource = VariáveisGlobais.dataSetBiblioteca;
             this.dataGridView3.DataMember = VariáveisGlobais.dataSetBiblioteca.Tables[0].ToString();
@@ -112,7 +110,8 @@ namespace BomDia
             checkBoxExibirPrévia.Text = "Prévia ligado";
             checkBoxExibirPrévia.Refresh();
 
-            
+            // Preencho o nome do usuário na barra de status
+            toolStripStatusLabelUsuário.Text = "Usuário atual: ".ToUpper() + Usuário.ToUpper();
         }
 
         public void FiltraDadosPrévia()
@@ -212,7 +211,7 @@ namespace BomDia
                 if (TarefasDataSet == null) { return; }
 
                 // Create a file name to write to.
-                string filename = "C:/Users/elielzer/Documents/Bom-Dia/XmlDoc.xml";
+                string filename = VariáveisGlobais.CaminhoBancoDeDados;
 
                 // Create the FileStream to write with.
                 System.IO.FileStream stream = new System.IO.FileStream
@@ -678,7 +677,8 @@ namespace BomDia
                             Row["DIAMARCADO"] = DataGridView1.Rows[i].Cells[3].Value; //3ª col
                             Row["Pasta"] = DataGridView1.Rows[i].Cells[9].Value;
                             Row["User"] = Responsável.Text;
-                            // Índice
+                            toolStripStatusLabelUsuário.Text = Responsável.Text;
+                            // Índice do registro automático na adição de registro
                             BomDiaTarefas.Rows.Add(Row);
 
 
@@ -742,7 +742,7 @@ namespace BomDia
             // Create points that define line.
             PointF point1 =
                 new PointF(splitContainer5.Left + textBox1.Width,
-                splitContainer5.Top + splitContainer5.Height - flowLayoutPanel6.Height
+                splitContainer5.Top + splitContainer5.Height - tableLayoutPanel11.Height
                );
 
             PointF point2 =
@@ -786,6 +786,7 @@ namespace BomDia
                 Row["DIAMARCADO"] = DataGridView1.Rows[i].Cells[3].Value; //3ª col
                 Row["Pasta"] = DataGridView1.Rows[i].Cells[9].Value;
                 Row["User"] = Responsável.Text;
+                toolStripStatusLabelUsuário.Text = Responsável.Text;  
                 // Índice
                 BomDiaTarefas.Rows.Add(Row);
                 ContadorDeClique += 1;
@@ -1164,7 +1165,7 @@ namespace BomDia
                 if (TarefasDataSet == null) { return; }
 
                 // Create a file name to write to.
-                string filename = "C:/Users/elielzer/Documents/Bom-Dia/XmlDoc.xml";
+                string filename = VariáveisGlobais.CaminhoBancoDeDados;
 
                 // Create the FileStream to write with.
                 System.IO.FileStream stream = new System.IO.FileStream
