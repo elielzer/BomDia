@@ -45,13 +45,14 @@ namespace BomDia
 
         public BomDia()
         {
-            InitializeComponent();    splitContainer2.Panel1Collapsed = true;
+            InitializeComponent(); splitContainer2.Panel1Collapsed = true;
 
             // Restrição no comportamento de alguns controles
             OQuePretendido.Enabled = false; QuandoPrevisto.Enabled = false; ComboBoxPorque.Enabled = false; flowLayoutPanel4.Enabled = false; ButtonAnexa.Enabled = false; bindingNavigatorDeleteItem.Enabled = false;
             PictureBoxEditar.Enabled = false;
+            DataGridView1.ColumnHeadersDefaultCellStyle.Font = Control.DefaultFont;
+            DataGridView1.DefaultCellStyle.Font = Control.DefaultFont;
         }
-
         public void BomDia_Load(object sender, EventArgs e)
         {
             TarefasDataSet.ReadXml(BancoDados, XmlReadMode.ReadSchema);
