@@ -52,6 +52,7 @@ namespace BomDia
             PictureBoxEditar.Enabled = false;
             DataGridView1.ColumnHeadersDefaultCellStyle.Font = Control.DefaultFont;
             DataGridView1.DefaultCellStyle.Font = Control.DefaultFont;
+            dataGridViewPrévia.DefaultCellStyle.Font = Control.DefaultFont;
         }
         public void BomDia_Load(object sender, EventArgs e)
         {
