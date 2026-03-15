@@ -53,6 +53,10 @@ namespace BomDia
             DataGridView1.ColumnHeadersDefaultCellStyle.Font = Control.DefaultFont;
             DataGridView1.DefaultCellStyle.Font = Control.DefaultFont;
             dataGridViewPrévia.DefaultCellStyle.Font = Control.DefaultFont;
+
+            // Associação de dados manuais
+            textBox2.TextBox.DataBindings.Add("Text", TarefasBindingSource, "IND", false, DataSourceUpdateMode.OnPropertyChanged);
+            
         }
         public void BomDia_Load(object sender, EventArgs e)
         {
@@ -79,7 +83,7 @@ namespace BomDia
 
             Width = LarguraReduzida;
             this.BackColor = Color.Black; this.BackColor = Color.Black;
-
+            this.SemanaToolStripButton.ForeColor = Color.Yellow;
             // Controles invisíveis
             DetalheUsuário.Hide(); PastaOculto.Hide(); label1.Text = "Desabilitado"; Old_label = label1.Text;
             BindingNavegador.Hide(); Responsável.Hide();
@@ -134,9 +138,9 @@ namespace BomDia
 
             StatusStripBomDia.Show(); Location = new Point(Xloc, Yloc); Width = LarguraForm; Height = AlturaForm;
 
-            this.BackColor = Color.Gray; this.WindowState = FormWindowState.Normal; FormBorderStyle = FormBorderStyle.Sizable;
+            this.BackColor = Color.PaleGreen; this.WindowState = FormWindowState.Normal; FormBorderStyle = FormBorderStyle.Sizable;
             ControlBox = true; cortinaToolStripMenuItem.Enabled = false; BindingNavegador.Visible = true;
-
+            SemanaToolStripButton.ForeColor = Color.Black;
             /* Mostra a data*/
             dateTimePicker1.Format = DateTimePickerFormat.Short;
             dateTimePicker1.Font =  new Font("Agency FB", 10F, FontStyle.Regular);
@@ -193,6 +197,7 @@ namespace BomDia
 
                 Height = (int)(((ushort)dateTimePicker1.Height) * 1.05);
                 this.BackColor = Color.Black;
+                this.SemanaToolStripButton.ForeColor = Color.Yellow;
                 Location = new Point(1100, 0);
                 cortinaToolStripMenuItem.Enabled = true;
                 this.Tag = "Min";
@@ -395,6 +400,7 @@ namespace BomDia
 
             Height = (int)(((ushort)dateTimePicker1.Height) * 1.1);
             this.BackColor = Color.Black; Location = new Point(1100, 0);
+            this.SemanaToolStripButton.ForeColor = Color.Yellow;
 
             cortinaToolStripMenuItem.Enabled = true;
 
@@ -732,10 +738,10 @@ namespace BomDia
             e.Graphics.DrawLine(bluePen, point1, point2);
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            ShowLineJoin(e);
-        }
+        //private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        //{
+        //    ShowLineJoin(e);
+        //}
         private void ShowLineJoin_tableLayoutPanel9(PaintEventArgs e)
         {
             // Create pen.
@@ -942,10 +948,10 @@ namespace BomDia
             splitContainer2.Panel1Collapsed = false;
         }
 
-        private void tableLayoutPanel14_Paint(object sender, PaintEventArgs e)
-        {
-            ShowLineJoin(e);
-        }
+        //private void tableLayoutPanel14_Paint(object sender, PaintEventArgs e)
+        //{
+        //    ShowLineJoin(e);
+        //}
 
         private DataGridView GetDataGridView1()
         {
@@ -996,7 +1002,7 @@ namespace BomDia
             Height = (int)(((ushort)dateTimePicker1.Height) * 1.1);
 
             this.BackColor = Color.Black; Location = new Point(1100, 0);
-
+            this.SemanaToolStripButton.ForeColor = Color.Yellow;
             cortinaToolStripMenuItem.Enabled = true;
 
             Program.Bomdia.TopMost = true;

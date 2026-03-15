@@ -34,5 +34,17 @@ namespace BomDia.Properties {
                 this["Responsável"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string IND {
+            get {
+                return ((string)(this["IND"]));
+            }
+            set {
+                this["IND"] = value;
+            }
+        }
     }
 }
