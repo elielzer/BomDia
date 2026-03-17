@@ -138,7 +138,7 @@ namespace BomDia
 
             StatusStripBomDia.Show(); Location = new Point(Xloc, Yloc); Width = LarguraForm; Height = AlturaForm;
 
-            this.BackColor = Color.PaleGreen; this.WindowState = FormWindowState.Normal; FormBorderStyle = FormBorderStyle.Sizable;
+            this.BackColor = DefaultBackColor; this.WindowState = FormWindowState.Normal; FormBorderStyle = FormBorderStyle.Sizable;
             ControlBox = true; cortinaToolStripMenuItem.Enabled = false; BindingNavegador.Visible = true;
             SemanaToolStripButton.ForeColor = Color.Black;
             /* Mostra a data*/
