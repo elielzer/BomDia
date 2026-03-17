@@ -305,8 +305,8 @@ namespace BomDia
             //
             if (dataPara > dataHoje)
             {
-                DiaBomDiaLabel.Text = "◢ Programático ◣".ToUpper();
-
+                DiaBomDiaLabel.Text = "Programático".ToUpper();
+                this.DiaBomDiaLabel.BackgroundImage = null;
                 bindingNavigatorAddNewItem.Text = "&Criar";
                 if (bindingNavigatorAddNewItem.Text != "&Criar")
                 { bindingNavigatorAddNewItem.Text = "&Criar"; }
@@ -316,8 +316,8 @@ namespace BomDia
             }
             if (dataPara < dataHoje)
             {
-                DiaBomDiaLabel.Text = "◢ Em log ◣".ToUpper();
-
+                DiaBomDiaLabel.Text = "Em log".ToUpper();
+                this.DiaBomDiaLabel.BackgroundImage = null;
                 if (bindingNavigatorAddNewItem.Enabled != false)
                 { bindingNavigatorAddNewItem.Enabled = false; }
             }
@@ -326,8 +326,9 @@ namespace BomDia
                 MSGtoolStripStatusLabel.Text =
                     "Arquivo de dados: " + BancoDados;
 
-                DiaBomDiaLabel.Text = "◢ Em tempo real ◣".ToUpper();
-
+                DiaBomDiaLabel.Text = " Em tempo real".ToUpper();
+                //global::BomDia.Properties.Resources.Edit1;
+                this.DiaBomDiaLabel.BackgroundImage = global::BomDia.Properties.Resources.MOON05;
                 if (bindingNavigatorAddNewItem.Enabled == false)
                 { bindingNavigatorAddNewItem.Enabled = true; }
                 if (bindingNavigatorAddNewItem.Text != "&Inserir")

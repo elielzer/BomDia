@@ -63,6 +63,16 @@ namespace BomDia.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _128 {
+            get {
+                object obj = ResourceManager.GetObject("128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ARW02LT {
             get {
                 object obj = ResourceManager.GetObject("ARW02LT", resourceCulture);
@@ -206,6 +216,16 @@ namespace BomDia.Properties {
         internal static System.Drawing.Bitmap LIGHTON {
             get {
                 object obj = ResourceManager.GetObject("LIGHTON", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MOON05 {
+            get {
+                object obj = ResourceManager.GetObject("MOON05", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
