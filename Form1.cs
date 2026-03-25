@@ -349,7 +349,7 @@ namespace BomDia
                 MSGtoolStripStatusLabel.Text =
                     "Arquivo de dados: " + BancoDados;
 
-                DiaBomDiaLabel.Text = " Em tempo real".ToUpper();
+                DiaBomDiaLabel.Text = " Em Pauta".ToUpper();
                 //global::BomDia.Properties.Resources.Edit1;
                 this.DiaBomDiaLabel.BackgroundImage = global::BomDia.Properties.Resources.MOON05;
                 if (bindingNavigatorAddNewItem.Enabled == false)
