@@ -1304,5 +1304,10 @@ namespace BomDia
                 ferramentasToolStripMenuItem.CheckState = CheckState.Unchecked;
             }
         }
+
+        private void atualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FiltraDadosMarcados();
+        }
     }
 }
