@@ -56,7 +56,8 @@ namespace BomDia
 
             // Associação de dados manuais
             textBox2.TextBox.DataBindings.Add("Text", TarefasBindingSource, "IND", false, DataSourceUpdateMode.OnPropertyChanged);
-            
+
+            tableLayoutPanel5.Hide();
         }
         public void BomDia_Load(object sender, EventArgs e)
         {
@@ -116,8 +117,16 @@ namespace BomDia
             checkBoxExibirPrévia.Text = "Prévia ligado";
             checkBoxExibirPrévia.Refresh();
 
+
+            // Mostrar dados marcados
+            FiltraDadosMarcados();
+
             // Preencho o nome do usuário na barra de status
             toolStripStatusLabelUsuário.Text = "Usuário atual: ".ToUpper() + Usuário.ToUpper();
+
+
+            //
+            ;
         }
 
         public void FiltraDadosPrévia()
@@ -128,7 +137,21 @@ namespace BomDia
             bindingSourcePrévia.Filter = rowFilter;
             bindingSourcePrévia.Sort = "QUANDO";
             dataGridViewPrévia.FirstDisplayedScrollingRowIndex = 0;
+ 
         }
+
+        public void FiltraDadosMarcados()
+        {
+
+            // Carregar dados para visão de marcados
+            string rowFilter = "QUANDO = '" + DateTime.Today + "' AND DIAMARCADO = QUANDO";
+            bindingSourceMarcados.Filter = rowFilter;
+            //bindingSourcePrévia.Sort = "SO";
+            dataGridViewMarcados.FirstDisplayedScrollingRowIndex = 0;
+        }
+
+
+
 
 
         private void CortinaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1266,6 +1289,20 @@ namespace BomDia
                 FiltraDadosPrévia();
             }
             ;
+        }
+
+        private void ferramentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ferramentasToolStripMenuItem.Checked == false) 
+            { 
+                tableLayoutPanel5.Visible = false;
+                ferramentasToolStripMenuItem.CheckState = CheckState.Checked;
+            }
+            else 
+            {
+                tableLayoutPanel5.Visible = true;
+                ferramentasToolStripMenuItem.CheckState = CheckState.Unchecked;
+            }
         }
     }
 }
