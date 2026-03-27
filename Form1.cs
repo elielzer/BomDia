@@ -144,14 +144,23 @@ namespace BomDia
         {
 
             // Carregar dados para visão de marcados
+            try
+            {
             string rowFilter = "QUANDO = '" + DateTime.Today + "' AND DIAMARCADO = QUANDO";
+            
             bindingSourceMarcados.Filter = rowFilter;
-            //bindingSourcePrévia.Sort = "SO";
+            ;
+            
             dataGridViewMarcados.FirstDisplayedScrollingRowIndex = 0;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+
         }
-
-
-
 
 
         private void CortinaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -349,7 +358,7 @@ namespace BomDia
                 MSGtoolStripStatusLabel.Text =
                     "Arquivo de dados: " + BancoDados;
 
-                DiaBomDiaLabel.Text = " Em Pauta".ToUpper();
+                DiaBomDiaLabel.Text = "Em Pauta".PadLeft(10);
                 //global::BomDia.Properties.Resources.Edit1;
                 this.DiaBomDiaLabel.BackgroundImage = global::BomDia.Properties.Resources.MOON05;
                 if (bindingNavigatorAddNewItem.Enabled == false)
