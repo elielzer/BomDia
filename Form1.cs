@@ -359,6 +359,7 @@ namespace BomDia
                     "Arquivo de dados: " + BancoDados;
 
                 DiaBomDiaLabel.Text = "Em Pauta".PadLeft(10);
+                groupBox2.Text = "Tempo Real".PadLeft(15);
                 //global::BomDia.Properties.Resources.Edit1;
                 this.DiaBomDiaLabel.BackgroundImage = global::BomDia.Properties.Resources.MOON05;
                 if (bindingNavigatorAddNewItem.Enabled == false)
